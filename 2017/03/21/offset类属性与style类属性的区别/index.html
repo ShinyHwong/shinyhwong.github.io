@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,offset,style,比较," />
+  <meta name="keywords" content="offset,style,比较," />
 
 
 
@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://on452etov.bkt.clouddn.com/offsetWidth%E4%B8%8Estyle.width.png">
 <meta property="og:image" content="http://on452etov.bkt.clouddn.com/offsetLeft%E4%B8%8Estyle.left.png">
 <meta property="og:image" content="http://on452etov.bkt.clouddn.com/offsetParrent%E4%B8%8EparrentNode.png">
-<meta property="og:updated_time" content="2017-03-21T15:41:23.768Z">
+<meta property="og:updated_time" content="2017-04-02T13:08:33.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="offset类属性与style类属性的区别">
 <meta name="twitter:description" content="在JavaScript DOM操作中，有两个属性可以获取元素的width属性，但是两者也有很大的不同">
@@ -335,6 +335,7 @@
 <li>必须要是行内元素才能获取到，当元素的宽高写在CSS中时，无法获取</li>
 <li>获取到的是String，带px</li>
 <li>可读写</li>
+<li>若没有设置left，style.left返回空字符串 “ “</li>
 </ol>
 </li>
 <li><h3 id="offset类属性"><a href="#offset类属性" class="headerlink" title="offset类属性"></a>offset类属性</h3><ol>
@@ -391,8 +392,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
             <a href="/tags/offset/" rel="tag"># offset</a>
           
             <a href="/tags/style/" rel="tag"># style</a>
@@ -419,6 +418,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/02/client、screen、page、scroll的比较/" rel="prev" title="获取DOM元素事件位置信息的几个方法">
+                获取DOM元素事件位置信息的几个方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -490,7 +493,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -503,7 +506,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
