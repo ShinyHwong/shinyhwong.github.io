@@ -326,60 +326,19 @@
 
       
         
-          
-            <h1 id="值类型与引用类型及在内存中的存储"><a href="#值类型与引用类型及在内存中的存储" class="headerlink" title="值类型与引用类型及在内存中的存储"></a>值类型与引用类型及在内存中的存储</h1><p>全文字数：3200字，阅读时长：10分钟</p>
-<h2 id="Part1-值类型与引用类型"><a href="#Part1-值类型与引用类型" class="headerlink" title="Part1 值类型与引用类型"></a>Part1 值类型与引用类型</h2><h3 id="值类型与引用类型的定义"><a href="#值类型与引用类型的定义" class="headerlink" title="值类型与引用类型的定义"></a>值类型与引用类型的定义</h3><ul>
+          <p>全文字数：3184字，阅读时长：10分钟</p>
+<h1 id="Part1-值类型与引用类型"><a href="#Part1-值类型与引用类型" class="headerlink" title="Part1 值类型与引用类型"></a>Part1 值类型与引用类型</h1><h2 id="值类型与引用类型的定义"><a href="#值类型与引用类型的定义" class="headerlink" title="值类型与引用类型的定义"></a>值类型与引用类型的定义</h2><ul>
 <li><p>值类型（基本类型）</p>
 <p>  定义：存放在<em>栈内存</em>中的简单数据段，数据大小确定，内存空间大小可以分配。<br>  5种基本数据类型：<code>string</code>、<code>number</code> 、<code>boolean</code>、<code>null</code>、<code>undefined</code>。</p>
 </li>
 </ul>
-<ul>
-<li><p>引用类型</p>
-<p>  定义：存放在<em>堆内存</em>中的对象，变量保存的实际是一个指针，当我们需要访问引用类型时，存放在栈内存中的指针会将我们指向堆内存的数据。每块空间大小不一样，根据情况进行特定的分配。<br>  常见的引用类型有：<code>Array</code>、<code>Object</code>、<code>Function</code></p>
-</li>
-</ul>
-<h3 id="值类型与引用类型的存储（传值与传址）"><a href="#值类型与引用类型的存储（传值与传址）" class="headerlink" title="值类型与引用类型的存储（传值与传址）"></a>值类型与引用类型的存储（传值与传址）</h3><ul>
-<li><p>值类型的赋值：把右边存储的信息（具体数据）复制一份给左边的变量。</p>
-<p>  特点：值类型赋值只是<strong>简单的数据复制</strong>，互相不影响，是<strong>独立</strong>的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> b = a;  <span class="comment">//具体数据的复制，复制之后a,b相互独立互不影响</span></div><div class="line">b = <span class="number">1</span>;</div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//1</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>引用类型的赋值：把右边存储的信息（指向具体数据的<em>地址</em>）复制一份给左边的变量。</p>
-<p>  特点：共享同一份数据，修改其中一个对象属性的值也会影响另一个。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = &#123;</div><div class="line">	<span class="attr">num</span> : <span class="number">10</span> </div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = obj1;	<span class="comment">//数据地址的复制，两个对象指向同一份数据，共享同一份数据。</span></div><div class="line">obj2.num = <span class="number">1</span>;</div><div class="line"><span class="built_in">console</span>.log(obj1.num);	<span class="comment">//1 修改obj2的属性也会影响obj1</span></div><div class="line"><span class="built_in">console</span>.log(obj2.num);	<span class="comment">//1</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="值类型与引用类型在函数中的应用"><a href="#值类型与引用类型在函数中的应用" class="headerlink" title="值类型与引用类型在函数中的应用"></a>值类型与引用类型在函数中的应用</h3><pre><code>&gt; 在函数中的参数有两种，一种是*实参*，就是实际的参数。还有一种是*形参*，形式参数，占位用的，函数调用之前是没有值的。
-&gt; 函数的调用：默认会把实参赋值给形参
-</code></pre><ul>
-<li><p>值类型作为函数的参数(值传递)<br>  形参与实参相互独立，没有影响</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123;</div><div class="line"><span class="comment">//默认会执行一步 n = num；</span></div><div class="line">	n = <span class="number">10</span>;</div><div class="line">	<span class="built_in">console</span>.log(n); <span class="comment">//10</span></div><div class="line">&#125;</div><div class="line">fn(num); <span class="comment">//函数的调用</span></div><div class="line"><span class="built_in">console</span>.log(num); <span class="comment">//20 值传递时，形参实参互不影响</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>引用类型做为函数的参数(指针传递)<br>  实参形参共享同一份数据，修改一个对象的值也会对另外一个对象产生影响</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">num</span> : <span class="number">10</span>&#125;; <span class="comment">//定义一个对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">object</span>) </span>&#123;</div><div class="line"><span class="comment">//默认进行 object = obj； 此时进行了地址的传递</span></div><div class="line">	object.num = <span class="number">1</span>； <span class="comment">//修改了一个源数据，所有指向改数据的对象的属性都进行了更改</span></div><div class="line">	object = &#123;<span class="attr">other</span> : others&#125;; <span class="comment">//object新建一块内存空间，指针指向新建的空间</span></div><div class="line">	<span class="built_in">console</span>.log(object.num); <span class="comment">//undefined 新建的空间内部已经没有num属性</span></div><div class="line">&#125;</div><div class="line">fn(obj); <span class="comment">//调用函数</span></div><div class="line"><span class="built_in">console</span>.log(obj.num); <span class="comment">//1  被object更改了属性</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Part2-堆栈的概念"><a href="#Part2-堆栈的概念" class="headerlink" title="Part2 堆栈的概念"></a>Part2 堆栈的概念</h2><h3 id="堆栈的定义"><a href="#堆栈的定义" class="headerlink" title="堆栈的定义"></a>堆栈的定义</h3><ul>
-<li><p>堆（heap）<br>  动态分配内存，大小不定，不会自动释放存储空间，堆中存储复杂类型数据</p>
-</li>
-<li><p>栈（stack）<br>  自动分配内存恐怖关键，系统自动释放，栈中存储简单类型数据</p>
-<p>  栈是一中特殊的线性表。其特殊性在于限定插入和删除数据元素的操作只能在线性表的一端进行。</p>
-<p>  <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1491999723&amp;di=d5c6a44c7ce952ba5331c8a027f0aad2&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fsee.xidian.edu.cn%2Fcpp%2Fuploads%2Fallimg%2F140713%2F1-140G3143015500.jpg" alt="线性表"></p>
-<p>  后进先出（Last in First out）,简称LIFO线性表</p>
-</li>
-</ul>
-<h3 id="数据在堆栈中的表示"><a href="#数据在堆栈中的表示" class="headerlink" title="数据在堆栈中的表示"></a>数据在堆栈中的表示</h3><p>JavaScript在内存中是如何表示的呢？我们可以通过以下例子来了解值类型和引用类型在内存中是如何存储的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> zs = &#123;</div><div class="line">	<span class="attr">name</span> : <span class="string">'zs'</span>,</div><div class="line">	<span class="attr">age</span> : <span class="number">10</span>,</div><div class="line">	<span class="attr">sex</span> : <span class="string">'男'</span>,</div><div class="line">	<span class="attr">dog</span> : dog,  <span class="comment">//指向dog对象</span></div><div class="line">	run : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125; <span class="comment">//指向run函数</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> dog = &#123;</div><div class="line">	<span class="attr">name</span> : <span class="string">'旺财'</span>,</div><div class="line">	<span class="attr">age</span> : <span class="number">10</span>,</div><div class="line">	<span class="attr">run</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125; <span class="comment">//指向run函数</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>以上代码可以描述为图示的关系：<br><img src="http://on452etov.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%9C%A8%E5%A0%86%E6%A0%88%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8.png" alt="数据在堆栈中的表示"></p>
-<h2 id="Part3-深复制与浅复制"><a href="#Part3-深复制与浅复制" class="headerlink" title="Part3 深复制与浅复制"></a>Part3 深复制与浅复制</h2><ul>
-<li><p>浅复制<br>  <img src="http://i.imgur.com/8V4fO14.png" alt="浅复制"><br>  在定义一个对象或数组的时候，变量在栈中只是存储了一个地址（指针），当我们复制该对象或数组的时候，复制的值也是该地址。在访问属性的时候，还是会通过复制的地址回溯到原来对象或数组指向的内存中。即两者共享了同一内存空间。修改一个对象的属性，另一个对象也会受到影响。</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Copy</span>(<span class="params">p</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> c = &#123;&#125;;  </div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;          　　</div><div class="line">		c[i] = p[i];</div><div class="line">	&#125;        </div><div class="line">	<span class="keyword">return</span> c;　</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>深复制<br>  <img src="http://i.imgur.com/8vGyNmU.png" alt="深复制"><br>  当我们不希望复制后的对象还与原对象共享同一数据，两者独立时，我们可以使用深复制来解决，通过递归的方法，把原对象中的属性方法都遍历给新的对象。这样，两个对象的属性会存储在堆中的不同内存空间。</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Copy</span>(<span class="params">p, c</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> c = c || &#123;&#125;;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> p[i] === <span class="string">'object'</span>) &#123;</div><div class="line">			c[i] = (p[i].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">			Copy(p[i], c[i]);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			c[i] = p[i];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/05/值类型与引用类型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -847,7 +806,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
