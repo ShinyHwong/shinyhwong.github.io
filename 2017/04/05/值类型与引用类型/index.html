@@ -87,7 +87,7 @@
 
 
 
-<meta name="description" content="全文字数：3184字，阅读时长：10分钟
+<meta name="description" content="全文字数：3450字，阅读时长：8分钟
 Part1 值类型与引用类型值类型与引用类型的定义
 值类型（基本类型）
   定义：存放在栈内存中的简单数据段，数据大小确定，内存空间大小可以分配。  5种基本数据类型：string、number 、boolean、null、undefined。">
@@ -95,18 +95,18 @@ Part1 值类型与引用类型值类型与引用类型的定义
 <meta property="og:title" content="值类型与引用类型及在内存中的存储">
 <meta property="og:url" content="http://yoursite.com/2017/04/05/值类型与引用类型/index.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="全文字数：3184字，阅读时长：10分钟
+<meta property="og:description" content="全文字数：3450字，阅读时长：8分钟
 Part1 值类型与引用类型值类型与引用类型的定义
 值类型（基本类型）
   定义：存放在栈内存中的简单数据段，数据大小确定，内存空间大小可以分配。  5种基本数据类型：string、number 、boolean、null、undefined。">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491999723&di=d5c6a44c7ce952ba5331c8a027f0aad2&imgtype=jpg&er=1&src=http%3A%2F%2Fsee.xidian.edu.cn%2Fcpp%2Fuploads%2Fallimg%2F140713%2F1-140G3143015500.jpg">
 <meta property="og:image" content="http://on452etov.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%9C%A8%E5%A0%86%E6%A0%88%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8.png">
 <meta property="og:image" content="http://i.imgur.com/8V4fO14.png">
-<meta property="og:image" content="http://i.imgur.com/8vGyNmU.png">
-<meta property="og:updated_time" content="2017-04-10T09:41:27.939Z">
+<meta property="og:image" content="http://i.imgur.com/r19WYcj.png">
+<meta property="og:updated_time" content="2017-04-11T05:45:32.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="值类型与引用类型及在内存中的存储">
-<meta name="twitter:description" content="全文字数：3184字，阅读时长：10分钟
+<meta name="twitter:description" content="全文字数：3450字，阅读时长：8分钟
 Part1 值类型与引用类型值类型与引用类型的定义
 值类型（基本类型）
   定义：存放在栈内存中的简单数据段，数据大小确定，内存空间大小可以分配。  5种基本数据类型：string、number 、boolean、null、undefined。">
@@ -401,7 +401,7 @@ Part1 值类型与引用类型值类型与引用类型的定义
       
 
       
-        <p>全文字数：3184字，阅读时长：10分钟</p>
+        <p>全文字数：3450字，阅读时长：8分钟</p>
 <h1 id="Part1-值类型与引用类型"><a href="#Part1-值类型与引用类型" class="headerlink" title="Part1 值类型与引用类型"></a>Part1 值类型与引用类型</h1><h2 id="值类型与引用类型的定义"><a href="#值类型与引用类型的定义" class="headerlink" title="值类型与引用类型的定义"></a>值类型与引用类型的定义</h2><ul>
 <li><p>值类型（基本类型）</p>
 <p>  定义：存放在<em>栈内存</em>中的简单数据段，数据大小确定，内存空间大小可以分配。<br>  5种基本数据类型：<code>string</code>、<code>number</code> 、<code>boolean</code>、<code>null</code>、<code>undefined</code>。</p>
@@ -450,7 +450,7 @@ Part1 值类型与引用类型值类型与引用类型的定义
 <p>以上代码可以描述为图示的关系：<br><img src="http://on452etov.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%9C%A8%E5%A0%86%E6%A0%88%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8.png" alt="数据在堆栈中的表示"></p>
 <hr>
 <h1 id="Part3-深拷贝与浅拷贝"><a href="#Part3-深拷贝与浅拷贝" class="headerlink" title="Part3 深拷贝与浅拷贝"></a>Part3 深拷贝与浅拷贝</h1><h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p><img src="http://i.imgur.com/8V4fO14.png" alt="浅拷贝"><br>在定义一个对象或数组的时候，变量在栈中只是存储了一个地址（指针），当我们复制该对象或数组的时候，复制的值也是该地址。在访问属性的时候，还是会通过复制的地址回溯到原来对象或数组指向的内存中。即两者共享了同一内存空间。修改一个对象的属性，另一个对象也会受到影响。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Copy</span>(<span class="params">p</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> c = &#123;&#125;;  </div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;          　　</div><div class="line">		c[i] = p[i];</div><div class="line">	&#125;        </div><div class="line">	<span class="keyword">return</span> c;　</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p><img src="http://i.imgur.com/8vGyNmU.png" alt="深拷贝"><br>当我们不希望复制后的对象还与原对象共享同一数据，两者独立时，我们可以使用深拷贝来解决，通过递归的方法，把原对象中的属性方法都遍历给新的对象。这样，两个对象的属性会存储在堆中的不同内存空间。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Copy</span>(<span class="params">p, c</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> c = c || &#123;&#125;;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</div><div class="line">		<span class="keyword">if</span> (p.hasOwnProperty(i)) &#123;</div><div class="line">			<span class="keyword">if</span> (<span class="keyword">typeof</span> p[i] === <span class="string">'object'</span>) &#123;</div><div class="line">				c[i] = (p[i].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">				Copy(p[i], c[i]);</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				c[i] = p[i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> c;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p><img src="http://i.imgur.com/r19WYcj.png" alt="深拷贝"><br>当我们不希望复制后的对象还与原对象共享同一数据，两者独立时，我们可以使用深拷贝来解决，通过递归的方法，把原对象中的属性方法都遍历给新的对象。这样，两个对象的属性会存储在堆中的不同内存空间。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj, copy</span>) </span>&#123;</div><div class="line">	<span class="comment">//被拷贝的对象必须是一个对象</span></div><div class="line">	copy = copy || &#123;&#125;;</div><div class="line">	<span class="comment">//遍历在目标对象中的所有属性</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> obj) &#123;</div><div class="line">		<span class="comment">//判断是否是自身的属性，防止遍历到原型属性</span></div><div class="line">		<span class="keyword">if</span> (obj.hasOwnProperty(k)) &#123;</div><div class="line">			<span class="comment">//如果是引用类型的属性（function除外）就要进行深拷贝</span></div><div class="line">			<span class="keyword">if</span> (<span class="keyword">typeof</span> obj[k] === <span class="string">'object'</span>) &#123;</div><div class="line">				<span class="comment">//判断属性是数组还是对象</span></div><div class="line">				copy[k] = obj[k].constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</div><div class="line">				<span class="comment">//递归进更深一层</span></div><div class="line">				deepClone(obj[k], copy[k]);</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				<span class="comment">//值类型或者是函数直接复制</span></div><div class="line">				copy[k] = obj[k];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> copy;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
