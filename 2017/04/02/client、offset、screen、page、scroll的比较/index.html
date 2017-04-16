@@ -88,22 +88,28 @@
 
 
 <meta name="description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。">
+在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
+Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
+12345678element">
 <meta property="og:type" content="article">
 <meta property="og:title" content="获取DOM元素事件位置信息的常用方法">
 <meta property="og:url" content="http://yoursite.com/2017/04/02/client、offset、screen、page、scroll的比较/index.html">
 <meta property="og:site_name" content="杂货铺">
 <meta property="og:description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。">
+在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
+Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
+12345678element">
 <meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png">
 <meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png">
 <meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/788/=OffsetHeight.png">
 <meta property="og:image" content="http://www.2cto.com/uploadfile/Collfiles/20140914/2014091409260873.png">
-<meta property="og:updated_time" content="2017-04-11T05:49:54.305Z">
+<meta property="og:updated_time" content="2017-04-16T12:26:41.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="获取DOM元素事件位置信息的常用方法">
 <meta name="twitter:description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。">
+在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
+Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
+12345678element">
 <meta name="twitter:image" content="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png">
 
 
@@ -397,9 +403,9 @@
       
         <p>全文字数：3630字，阅读时长：8分钟</p>
 <p>在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。</p>
-<a id="more"></a>
 <h1 id="Part1-client、scroll、offset元素属性的定义"><a href="#Part1-client、scroll、offset元素属性的定义" class="headerlink" title="Part1  client、scroll、offset元素属性的定义"></a>Part1  client、scroll、offset元素属性的定义</h1><p>在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是<strong>只读</strong>属性。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">element.clientHeight	<span class="comment">//在页面上返回内容的可视高度（不包括边框，边距或滚动条）</span></div><div class="line">element.clientLeft	<span class="comment">//表示一个元素的左边框的宽度,若左边出现了垂直滚动条，也包含滚动条的宽度</span></div><div class="line"></div><div class="line">element.offsetHeight	<span class="comment">//返回元素的高度，包括边框和填充，但不是边距</span></div><div class="line">element.offsetLeft	<span class="comment">//获取边框相对于具有定位属性的父对象的左边距</span></div><div class="line"></div><div class="line">element.scrollHeight	<span class="comment">//返回元素的整体高度（包括带滚动条的隐蔽的地方）</span></div><div class="line">element.scrollLeft	<span class="comment">//滚动条卷去隐藏的距离</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="clientHeight、scrollHeight、offsetHeight的比较"><a href="#clientHeight、scrollHeight、offsetHeight的比较" class="headerlink" title="clientHeight、scrollHeight、offsetHeight的比较"></a>clientHeight、scrollHeight、offsetHeight的比较</h2><h3 id="client"><a href="#client" class="headerlink" title="client"></a>client</h3><p><img src="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png" alt="client"><br>clientHeight：可见区域的宽度，不包括<code>boder</code>的宽度，如果区域内带有滚动条，还应该减去横向滚动条不可用的高度，正常的是17px，其实就是滚动条的可滚动的部分了，其实<em>clientHeight</em>与<code>height</code>的高度差不多，如果不带滚动条的话他们的值都是一样的，如果带有滚动条的话就会比<code>height</code>值少17px；火狐与IE下均为一致。<br>注意，对于类型<code>&lt;i&gt;</code>,<code>&lt;code&gt;</code>和<code>&lt;span&gt;</code>这些内联元素,<em>clientWidth</em>和<em>clientHeight</em>总是返回0。</p>
 <h3 id="scroll"><a href="#scroll" class="headerlink" title="scroll"></a>scroll</h3><p><img src="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png" alt="scroll"><br>scrollHeight：同样不包含<code>border</code>,由<code>height</code>与<code>padding</code>相加。若包含滚动条，<code>scrollHeight</code>就是滚动条可滚动的距离。（<code>height</code>与<code>padding</code>相加在减去滚动条的高度，默认为17px）。直观的说法就是元素的内容区域加上它的内边距再加上任何溢出内容的尺寸。当内容正好和内容区域匹配而没有溢出时，这些属性与clientWidth和clientHeight是相等的。但当溢出时，它们就包含溢出的内容，返回值比clientWidth和clientHeight要大。</p>
 <h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><p><img src="https://developer.mozilla.org/@api/deki/files/788/=OffsetHeight.png" alt="offset"><br>offsetHeight：元素的offsetHeightw值包括该元素的边框,元素的垂直内边距,元素的水平滚动条(若出现水平滚动条),以及元素的样式高度。实际值为<code>height</code> + <code>padding</code> + <code>border</code>。</p>

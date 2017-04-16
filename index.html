@@ -397,7 +397,8 @@
 <li><p>值类型（基本类型）</p>
 <p>  定义：存放在<em>栈内存</em>中的简单数据段，数据大小确定，内存空间大小可以分配。<br>  5种基本数据类型：<code>string</code>、<code>number</code> 、<code>boolean</code>、<code>null</code>、<code>undefined</code>。</p>
 </li>
-</ul>
+<li><p>引用类型</p>
+<p>  定义：存放在<em>堆内存</em>中的对象，变量保存的实际是一个指针，当我们需要访问引用类型时，存放在栈内存中的指针会将我们指向堆内存的数据。每块空间大小不一样，根据情况进行特定的分配。<br>  常见的引用类型有：<code>Array</code>、<code>Object</code>、<code>Function</code></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/05/值类型与引用类型/#more" rel="contents">
@@ -544,6 +545,8 @@
         
           <p>全文字数：3630字，阅读时长：8分钟</p>
 <p>在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。</p>
+<h1 id="Part1-client、scroll、offset元素属性的定义"><a href="#Part1-client、scroll、offset元素属性的定义" class="headerlink" title="Part1  client、scroll、offset元素属性的定义"></a>Part1  client、scroll、offset元素属性的定义</h1><p>在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是<strong>只读</strong>属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">element.clientHeight	<span class="comment">//在页面上返回内容的可视高度（不包括边框，边距或滚动条）</span></div><div class="line">element.clientLeft	<span class="comment">//表示一个元素的左边框的宽度,若左边出现了垂直滚动条，也包含滚动条的宽度</span></div><div class="line"></div><div class="line">element.offsetHeight	<span class="comment">//返回元素的高度，包括边框和填充，但不是边距</span></div><div class="line">element.offsetLeft	<span class="comment">//获取边框相对于具有定位属性的父对象的左边距</span></div><div class="line"></div><div class="line">element.scrollHeight	<span class="comment">//返回元素的整体高度（包括带滚动条的隐蔽的地方）</span></div><div class="line">element.scrollLeft	<span class="comment">//滚动条卷去隐藏的距离</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/02/client、offset、screen、page、scroll的比较/#more" rel="contents">
@@ -688,8 +691,26 @@
 
       
         
-          <p>全文字数：1205字，阅读时长：3分钟</p>
+          <p>全文字数：1115字，阅读时长：3分钟</p>
 <h1 id="offset类属性与style类属性的区别"><a href="#offset类属性与style类属性的区别" class="headerlink" title="offset类属性与style类属性的区别"></a>offset类属性与style类属性的区别</h1><p>在JavaScript DOM操作中，有两个属性可以获取元素的width属性，但是两者也有很大的不同</p>
+<ul>
+<li><p>style类属性</p>
+<ol>
+<li>必须要是行内元素才能获取到，当元素的宽高写在CSS中时，无法获取</li>
+<li>获取到的是String，带px</li>
+<li>可读写</li>
+<li>若没有设置left，style.left返回空字符串 “ “</li>
+</ol>
+</li>
+<li><p>offset类属性</p>
+<ol>
+<li>获取元素的实际存在的宽高，不管是在行内还是页内</li>
+<li>获取到的是Number</li>
+<li>只可读</li>
+</ol>
+</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/21/offset类属性与style类属性的区别/#more" rel="contents">
@@ -836,7 +857,24 @@
         
           <p>全文字数：2037字，阅读时长：5分钟</p>
 <h1 id="Part1-数字转换成字符串"><a href="#Part1-数字转换成字符串" class="headerlink" title="Part1 数字转换成字符串"></a>Part1 数字转换成字符串</h1><h2 id="1-1-使用JS内部方法进行转换"><a href="#1-1-使用JS内部方法进行转换" class="headerlink" title="1.1 使用JS内部方法进行转换"></a>1.1 使用JS内部方法进行转换</h2><ol>
-<li>parseInt  可以将一个字符串型整数进行转换.
+<li>parseInt  可以将一个字符串型整数进行转换.</li>
+</ol>
+<blockquote>
+<p>parseInt提取数字注意点.</p>
+<blockquote>
+<p>第一个字母必须是数字,如果不是数字则显示NaN</p>
+<ol>
+<li>parseFloat 可以将一个字符串型的浮点数进行转换</li>
+</ol>
+</blockquote>
+<p>因为JS是弱类型语言, 不管是int还是float都是Number.</p>
+</blockquote>
+<h2 id="1-2-直接使用Number对象进行包裹"><a href="#1-2-直接使用Number对象进行包裹" class="headerlink" title="1.2 直接使用Number对象进行包裹"></a>1.2 直接使用Number对象进行包裹</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">"10"</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(a));</div></pre></td></tr></table></figure>
+<h2 id="1-3-参与数学计算-加法除外"><a href="#1-3-参与数学计算-加法除外" class="headerlink" title="1.3 参与数学计算(加法除外)"></a>1.3 参与数学计算(加法除外)</h2><blockquote>
+<p>加法会将字符串进行拼接</p>
+</blockquote>
+<p>乘法、除法、模运算(取余)都可以将字符串类型变成Number类型.</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/14/JavaScript中的数据类型转换/#more" rel="contents">
