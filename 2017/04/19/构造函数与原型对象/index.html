@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="对象,创建对象,特性," />
+  <meta name="keywords" content="构造函数,原型对象,this,私有属性," />
 
 
 
@@ -87,28 +87,67 @@
 
 
 
-<meta name="description" content="全文字数：1888字，阅读时长：4分钟
-对象（Object）是什么？
-在软件系统中，对象具有唯一的标识符，对象包括属性（Properties）和方法（Methods），属性就是需要记忆的信息，方法就是对象能够提供的服务。在面向对象（Object Oriented）的软件中，对象（Object）是某一个类（Class）的实例（Instance）。 —— 维基百科
+<meta name="description" content="全文字数：3735字，阅读时长：9分钟
+构造函数
+ 函数也可以作为构造函数的参数
 
-面向对象语言的特点：有类(clas">
+
+构造函数和工厂函数的区别：    
+
+构造函数首字母大写
+构造函数内部会默认创建新的对象，并且默认返回这个对象
+在创建对象的时候，通过new调用构造函数
+
+
+返回值
+
+构造函数内部没有return，返回默认新创建的对象
+如果构造函数内部有return，分两种情况：
+
+返回值类型，忽略该return，返回新创建的对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象基本介绍与创建对象">
-<meta property="og:url" content="http://yoursite.com/2017/04/16/面向对象介绍与创建对象/index.html">
+<meta property="og:title" content="构造函数与原型对象">
+<meta property="og:url" content="http://yoursite.com/2017/04/19/构造函数与原型对象/index.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="全文字数：1888字，阅读时长：4分钟
-对象（Object）是什么？
-在软件系统中，对象具有唯一的标识符，对象包括属性（Properties）和方法（Methods），属性就是需要记忆的信息，方法就是对象能够提供的服务。在面向对象（Object Oriented）的软件中，对象（Object）是某一个类（Class）的实例（Instance）。 —— 维基百科
+<meta property="og:description" content="全文字数：3735字，阅读时长：9分钟
+构造函数
+ 函数也可以作为构造函数的参数
 
-面向对象语言的特点：有类(clas">
-<meta property="og:updated_time" content="2017-04-16T14:48:34.481Z">
+
+构造函数和工厂函数的区别：    
+
+构造函数首字母大写
+构造函数内部会默认创建新的对象，并且默认返回这个对象
+在创建对象的时候，通过new调用构造函数
+
+
+返回值
+
+构造函数内部没有return，返回默认新创建的对象
+如果构造函数内部有return，分两种情况：
+
+返回值类型，忽略该return，返回新创建的对">
+<meta property="og:updated_time" content="2017-04-19T08:21:51.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象基本介绍与创建对象">
-<meta name="twitter:description" content="全文字数：1888字，阅读时长：4分钟
-对象（Object）是什么？
-在软件系统中，对象具有唯一的标识符，对象包括属性（Properties）和方法（Methods），属性就是需要记忆的信息，方法就是对象能够提供的服务。在面向对象（Object Oriented）的软件中，对象（Object）是某一个类（Class）的实例（Instance）。 —— 维基百科
+<meta name="twitter:title" content="构造函数与原型对象">
+<meta name="twitter:description" content="全文字数：3735字，阅读时长：9分钟
+构造函数
+ 函数也可以作为构造函数的参数
 
-面向对象语言的特点：有类(clas">
+
+构造函数和工厂函数的区别：    
+
+构造函数首字母大写
+构造函数内部会默认创建新的对象，并且默认返回这个对象
+在创建对象的时候，通过new调用构造函数
+
+
+返回值
+
+构造函数内部没有return，返回默认新创建的对象
+如果构造函数内部有return，分两种情况：
+
+返回值类型，忽略该return，返回新创建的对">
 
 
 
@@ -136,13 +175,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/16/面向对象介绍与创建对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/19/构造函数与原型对象/"/>
 
 
 
 
 
-  <title> 面向对象基本介绍与创建对象 | 杂货铺 </title>
+  <title> 构造函数与原型对象 | 杂货铺 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -304,7 +343,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/16/面向对象介绍与创建对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/构造函数与原型对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shine Hwong">
@@ -325,7 +364,7 @@
             
             
               
-                面向对象基本介绍与创建对象
+                构造函数与原型对象
               
             
           </h1>
@@ -340,8 +379,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T19:49:11+08:00">
-                2017-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T16:03:33+08:00">
+                2017-04-19
               </time>
             
 
@@ -360,8 +399,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/16/面向对象介绍与创建对象/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/04/16/面向对象介绍与创建对象/" itemprop="commentsCount"></span>
+                <a href="/2017/04/19/构造函数与原型对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/04/19/构造函数与原型对象/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -370,7 +409,7 @@
 
           
           
-             <span id="/2017/04/16/面向对象介绍与创建对象/" class="leancloud_visitors" data-flag-title="面向对象基本介绍与创建对象">
+             <span id="/2017/04/19/构造函数与原型对象/" class="leancloud_visitors" data-flag-title="构造函数与原型对象">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -399,61 +438,127 @@
       
 
       
-        <p>全文字数：1888字，阅读时长：4分钟</p>
-<h1 id="对象（Object）是什么？"><a href="#对象（Object）是什么？" class="headerlink" title="对象（Object）是什么？"></a>对象（Object）是什么？</h1><blockquote>
-<p>在软件系统中，对象具有唯一的标识符，对象包括属性（Properties）和方法（Methods），属性就是需要记忆的信息，方法就是对象能够提供的服务。在面向对象（Object Oriented）的软件中，对象（Object）是某一个类（Class）的实例（Instance）。 —— 维基百科</p>
+        <p>全文字数：3735字，阅读时长：9分钟</p>
+<h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><blockquote>
+<p> 函数也可以作为构造函数的参数</p>
 </blockquote>
-<p>面向对象语言的特点：有类(class)的概念，如C++、Java。<br>Javascript没有类的概念，基于原型，支持面向对象。</p>
 <ul>
-<li><p>基本数据类型<br>  <code>string</code>、 <code>number</code>、 <code>boolean</code>、 <code>null</code>、 <code>undefined</code></p>
-<p> <code>null</code>、<code>undefined</code>分别表示没有声明和声明后没有初始化的变量、对象，是两个简单的值，其余三个有对应的包装对象<code>Number</code>、<code>Boolean</code>、<code>String</code></p>
-</li>
-</ul>
-<a id="more"></a>
-<h2 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h2><ul>
-<li><p>封装<br>  封装就是把过程和数据封闭起来，对数据的访问只能通过开放的接口<br>  作用：方便维护，提高代码的复用性，信息隐蔽</p>
-</li>
-<li><p>继承<br>  子类对象继成使用父亲的属性和方法</p>
-</li>
-<li><p>多态<br>  多态是指两个或多个属于不同类的对象，对于同一个消息（方法调用）做出不同响应的方式<br>  Javascript天生就具备多态的特性（弱类型语言）</p>
-</li>
-</ul>
-<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><ol>
-<li><p>字面量式声明对象</p>
-<p> 使用场景：只需要简单的创建几个对象</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">name</span> : <span class="string">'object'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p> 问题：在创建同类型的代码时存在大量重复代码</p>
-</li>
-<li><p>使用内置的构造函数</p>
-<p> 系统内置的构造函数: <code>Object</code>、<code>Array</code>、<code>Date</code>、<code>Function</code>等</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">obj.name = <span class="string">'object'</span>;</div><div class="line"><span class="comment">//等价于 var obj = &#123;&#125;;</span></div></pre></td></tr></table></figure>
-<p> 问题：复用性不好，存在大量冗余重复代码，与字面量方式类似</p>
-</li>
-<li><p>简单的工厂的函数</p>
-<p> 封装：把固定部分写在函数体中，不同的作为函数的参数传递进去</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//// 01提供函数(工厂函数)封装对象的创建过程</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creat</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">	<span class="comment">//创建一个空的对象</span></div><div class="line">	<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	<span class="comment">//设置属性和方法</span></div><div class="line">	obj.name = name;</div><div class="line">	<span class="comment">//返回对象</span></div><div class="line">	<span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"><span class="comment">//创建对象</span></div><div class="line"><span class="keyword">var</span> newObj = creat(<span class="string">'objName'</span>);</div></pre></td></tr></table></figure>
-<p> 问题：创建不同类型对象时，无法识别对象</p>
-</li>
-<li><p>自定义构造函数创建对象</p>
+<li><p>构造函数和工厂函数的区别：    </p>
 <ol>
-<li>提供一个构造函数</li>
-<li>通过<code>this</code>设置属性和方法</li>
-<li><p>使用<code>new</code>构造函数创建对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">	<span class="comment">/* 默认会创建一个新的对象</span></div><div class="line">	var obj = new Object();</div><div class="line">	默认会把新创建的对象赋值给this</div><div class="line">	this = obj; */</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line"></div><div class="line">	<span class="comment">/*默认会返回新创建的对象</span></div><div class="line">	return this;*/</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'张三'</span>, <span class="number">20</span>);</div></pre></td></tr></table></figure>
-<p>问题：破坏封装性，结构性不好，全局变量污染。创建多个对象时，内部属性方法一样，每次都会开辟一块新的内存空间，造成浪费<br>解决办法：通过原型属性和方法</p>
-</li>
+<li>构造函数首字母大写</li>
+<li>构造函数内部会默认创建新的对象，并且默认返回这个对象</li>
+<li>在创建对象的时候，通过<code>new</code>调用构造函数</li>
 </ol>
 </li>
+<li><p>返回值</p>
+<ul>
+<li>构造函数内部没有return，返回默认新创建的对象</li>
+<li><p>如果构造函数内部有return，分两种情况：</p>
+<ol>
+<li>返回<em>值类型</em>，<strong>忽略</strong>该return，返回新创建的对象</li>
+<li>返回值是<em>引用类型</em>的数据，会<strong>覆盖</strong>之前创建的对象，返回该引用类型数据的值<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;		</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="comment">//return 'test';  会忽略该return</span></div><div class="line">	<span class="comment">//return &#123;&#125;;  返回该对象</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'张三'</span>, <span class="number">20</span>);</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="判断对象的类型"><a href="#判断对象的类型" class="headerlink" title="判断对象的类型"></a>判断对象的类型</h2><ul>
-<li><p><code>instanceof</code> ：判断某一变量是否为一个对象的实例<br>  用法：判断a是否是A的一个实例，<code>a instanceof A；</code>返回boolean</p>
-</li>
-<li><p><code>isPropertyOf</code>：判断一个对象是否是指定对象的原型对象<br>  用法：判断object是否是obj的原型对象，<code>object.isPropertyOf(obj);</code> 返回boolean</p>
-</li>
-<li><p><code>constructor</code> ：<em>构造器属性</em>，获取对象是由哪一个构造函数所创建的<br>  用法：获得实例对象a的构造函数 <code>a.constructor;</code> 返回a的构造函数</p>
 </li>
 </ul>
+</li>
+<li><p>实例和实例化<br>使用构造函数创建对象的过程称为<em>实例化</em>，创建出来的这个对象叫做该构造函数的<em>实例</em>。    </p>
+<a id="more"></a>
+<h2 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h2><p><code>String</code>、<code>Number</code>、<code>Boolean</code></p>
+</li>
+<li>可以使用<code>var str = new String(&#39;字符串&#39;)</code>来创建字符串对象，这里<code>typeof str //object</code></li>
+<li><code>var str1 = &#39;字符串&#39;</code>或者<code>var str2 = String(&#39;字符串&#39;)</code>的类型都是<code>string</code></li>
+<li>我们还可以通过 <code>var str = new Object(&#39;字符串&#39;)</code>来创建字符串对象，也可以输入数字或true/false，Object会自动判断是哪种类型。这里<code>typeof str //object</code></li>
+</ul>
+<blockquote>
+<p>基本数据类型也能有属性或者方法，在内部会进行</p>
+<ol>
+<li>创建一个与之对应的对象</li>
+<li>利用这个对象访问属性和方法并返回结果</li>
+<li>返回结构之后，立即销毁该对象<br><code>var str = &#39;demo&#39;; console.log(str.length); //4</code></li>
+</ol>
+</blockquote>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p><code>this</code>指向的是 <em>函数的调用者</em> 或者是 <em>事件的调用者</em></p>
+<p>this -&gt;指向具体的对象<br>函数调用:</p>
+<ol>
+<li>作为对象的方法调用 this-&gt;当前的对象</li>
+<li>普通函数调用 this-&gt;window</li>
+<li>通过new构造函数调用 this-&gt;构造函数内部创建的新对象</li>
+<li>使用<code>call</code> / <code>apply</code>调用(函数上下文调用) this-&gt;第一参数</li>
+</ol>
+<p><code>this</code>在事件指令表示事件源<br><code>this</code>在定时器中表示windows</p>
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><p>我们经常利用<code>new</code>运算符去声明新的对象</p>
+<p><code>new</code>运算符接受一个函数F及其参数： new F(arguments…)<br>这一过程分为三步：</p>
+<ol>
+<li>创建类的实例。这步是把一个空的对象的<code>__proto__</code>属性设置为F.prototype。</li>
+<li>初始化实例。函数F被传入参数并调用，关键字<code>this</code>被设定为该实例。</li>
+<li>返回实例，如果没有<code>return</code>，默认返回<code>this</code>引用。  </li>
+</ol>
+<blockquote>
+<p><code>new</code> 运算符的作用是<em>创建一个实例对象</em>。这个对象可以是用户自定义的，也可以是带构造函数的一些系统自带的对象。</p>
+<p><code>new</code> 运算符可以让 <code>this</code> 指向<strong>新的对象</strong></p>
+<blockquote>
+<p>所谓“构造函数”，其实就是普通函数内部使用了<code>this</code>变量。对构造函数使用<code>new</code>运算符，就能生成实例，并且<code>this</code>变量会绑定在实例对象上。<br>为了和普通函数区分， 第一个字母大写</p>
+</blockquote>
+</blockquote>
+<p>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>）; <span class="comment">//this指向window</span></div><div class="line">&#125;</div><div class="line">fun();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>）; <span class="comment">//this指向fn</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">new</span> fn(); <span class="comment">//添加了new的函数，this指向的是新的对象</span></div></pre></td></tr></table></figure></p>
+<h2 id="私有方法和特权方法"><a href="#私有方法和特权方法" class="headerlink" title="私有方法和特权方法"></a>私有方法和特权方法</h2><p>私有变量/方法：定义在构造函数内部的变量和方法，私有方法本身是可以访问构造函数内部的所有属性的，即私有属性和共有属性。但是私有方法不可以在构造函数的外部被调用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> private = <span class="string">'私有变量'</span>;</div><div class="line">	funciotn privateFun() &#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'这是一个私有方法'</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>特权方法：可以当问私有变量和私有函数的实例方法，使用<code>this.</code>来转换。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'名字'</span>;</div><div class="line">	<span class="keyword">this</span>.showName = funciotn () &#123;</div><div class="line">		<span class="comment">//通过this定义一个特权方法</span></div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Fun();</div><div class="line">obj.showName(); <span class="comment">//名字</span></div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="原型对象（prototype）"><a href="#原型对象（prototype）" class="headerlink" title="原型对象（prototype）"></a>原型对象（prototype）</h1><ul>
+<li><p>什么是原型对象？</p>
+<p>  在构造函数创建出来的时候，系统会默认创建一个对象和这个构造函数关联，这个对象就称为这个<strong>构造函数的原型对象</strong></p>
+</li>
+<li><p>原型对象的作用？</p>
+<p>  使用构造函数创建的对象默认就可以使用原型对象中的<em>属性</em>和<em>方法</em></p>
+</li>
+<li><p>怎么访问原型对象？</p>
+<p>  <code>构造函数.prototype</code><br>  <code>对象.__prototype__</code> </p>
+<pre><code>注意：`__prototype__`不是ECMA标准里的属性
+</code></pre></li>
+<li>怎么设置原型对象？<ol>
+<li>原型对象本质也是对象，利用对象的动态特性也可以设置原型对象的属性和方法</li>
+<li>使用字面量的方式创建（<strong>替换</strong>原型）</li>
+</ol>
+</li>
+</ul>
+<h2 id="关于原型对象的替换"><a href="#关于原型对象的替换" class="headerlink" title="关于原型对象的替换"></a>关于原型对象的替换</h2><ol>
+<li>替换原型对象<strong>之前所创建的对象</strong>和<strong>替换之后创建的对象</strong>，它们的原型对象<strong>不是同一个原型对象</strong>。（切断）</li>
+<li>替换原型对象之后，constructor指向Object，需要在替换时修正构造器的指向</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">//创建构造函数</span></div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(); <span class="comment">//创建对象</span></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="comment">/*修正时需要加一段代码，</span></div><div class="line">	constructor : Person,</div><div class="line">	指向原来的原型对象，这样之前创建的对象才能正确使用新的属性方法*/</div><div class="line">	des : <span class="string">'一段描述'</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//替换原型对象</span></div><div class="line">Person.prototype = obj;</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p1.des); <span class="comment">//undefined 替换之前没有des属性</span></div><div class="line"><span class="built_in">console</span>.log(p2.des); <span class="comment">//一段描述</span></div></pre></td></tr></table></figure>
+<h2 id="原型对象的属性"><a href="#原型对象的属性" class="headerlink" title="原型对象的属性"></a>原型对象的属性</h2><ol>
+<li><p>访问原型对象的属性</p>
+<ul>
+<li>对象.属性</li>
+<li>构造函数.prototype.属性</li>
+</ul>
+</li>
+<li><p>属性的访问原则<br> <em>就近原则</em>： 使用<code>对象.属性</code>访问属性的时候，首先会去找自己身上的属性（实例属性），如果找到就返回该值，如果没有，会去该对象构造函数原型对象上找是否有这个属性（原型属性）。如果都没有，返回<code>undefined</code>或报错(函数)。</p>
+</li>
+<li><p>设置原型对象的属性</p>
+<ol>
+<li>通过<code>构造函数.prototype.属性</code>来设置换着替换原型对象属性</li>
+<li><p>如果属性是引用类型的数据，可以通过<code>实例对象.引用对象.属性</code>的方式修改</p>
+<blockquote>
+<h5 id="关于实例对象中的属性与原型对象中的属性"><a href="#关于实例对象中的属性与原型对象中的属性" class="headerlink" title="关于实例对象中的属性与原型对象中的属性"></a>关于实例对象中的属性与原型对象中的属性</h5><p>虽然能通过实例对象访问原型对象中的值，但不能通过实例对象重写原型中的值，当为实例对象添加一个属性时，这个属性就会<strong>屏蔽</strong>原型对象中保存的<strong>同名属性</strong>，换句话说，添加的这个属性只会阻止我们访问原型中的那个属性，但不会对原型中属性产生任何影响。不过使用delete操作符可以完全删除实例属性，从而让我们可以重新访问原型中的属性。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="属性存在的检测"><a href="#属性存在的检测" class="headerlink" title="属性存在的检测"></a>属性存在的检测</h3><ul>
+<li><code>for..in</code>： 判断对象中是否存在指定的属性。既可以检测实例属性也可以检测原型属性。</li>
+<li><code>hasOwnProperty()</code>方法 ：判断对象中是否存在指定的实例对象中。</li>
+</ul>
+<p>补充：对象(Object)数据类型</p>
+<pre><code>&gt; 对象就是带有**属性**和**方法**的*数据类型*
 
+例如 `Array`、`Date`等，我们最常用的`Function`也是一个对象，虽然
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;; <span class="comment">//"function"</span></div></pre></td></tr></table></figure>
+
+但是Function实例和其他类型的实例没有什么区别，都是对象，只不过`typeof`操作符对其做了特殊处理
+</code></pre>
       
     </div>
 
@@ -476,11 +581,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/对象/" rel="tag"># 对象</a>
+            <a href="/tags/构造函数/" rel="tag"># 构造函数</a>
           
-            <a href="/tags/创建对象/" rel="tag"># 创建对象</a>
+            <a href="/tags/原型对象/" rel="tag"># 原型对象</a>
           
-            <a href="/tags/特性/" rel="tag"># 特性</a>
+            <a href="/tags/this/" rel="tag"># this</a>
+          
+            <a href="/tags/私有属性/" rel="tag"># 私有属性</a>
           
         </div>
       
@@ -493,8 +600,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/05/值类型与引用类型/" rel="next" title="值类型与引用类型及在内存中的存储">
-                <i class="fa fa-chevron-left"></i> 值类型与引用类型及在内存中的存储
+              <a href="/2017/04/16/面向对象介绍与创建对象/" rel="next" title="面向对象基本介绍与创建对象">
+                <i class="fa fa-chevron-left"></i> 面向对象基本介绍与创建对象
               </a>
             
           </div>
@@ -502,10 +609,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/19/构造函数与原型对象/" rel="prev" title="构造函数与原型对象">
-                构造函数与原型对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -661,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对象（Object）是什么？"><span class="nav-number">1.</span> <span class="nav-text">对象（Object）是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象三大特性"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象三大特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">1.2.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断对象的类型"><span class="nav-number">1.3.</span> <span class="nav-text">判断对象的类型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数"><span class="nav-number">1.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本包装类型"><span class="nav-number">1.1.</span> <span class="nav-text">基本包装类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">1.2.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#new"><span class="nav-number">1.3.</span> <span class="nav-text">new</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#私有方法和特权方法"><span class="nav-number">1.4.</span> <span class="nav-text">私有方法和特权方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型对象（prototype）"><span class="nav-number">2.</span> <span class="nav-text">原型对象（prototype）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于原型对象的替换"><span class="nav-number">2.1.</span> <span class="nav-text">关于原型对象的替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型对象的属性"><span class="nav-number">2.2.</span> <span class="nav-text">原型对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#关于实例对象中的属性与原型对象中的属性"><span class="nav-number">2.2.0.0.1.</span> <span class="nav-text">关于实例对象中的属性与原型对象中的属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性存在的检测"><span class="nav-number">2.2.1.</span> <span class="nav-text">属性存在的检测</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -813,7 +916,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 89491, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "2017/04/16/面向对象介绍与创建对象/"});
+		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "2017/04/19/构造函数与原型对象/"});
 		
 
 		(function() {
