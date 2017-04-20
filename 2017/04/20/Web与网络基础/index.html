@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="方法总结,DOM元素属性,DOM事件属性,获取位置定位," />
+  <meta name="keywords" content="TCP/IP,TCP三次握手,TCP/IP 分层管理,URI格式," />
 
 
 
@@ -87,30 +87,33 @@
 
 
 
-<meta name="description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element">
+<meta name="description" content="全文字数：3365字，阅读时长：8分钟
+Web使用一种名为HTTP(HyperText Transfer Protocol，超文本传输协议)的协议作为规范，完成从客户端到服务器端等一系列运作流程。可以说，Web是建立在HTTP协议上通信的。
+3项WWW构建技术，分别是：作为页面的文本标记语言的HTML；作为文档传递协议的HTTP；指定文档所在地址的URL。
+通常使用的网络（包括互联网）是在TCP/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="获取DOM元素事件位置信息的常用方法">
-<meta property="og:url" content="http://yoursite.com/2017/04/02/client、offset、screen、page、scroll的比较/index.html">
+<meta property="og:title" content="Web与网络基础">
+<meta property="og:url" content="http://yoursite.com/2017/04/20/Web与网络基础/index.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/788/=OffsetHeight.png">
-<meta property="og:image" content="http://www.2cto.com/uploadfile/Collfiles/20140914/2014091409260873.png">
-<meta property="og:updated_time" content="2017-04-16T14:47:28.713Z">
+<meta property="og:description" content="全文字数：3365字，阅读时长：8分钟
+Web使用一种名为HTTP(HyperText Transfer Protocol，超文本传输协议)的协议作为规范，完成从客户端到服务器端等一系列运作流程。可以说，Web是建立在HTTP协议上通信的。
+3项WWW构建技术，分别是：作为页面的文本标记语言的HTML；作为文档传递协议的HTTP；指定文档所在地址的URL。
+通常使用的网络（包括互联网）是在TCP/">
+<meta property="og:image" content="http://on452etov.bkt.clouddn.com/TCP/IP%E5%9B%BE%E8%A7%A3.png">
+<meta property="og:image" content="http://on452etov.bkt.clouddn.com/TCP/IP%E5%88%86%E5%B1%82%E5%9B%BE.jpg">
+<meta property="og:image" content="http://on452etov.bkt.clouddn.com/TCP/IP%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.jpg">
+<meta property="og:image" content="http://on452etov.bkt.clouddn.com/ARP%E5%8D%8F%E8%AE%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.jpg">
+<meta property="og:image" content="http://i.imgur.com/QRwDn85.jpg">
+<meta property="og:image" content="http://i.imgur.com/NAmT4k6.jpg">
+<meta property="og:image" content="http://i.imgur.com/nlvKPWc.jpg">
+<meta property="og:updated_time" content="2017-04-20T15:58:57.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="获取DOM元素事件位置信息的常用方法">
-<meta name="twitter:description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element">
-<meta name="twitter:image" content="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png">
+<meta name="twitter:title" content="Web与网络基础">
+<meta name="twitter:description" content="全文字数：3365字，阅读时长：8分钟
+Web使用一种名为HTTP(HyperText Transfer Protocol，超文本传输协议)的协议作为规范，完成从客户端到服务器端等一系列运作流程。可以说，Web是建立在HTTP协议上通信的。
+3项WWW构建技术，分别是：作为页面的文本标记语言的HTML；作为文档传递协议的HTTP；指定文档所在地址的URL。
+通常使用的网络（包括互联网）是在TCP/">
+<meta name="twitter:image" content="http://on452etov.bkt.clouddn.com/TCP/IP%E5%9B%BE%E8%A7%A3.png">
 
 
 
@@ -138,13 +141,13 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/02/client、offset、screen、page、scroll的比较/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/20/Web与网络基础/"/>
 
 
 
 
 
-  <title> 获取DOM元素事件位置信息的常用方法 | 杂货铺 </title>
+  <title> Web与网络基础 | 杂货铺 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -306,7 +309,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/02/client、offset、screen、page、scroll的比较/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/Web与网络基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shine Hwong">
@@ -327,7 +330,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
             
             
               
-                获取DOM元素事件位置信息的常用方法
+                Web与网络基础
               
             
           </h1>
@@ -342,8 +345,8 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-02T18:10:15+08:00">
-                2017-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T23:52:57+08:00">
+                2017-04-20
               </time>
             
 
@@ -362,8 +365,8 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/02/client、offset、screen、page、scroll的比较/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/04/02/client、offset、screen、page、scroll的比较/" itemprop="commentsCount"></span>
+                <a href="/2017/04/20/Web与网络基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/04/20/Web与网络基础/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -372,7 +375,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 
           
           
-             <span id="/2017/04/02/client、offset、screen、page、scroll的比较/" class="leancloud_visitors" data-flag-title="获取DOM元素事件位置信息的常用方法">
+             <span id="/2017/04/20/Web与网络基础/" class="leancloud_visitors" data-flag-title="Web与网络基础">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -401,27 +404,59 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
       
 
       
-        <p>全文字数：3630字，阅读时长：8分钟</p>
-<p>在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。</p>
-<h1 id="Part1-client、scroll、offset元素属性的定义"><a href="#Part1-client、scroll、offset元素属性的定义" class="headerlink" title="Part1  client、scroll、offset元素属性的定义"></a>Part1  client、scroll、offset元素属性的定义</h1><p>在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是<strong>只读</strong>属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">element.clientHeight <span class="comment">//在页面上返回内容的可视高度（不包括边框，边距或滚动条）</span></div><div class="line">element.clientLeft <span class="comment">//元素的左边框的宽度,若左边出现了垂直滚动条，也包含滚动条的宽度</span></div><div class="line"></div><div class="line">element.offsetHeight <span class="comment">//返回元素的高度，包括边框和填充，但不是边距</span></div><div class="line">element.offsetLeft <span class="comment">//获取边框相对于具有定位属性的父对象的左边距</span></div><div class="line"></div><div class="line">element.scrollHeight <span class="comment">//返回元素的整体高度（包括带滚动条的隐蔽的地方）</span></div><div class="line">element.scrollLeft <span class="comment">//滚动条卷去隐藏的距离</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="clientHeight、scrollHeight、offsetHeight的比较"><a href="#clientHeight、scrollHeight、offsetHeight的比较" class="headerlink" title="clientHeight、scrollHeight、offsetHeight的比较"></a>clientHeight、scrollHeight、offsetHeight的比较</h2><h3 id="client"><a href="#client" class="headerlink" title="client"></a>client</h3><p><img src="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png" alt="client"><br>clientHeight：可见区域的宽度，不包括<code>boder</code>的宽度，如果区域内带有滚动条，还应该减去横向滚动条不可用的高度，正常的是17px，其实就是滚动条的可滚动的部分了，其实<em>clientHeight</em>与<code>height</code>的高度差不多，如果不带滚动条的话他们的值都是一样的，如果带有滚动条的话就会比<code>height</code>值少17px；火狐与IE下均为一致。<br>注意，对于类型<code>&lt;i&gt;</code>,<code>&lt;code&gt;</code>和<code>&lt;span&gt;</code>这些内联元素,<em>clientWidth</em>和<em>clientHeight</em>总是返回0。</p>
-<h3 id="scroll"><a href="#scroll" class="headerlink" title="scroll"></a>scroll</h3><p><img src="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png" alt="scroll"><br>scrollHeight：同样不包含<code>border</code>,由<code>height</code>与<code>padding</code>相加。若包含滚动条，<code>scrollHeight</code>就是滚动条可滚动的距离。（<code>height</code>与<code>padding</code>相加在减去滚动条的高度，默认为17px）。直观的说法就是元素的内容区域加上它的内边距再加上任何溢出内容的尺寸。当内容正好和内容区域匹配而没有溢出时，这些属性与clientWidth和clientHeight是相等的。但当溢出时，它们就包含溢出的内容，返回值比clientWidth和clientHeight要大。</p>
-<h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><p><img src="https://developer.mozilla.org/@api/deki/files/788/=OffsetHeight.png" alt="offset"><br>offsetHeight：元素的offsetHeightw值包括该元素的边框,元素的垂直内边距,元素的水平滚动条(若出现水平滚动条),以及元素的样式高度。实际值为<code>height</code> + <code>padding</code> + <code>border</code>。</p>
-<h2 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>测试代码<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">        div&#123;</div><div class="line">            overflow: scroll; /*设置滚动条*/</div><div class="line">            position: absolute;</div><div class="line">            left: 1500px;</div><div class="line">            width: 300px;</div><div class="line">            height: 300px;</div><div class="line">            border: 5px solid #000;</div><div class="line">            padding: 10px;</div><div class="line">            margin: 20px;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'clientWidth: '</span>+ div.clientWidth);</div><div class="line">	 <span class="comment">//320 padding+width 有滚动条时 303 padding+width-scroll(默认17px)</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'clientLeft: '</span>+ div.clientLeft); </div><div class="line">	<span class="comment">//5 边框的宽度，有滚动条就加滚动条宽度</span></div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'offsetWidth: '</span>+ div.offsetWidth);</div><div class="line">	<span class="comment">//330 boder + padding + width</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'offsetLeft: '</span>+ div.offsetLeft); </div><div class="line">	<span class="comment">//1520  获取边框相对于具有定位属性的父对象的左边距</span></div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'scrollWidth: '</span> + div.scrollWidth); </div><div class="line">	<span class="comment">//320 padding + width 有滚动条时 303 padding+width-scrollWidth(默认17px)</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'scrollLeft: '</span> + div.scrollLeft); </div><div class="line">	<span class="comment">//0 滚动条卷去的部分</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<hr>
-<h1 id="Part2-offset、client、screen、page在DOM事件中的定义"><a href="#Part2-offset、client、screen、page在DOM事件中的定义" class="headerlink" title="Part2  offset、client、screen、page在DOM事件中的定义"></a>Part2  offset、client、screen、page在DOM事件中的定义</h1><p>在文档中，以上4个属性都归类在DOM Event中，属于事件状态，需要与函数结合起来使用，函数不会在事件发生前执行。常见的事件有鼠标点击、键盘按下等，事件发生后，我们就能检测相应的属性。</p>
-<p><img src="http://www.2cto.com/uploadfile/Collfiles/20140914/2014091409260873.png" alt=""></p>
-<h2 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h2><p>screenX:鼠标位置相对于用户屏幕水平偏移量，此时的参照点也就是原点是<strong>屏幕的左上角</strong>。</p>
-<h2 id="client-1"><a href="#client-1" class="headerlink" title="client"></a>client</h2><p>clientX:跟screenX相比就是将参照点改成了浏览器内容区域的左上角，该参照点会随之滚动条的移动而移动，也就是说，他计算<code>left</code>或<code>top</code>时直接忽略了滚动条的高和宽，它的参考点是<strong>浏览器可见区域的左上角</strong>，而不是页面本身的body左上角原点，计算数值和滚动条是否滚动没有关系，只是绝对的计算鼠标点距离浏览器内容区域的左上角的距离，忽略了滚动条的存在。</p>
-<h2 id="page"><a href="#page" class="headerlink" title="page"></a>page</h2><p>pageX：参照点是<strong>页面本身的body原点</strong>，而不是浏览器内容区域左上角，它计算的值不会随着滚动条而变动，它在计算时其实是以body左上角原点（即页面本身的左上角，而不是浏览器可见区域的左上角）为参考点计算的，这个相当于已经把滚动条滚过的高或宽计算在内了，所以无论滚动条是否滚动，他都是一样的距离值。</p>
-<blockquote>
-<p><code>pageX</code> = <code>clientX</code> + ScrollLeft(滚动条滚过的水平距离)<br><code>pageY</code> = <code>clientY</code> + ScrollTop(滚动条滚过的垂直距离)</p>
-</blockquote>
-<h2 id="offset-1"><a href="#offset-1" class="headerlink" title="offset"></a>offset</h2><p>offsetX：<em>offsetX</em> 表示鼠标指针位置相对于<strong>触发事件的对象</strong>的 <em>x</em>    坐标。不包含边框，所以可以为负值。</p>
-<hr>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在实际开发中，我们经常要使用以上的方法来获得我们需要的值。首先，我们应该注意每一种属性的区别，了解他们是如何计算出来的，不至于在开发中张冠李戴，出现错误。其次，以上各种属性在不同浏览器中也有兼容问题，也是我们必须要要小心的地方，因为你可能写对了名字，但是在这个浏览器中无效，那也是白忙活一场。<br>所以，在开发时，应尽量避免出现这些问题，多进行验证，这样才能保证代码的正确性。 </p>
+        <p>全文字数：3365字，阅读时长：8分钟</p>
+<p>Web使用一种名为HTTP(HyperText Transfer Protocol，超文本传输协议)的协议作为规范，完成从客户端到服务器端等一系列运作流程。可以说，Web是建立在HTTP协议上通信的。</p>
+<p>3项WWW构建技术，分别是：作为页面的文本标记语言的<em>HTML</em>；作为文档传递协议的<em>HTTP</em>；指定文档所在地址的<em>URL</em>。</p>
+<p>通常使用的网络（包括互联网）是在TCP/IP协议族的基础上运作的。而HTTP属于它内部的一个子集。</p>
+<p><img src="http://on452etov.bkt.clouddn.com/TCP/IP%E5%9B%BE%E8%A7%A3.png" alt="互联网协议族"><br><a id="more"></a></p>
+<h1 id="TCP-IP-分层管理"><a href="#TCP-IP-分层管理" class="headerlink" title="TCP/IP 分层管理"></a>TCP/IP 分层管理</h1><p>TCP/IP协议族里最重要的一点就是分层。TCP/IP协议族按层次分别分为一下4层：应用层、传输层、网络层和数据链路层。<br>把TCP/IP层次化是有好处的。比如某个地方需要改变设计时，只要把需要变动的层替换掉就好了。把各层之间的接口部分规划好之后，每个层次内部的设计就能够自由行动了。</p>
+<p>TCP/IP协议族各层的作用如下。</p>
+<ul>
+<li><p>应用层<br>  应用层决定了向用户提供应用服务时通信的活动。<br>  TCP/IP协议族内预存了各类通用的应用服务。比如，FTP（文件传输协议）和DNS（域名系统）服务就是其中两类。<br>  HTTP协议也处于该层</p>
+</li>
+<li><p>传输层<br>  传输层对上层应用层，提供处于网络连接中的两台计算机之间的数据传输。<br>  在传输层有两个性质不同的协议：<strong>TCP</strong>（Transmission Control Protocol，传输控制协议）和<strong>UDP</strong>（User Data Protocol，用户数据报协议）。</p>
+</li>
+<li><p>网络层（又名网络互连层）<br>  网络层用来处理在网络上流动的数据包。数据包是网络传输的最小数据单位。该层规定了通过怎样的路径（所谓的传输路线）到达对方计算机，并把数据包传送给对方。<br>  与对方计算机之间通过多台计算机或网络设备进行传输时，网络层所起的作用就是在众多的选项内选择一条传输线路。</p>
+</li>
+<li><p>链路层（又名数据链路曾，网络接口层）<br>  用来处理连接网络的硬件部分。包括控制操作系统、硬件的设备驱动、NIC（网络适配器，即网卡），及光线等物理可见部分（还包括连接器等一切传输媒介）。硬件上的范畴均在链路层的作用范围内。</p>
+</li>
+</ul>
+<h1 id="TCP-IP-通信传输流"><a href="#TCP-IP-通信传输流" class="headerlink" title="TCP/IP 通信传输流"></a>TCP/IP 通信传输流</h1><p><img src="http://on452etov.bkt.clouddn.com/TCP/IP%E5%88%86%E5%B1%82%E5%9B%BE.jpg" alt="TCP/IP分层"></p>
+<p>以HTTP为例，首先作为发送端的客户端在应用层（HTTP协议）发出一个想看某个Web页面的HTTP请求。</p>
+<p>接着，为了传输方便，在传输层（TCP协议）把从应用层处收到的数据(HTTP请求报文）进行分割，并在各个报文上打上标记序号及端口号转发到网络层。</p>
+<p>在网络层（IP协议），增加作为通信目的地的MAC地址后转发给链路层。这样以来，发往网络的通信请求就准备齐全了。</p>
+<p>接收端的服务器在链路层接收到数据，按序往上层发送，一直到应用层。当传输到应用层，才能算真正的接收到由客户端发送过来的HTTP请求。</p>
+<p><img src="http://on452etov.bkt.clouddn.com/TCP/IP%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.jpg" alt="TCP/IP传输过程"></p>
+<p><em>发送端</em>在层与层之间传输数据时，每经过一层时必定会被打上一个所属的<strong>首部信息</strong>。反之，<em>接收端</em>在层与层传输数据时，每经过一层时会把对应首部<strong>消去</strong>。<br>这种把数据信息把封装起来的做法称为<strong>封装</strong>（encapsulate）。</p>
+<h1 id="IP、TCP-和-DNS"><a href="#IP、TCP-和-DNS" class="headerlink" title="IP、TCP 和 DNS"></a>IP、TCP 和 DNS</h1><h2 id="负责传输的IP协议"><a href="#负责传输的IP协议" class="headerlink" title="负责传输的IP协议"></a>负责传输的IP协议</h2><p>按层次分，IP（Internet Protocol）网络协议位于网络层。<br>IP协议的作用是把各种数据包传送给对方。而要保证确实传送到对方那里，则需要满足各类条件。其中两个重要的条件是IP地址和MAC地址。<br>IP地址致命了节点被分配到的地址，MAC地址是指网卡所属的固定地址。IP地址可以和MAC地址进行配对。IP地址可变换，但MAC地址基本上不会更改。</p>
+<p>在网络上，通常是经过多台计算机和网络设备中转才能连接到对方。而在进行中转时，会利用下一站中转设备的MAC地址来搜索下一个中转目标。这时，会采用<strong>ARP协议</strong>。ARP是一种用以解析地址的协议，根据通信方的IP地址就可以反查出对应的MAC地址。<br><img src="http://on452etov.bkt.clouddn.com/ARP%E5%8D%8F%E8%AE%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.jpg" alt="ARP协议"></p>
+<p>无论哪台计算机、哪台网络设备，它们都无法全面掌握互联网中的细节。</p>
+<h2 id="确保可靠性的TCP协议"><a href="#确保可靠性的TCP协议" class="headerlink" title="确保可靠性的TCP协议"></a>确保可靠性的TCP协议</h2><p>按层次分，TCP位于传输层，提供可靠的字节流服务。<br>所谓的字节流服务是指：为了方便传输，将大块数据分割成以报文段（segment）为单位的数据包进行管理。而可靠的传输服务是指，能够把大数据准确可靠地传给对方。</p>
+<h3 id="TCP传输中的三次握手"><a href="#TCP传输中的三次握手" class="headerlink" title="TCP传输中的三次握手"></a>TCP传输中的三次握手</h3><p>为了准确无误地将数据送达目标出，TCP协议采用了三次握手策略。用TCP协议把数据包送出去后，TCP不会对传送后的情况置之不理，它一定会向对方确认是否成功送达。握手过程中使用了TCP的标志——<strong>SYN</strong>（synchronize）和<strong>ACK</strong>（acknowledgement）。<br>发送端首先发送一个带SYN标志的数据包给对方。接收端收到后，回传一个带有SYN/ACK标志的数据包以示传达确认信息。最后，发送端再回传一个带ACK标志的数据包，代表握手结束。<br><img src="http://i.imgur.com/QRwDn85.jpg" alt="TCP三次握手"></p>
+<h2 id="负责域名解析的DNS服务"><a href="#负责域名解析的DNS服务" class="headerlink" title="负责域名解析的DNS服务"></a>负责域名解析的DNS服务</h2><p>DNS服务是和HTTP协议一样一样位于应用层的协议。它提供域名到IP地址之间的解析服务。<br>用户通常使用主机名或域名来访问对方的计算机，计算机擅长处理数字而不是名称，因此，DNS服务应运而生。</p>
+<p>DNS协议提供<strong>通过域名查找IP地址</strong>，或逆向<strong>从IP地址反查域名</strong>的服务。</p>
+<p><img src="http://i.imgur.com/NAmT4k6.jpg" alt="传输过程"></p>
+<h1 id="URI-和-URL"><a href="#URI-和-URL" class="headerlink" title="URI 和 URL"></a>URI 和 URL</h1><p>URI：统一资源标识符<br>URL：统一资源定位符</p>
+<p>URI就是某个协议方案表示的资源的定位标识符。协议方案是指访问资源所使用的协议类型名称。采用HTTP协议时，协议方案就是http。除此之外ftp、file等。</p>
+<p><em>URI</em> 用字符串标识某一<strong>互联网资源</strong>。而 <em>URL</em> 表示<strong>资源的地点</strong>（互联网上所处的位置）。可见<strong>URL是URI的子集</strong>。</p>
+<h2 id="绝对URI格式"><a href="#绝对URI格式" class="headerlink" title="绝对URI格式"></a>绝对URI格式</h2><p><img src="http://i.imgur.com/nlvKPWc.jpg" alt="绝对URI格式"></p>
+<ul>
+<li><p>协议方案名<br>  使用<code>http:</code>或者<code>https:</code>等协议方案名获取访问资源时要指定协议类型。</p>
+</li>
+<li><p>登录信息（认证）<br>  指定用户名和密码作为从服务器端获取资源时必要的登录信息。可选项。</p>
+</li>
+<li><p>服务器地址<br>  使用绝对URI必须指定待访问的服务器地址。地址可以是hwong.cn这种DNS可解析的名称，或是192.168.1.1这类IPv4地址名。</p>
+</li>
+<li><p>服务器端口号<br>  指定服务器连接的网络端口号。可选项，省略则自动使用默认端口号。</p>
+</li>
+<li><p>带层次的文件路径<br>  指定服务器上的文件路径来定位特指的资源。</p>
+</li>
+<li><p>查询字符串<br>  针对已指定的的文件路径内的资源，可以使用查询字符串传入任意参数。可选项。</p>
+</li>
+<li><p>片段标识符<br>  通常可标记出已获取资源中的子资源（文档内的某个位置）。可选项。</p>
+</li>
+</ul>
+<p>参考资料：《图解HTTP》第一章</p>
 
       
     </div>
@@ -445,13 +480,13 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
       
         <div class="post-tags">
           
-            <a href="/tags/方法总结/" rel="tag"># 方法总结</a>
+            <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
           
-            <a href="/tags/DOM元素属性/" rel="tag"># DOM元素属性</a>
+            <a href="/tags/TCP三次握手/" rel="tag"># TCP三次握手</a>
           
-            <a href="/tags/DOM事件属性/" rel="tag"># DOM事件属性</a>
+            <a href="/tags/TCP-IP-分层管理/" rel="tag"># TCP/IP 分层管理</a>
           
-            <a href="/tags/获取位置定位/" rel="tag"># 获取位置定位</a>
+            <a href="/tags/URI格式/" rel="tag"># URI格式</a>
           
         </div>
       
@@ -464,8 +499,8 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/21/offset类属性与style类属性的区别/" rel="next" title="offset类属性与style类属性的区别">
-                <i class="fa fa-chevron-left"></i> offset类属性与style类属性的区别
+              <a href="/2017/04/19/构造函数与原型对象/" rel="next" title="构造函数与原型对象">
+                <i class="fa fa-chevron-left"></i> 构造函数与原型对象
               </a>
             
           </div>
@@ -473,10 +508,6 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/05/值类型与引用类型/" rel="prev" title="值类型与引用类型及在内存中的存储">
-                值类型与引用类型及在内存中的存储 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -632,7 +663,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part1-client、scroll、offset元素属性的定义"><span class="nav-number">1.</span> <span class="nav-text">Part1  client、scroll、offset元素属性的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#clientHeight、scrollHeight、offsetHeight的比较"><span class="nav-number">1.1.</span> <span class="nav-text">clientHeight、scrollHeight、offsetHeight的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#client"><span class="nav-number">1.1.1.</span> <span class="nav-text">client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scroll"><span class="nav-number">1.1.2.</span> <span class="nav-text">scroll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offset"><span class="nav-number">1.1.3.</span> <span class="nav-text">offset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试代码"><span class="nav-number">1.2.</span> <span class="nav-text">测试代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part2-offset、client、screen、page在DOM事件中的定义"><span class="nav-number">2.</span> <span class="nav-text">Part2  offset、client、screen、page在DOM事件中的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#screen"><span class="nav-number">2.1.</span> <span class="nav-text">screen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-1"><span class="nav-number">2.2.</span> <span class="nav-text">client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#page"><span class="nav-number">2.3.</span> <span class="nav-text">page</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#offset-1"><span class="nav-number">2.4.</span> <span class="nav-text">offset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP-分层管理"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP 分层管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP-通信传输流"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP 通信传输流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IP、TCP-和-DNS"><span class="nav-number">3.</span> <span class="nav-text">IP、TCP 和 DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#负责传输的IP协议"><span class="nav-number">3.1.</span> <span class="nav-text">负责传输的IP协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确保可靠性的TCP协议"><span class="nav-number">3.2.</span> <span class="nav-text">确保可靠性的TCP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP传输中的三次握手"><span class="nav-number">3.2.1.</span> <span class="nav-text">TCP传输中的三次握手</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负责域名解析的DNS服务"><span class="nav-number">3.3.</span> <span class="nav-text">负责域名解析的DNS服务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#URI-和-URL"><span class="nav-number">4.</span> <span class="nav-text">URI 和 URL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绝对URI格式"><span class="nav-number">4.1.</span> <span class="nav-text">绝对URI格式</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -784,7 +815,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 		_hcwp.push({widget:"Bloggerstream", widget_id: 89491, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "2017/04/02/client、offset、screen、page、scroll的比较/"});
+		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "2017/04/20/Web与网络基础/"});
 		
 
 		(function() {
