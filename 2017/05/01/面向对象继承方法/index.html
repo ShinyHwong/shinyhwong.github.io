@@ -1,0 +1,1090 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="继承， 原型链， 拷贝," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="全文字数：5748字，阅读时间：10分钟
+继承的概念：通过一定的方式实现让某个类型A获取另外一个类型B的属性和方法。其中类型A称为子类型，类型B称为父类型或超类型。
+JavaScript中的继承：Object是所有对象的父类型，所有Javascript中的对象都是直接或间接继承自Object。
+继承有两种方式：接口继承和实现继承，在JS中只支持实现继承，实现继承主要依赖原型链来完成。
+
+说明：其他">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象继承方法">
+<meta property="og:url" content="http://yoursite.com/2017/05/01/面向对象继承方法/index.html">
+<meta property="og:site_name" content="杂货铺">
+<meta property="og:description" content="全文字数：5748字，阅读时间：10分钟
+继承的概念：通过一定的方式实现让某个类型A获取另外一个类型B的属性和方法。其中类型A称为子类型，类型B称为父类型或超类型。
+JavaScript中的继承：Object是所有对象的父类型，所有Javascript中的对象都是直接或间接继承自Object。
+继承有两种方式：接口继承和实现继承，在JS中只支持实现继承，实现继承主要依赖原型链来完成。
+
+说明：其他">
+<meta property="og:image" content="http://i.imgur.com/GV32mRI.png">
+<meta property="og:updated_time" content="2017-05-01T07:54:21.990Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象继承方法">
+<meta name="twitter:description" content="全文字数：5748字，阅读时间：10分钟
+继承的概念：通过一定的方式实现让某个类型A获取另外一个类型B的属性和方法。其中类型A称为子类型，类型B称为父类型或超类型。
+JavaScript中的继承：Object是所有对象的父类型，所有Javascript中的对象都是直接或间接继承自Object。
+继承有两种方式：接口继承和实现继承，在JS中只支持实现继承，实现继承主要依赖原型链来完成。
+
+说明：其他">
+<meta name="twitter:image" content="http://i.imgur.com/GV32mRI.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/01/面向对象继承方法/"/>
+
+
+
+
+
+  <title> 面向对象继承方法 | 杂货铺 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=61649579";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杂货铺</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/01/面向对象继承方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shine Hwong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杂货铺">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                面向对象继承方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-01T15:35:12+08:00">
+                2017-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/01/面向对象继承方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/05/01/面向对象继承方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/05/01/面向对象继承方法/" class="leancloud_visitors" data-flag-title="面向对象继承方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>全文字数：5748字，阅读时间：10分钟</p>
+<p>继承的概念：通过一定的方式实现让某个类型A<strong>获取</strong>另外一个类型B的<strong>属性</strong>和<strong>方法</strong>。其中类型A称为<em>子类型</em>，类型B称为<em>父类型或超类型</em>。</p>
+<p>JavaScript中的继承：<code>Object</code>是<strong>所有对象的父类型</strong>，所有Javascript中的对象都是直接或间接继承自<code>Object</code>。</p>
+<p>继承有两种方式：<em>接口继承</em>和<em>实现继承</em>，在JS中只支持<em>实现继承</em>，实现继承主要依赖<strong>原型链</strong>来完成。</p>
+<blockquote>
+<p>说明：其他语言中继承通常通过<em>类</em>来实现，JS中没有<em>类</em>的概念（ES6新增了class）。JS中的继承是某个对象继承继承另外一个对象，是基于<em>对象</em>的。</p>
+</blockquote>
+<h1 id="1-属性拷贝（混入式继承）"><a href="#1-属性拷贝（混入式继承）" class="headerlink" title="1. 属性拷贝（混入式继承）"></a>1. 属性拷贝（混入式继承）</h1><p>属性拷贝是浅拷贝，复制引用类型时，只会复制地址，两者会共享同一数据，修改一个会影响另外一个。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = &#123;</div><div class="line">	<span class="attr">name</span> : <span class="string">'小明'</span>,</div><div class="line">	<span class="attr">age</span> : <span class="number">20</span>,</div><div class="line">	<span class="attr">friends</span> : [<span class="string">'小红'</span>,  <span class="string">'小智'</span>]</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = &#123;&#125;;</div><div class="line"><span class="comment">//obj2继承obj1的属性</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> obj1) &#123;</div><div class="line">	obj2[k] = obj1[k]; <span class="comment">//遍历复制属性</span></div><div class="line">&#125;</div><div class="line">obj2.friends.push(<span class="string">'小王'</span>); <span class="comment">//为子对象添加一个属性</span></div><div class="line"><span class="comment">//obj1的friends里也会被增加一个小王</span></div></pre></td></tr></table></figure></p>
+<p>在ES6中添加了一个<code>Object.assign()</code>属性<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> copy = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span> : <span class="string">'小明'</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">age</span> : <span class="number">20</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj3 = &#123;<span class="attr">friends</span> : [<span class="string">'小红'</span>]&#125;;</div><div class="line"><span class="comment">//第一个参数：目标对象，后面的参数：需要拷贝的对象</span></div><div class="line"><span class="built_in">Object</span>.assign(copy, obj1, obj2, obj3);</div><div class="line"><span class="built_in">console</span>.log(copy); <span class="comment">//输出&#123;name : '小明',age : 20,friends : ['小红']&#125;</span></div><div class="line">copy.friends.push(<span class="string">'小王'</span>);</div><div class="line"><span class="built_in">console</span>.log(obj3); <span class="comment">//输出&#123;friends : ['小红', '小王']&#125;</span></div></pre></td></tr></table></figure></p>
+<p>同样会影响父对象中的引用类型属性。</p>
+<h1 id="2-原型式继承"><a href="#2-原型式继承" class="headerlink" title="2. 原型式继承"></a>2. 原型式继承</h1><p>利用构造函数创建出来的对象可以使用原型对象中的属性和方法</p>
+<p>简单的原型式继承：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Fun.prototype.des = <span class="string">'des'</span>;</div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Fun();</div><div class="line"><span class="built_in">console</span>.log(obj.des); <span class="comment">//des</span></div><div class="line"><span class="comment">//构造函数创建的对象可以使用原型的属性方法</span></div></pre></td></tr></table></figure></p>
+<p>复杂一点的原型式继承：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'名字'</span>;</div><div class="line">&#125;</div><div class="line">Fun1.prototype.des = <span class="string">'des'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun2</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Fun2.prototype = Fun1.prototype;</div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Fun2(); <span class="comment">//无法获取到name属性</span></div><div class="line"><span class="comment">//应该修正构造器的指向</span></div><div class="line"><span class="comment">//Fun2.prototype.constructor = Fun2;</span></div><div class="line"><span class="built_in">console</span>.log(obj.constructor); <span class="comment">//默认指向Fun1</span></div></pre></td></tr></table></figure></p>
+<p>问题： 1.原型式继承创建出来的子对象的构造器属性默认指向父构造函数，需要修正consturctor的指向。<br>2.无法获取到父对象<strong>构造函数</strong>中的属性。</p>
+<h2 id="扩展内置对象"><a href="#扩展内置对象" class="headerlink" title="扩展内置对象"></a>扩展内置对象</h2><p>系统内置的对象(<code>Array</code>、<code>Object</code>等)都可以通过在原型对象上添加属性的方式来让所有子对象拥有这一属性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.add = <span class="string">'添加的属性'</span>;</div><div class="line"><span class="built_in">Array</span>.prototype.addFun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.add);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">arr.addFun(); <span class="comment">//添加的属性</span></div></pre></td></tr></table></figure></p>
+<p>不建议使用这种方式，在实际开发中通常是多人合作。如果都扩展内置对象，后期将难以维护，同时也会引发覆盖等安全问题。</p>
+<h2 id="安全的扩展内置对象"><a href="#安全的扩展内置对象" class="headerlink" title="安全的扩展内置对象"></a>安全的扩展内置对象</h2><ol>
+<li>提供一个自定义构造函数</li>
+<li>设置构造函数的原型对象是内置对象的实例</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//提供一个构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyArray</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="comment">//设置构造函数的原型对象为内置对象的实例</span></div><div class="line">MyArray.prototype = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">MyArray.prototype.des = <span class="string">'des'</span>;</div><div class="line">MyArray.prototype.logDes = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.des);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> MyArray();</div><div class="line">arr.push(<span class="string">'123'</span>);</div><div class="line">arr.logDes(); <span class="comment">//des</span></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [123]; 继承来自Array的属性方法</span></div></pre></td></tr></table></figure>
+<h1 id="3-原型链继承"><a href="#3-原型链继承" class="headerlink" title="3. 原型链继承"></a>3. 原型链继承</h1><p>实现原型链继承的过程：先提供一个子构造函数和父构造函数，设置子构造函数的原型对象是父构造函数的实例。<br><img src="http://i.imgur.com/GV32mRI.png" alt="原型链继承图"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置父构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'名字'</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//设置父构造函数的原型对象</span></div><div class="line">Person.prototype.des = <span class="string">'des'</span>;</div><div class="line"><span class="comment">//设置子构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="comment">//设置原型链继承</span></div><div class="line">Student.prototype = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> stu = <span class="keyword">new</span> Student();</div><div class="line"><span class="built_in">console</span>.log(stu.des); <span class="comment">//des</span></div><div class="line"><span class="built_in">console</span>.log(stu.name); <span class="comment">//名字</span></div></pre></td></tr></table></figure></p>
+<h2 id="原型链继承的注意点"><a href="#原型链继承的注意点" class="headerlink" title="原型链继承的注意点"></a>原型链继承的注意点</h2><p><strong>在完成原型链继承之后</strong>，再进行：</p>
+<ol>
+<li>修正构造器属性的指向</li>
+<li>设置子构造函数的原型对象的属性和方法，并且不要使用字面量的方式修改子构造函数属性，会产生替换，应使用对象的动态特性设置</li>
+</ol>
+<h2 id="原型链继承的问题"><a href="#原型链继承的问题" class="headerlink" title="原型链继承的问题"></a>原型链继承的问题</h2><ol>
+<li>无法传递参数给父构造函数</li>
+<li>用子构造函数创建多个实例对象时，只会复制引用类型数据地址，会产生共享问题。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置父构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.friends = [<span class="string">'小明'</span>];</div><div class="line">&#125;</div><div class="line"><span class="comment">//创建子构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.num = num;</div><div class="line">&#125;</div><div class="line"><span class="comment">//设置原型链继承</span></div><div class="line">Student.prototype = <span class="keyword">new</span> Person();</div><div class="line"><span class="comment">//修正构造器指向</span></div><div class="line">Student.prototype.constructor = Student;</div><div class="line"><span class="comment">//创建实例对象，无法传递参数到父构造函数</span></div><div class="line"><span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'2017'</span>);</div><div class="line"><span class="keyword">var</span> stu2 = <span class="keyword">new</span> Student(<span class="string">'2018'</span>);</div><div class="line"></div><div class="line"><span class="comment">//设置stu1，也会影响stu2</span></div><div class="line">stu1.friends.push = <span class="string">'小红'</span>;</div><div class="line"><span class="built_in">console</span>.log(stu1); <span class="comment">//2017 [小明, 小红]</span></div><div class="line"><span class="built_in">console</span>.log(stu2); <span class="comment">//2018 [小明, 小红]</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Object-creat-方法实现继承"><a href="#Object-creat-方法实现继承" class="headerlink" title="Object.creat()方法实现继承"></a>Object.creat()方法实现继承</h2><p>作用：创建一个对象，并设置该对象的原型对象为指定对象<br>兼容性：ES5<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">name</span> : <span class="string">'名字'</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">//o为创建的对象，设置它的原型对象为obj</span></div><div class="line"><span class="keyword">var</span> o = <span class="built_in">Object</span>.creat(obj);</div><div class="line"><span class="built_in">console</span>.log(o.name); <span class="comment">//名字</span></div><div class="line"><span class="comment">//相当于</span></div><div class="line"><span class="keyword">var</span> newObj = &#123;</div><div class="line">	<span class="attr">name</span> : <span class="string">'名字'</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">//非标写法  var newO=&#123;&#125;; newO.__proto__ = newObj;</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Fun.prototype = newObj;</div><div class="line"><span class="keyword">var</span> newO = <span class="keyword">new</span> Fun();</div></pre></td></tr></table></figure></p>
+<h1 id="4-借用构造函数（经典继承-伪对象继承）"><a href="#4-借用构造函数（经典继承-伪对象继承）" class="headerlink" title="4. 借用构造函数（经典继承 | 伪对象继承）"></a>4. 借用构造函数（经典继承 | 伪对象继承）</h1><h2 id="call和apply的用法"><a href="#call和apply的用法" class="headerlink" title="call和apply的用法"></a><code>call</code>和<code>apply</code>的用法</h2><p>用法：<code>Function.prototype.call/apply()</code><br>作用：借用其他对象的方法<br>参数输入:第一个参数为需要借参数的对象，之后的为输入的参数<br>不同点：<code>call</code>(对象， 参数1， 参数2…) 参数列表<br><code>apply</code>(对象， [参数1， 参数2…]) 参数数组</p>
+<p>关于this的指向：使用了<code>call</code>或<code>apply</code>方法后，调用的<code>this</code>指向被绑定的对象（第一个参数）。</p>
+<h2 id="借用构造函数的用法"><a href="#借用构造函数的用法" class="headerlink" title="借用构造函数的用法"></a>借用构造函数的用法</h2><p>借用构造函数实现继承解决了无法传递参数给父构造函数的问题<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">num, name</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.num = num;</div><div class="line">	<span class="comment">//通过借用构造函数调用父构造函数的方法实现继承</span></div><div class="line">	Person.call(<span class="keyword">this</span>, name);</div><div class="line">&#125;</div><div class="line"><span class="comment">//创建不同的实例对象</span></div><div class="line"><span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'2017'</span>, <span class="string">'小明'</span>);</div><div class="line"><span class="keyword">var</span> stu2 = <span class="keyword">new</span> Student(<span class="string">'2018'</span>, <span class="string">'小红'</span>);</div><div class="line"><span class="built_in">console</span>.log(stu1); <span class="comment">// 2017 小明</span></div><div class="line"><span class="built_in">console</span>.log(stu2); <span class="comment">// 2018 小红</span></div></pre></td></tr></table></figure></p>
+<h1 id="5-组合继承"><a href="#5-组合继承" class="headerlink" title="5. 组合继承"></a>5. 组合继承</h1><ol>
+<li>借用构造函数继承获取实例属性和方法</li>
+<li>原型式继承获取原型属性和方法</li>
+</ol>
+<p>组合继承 = 借用构造函数继承 + 原型式继承<br>问题：子构造函数原型对象与父构造函数原型对象共享同一数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置构造函数属性</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"><span class="comment">//设置原型对象属性方法</span></div><div class="line">Person.prototype.des = <span class="string">'des'</span>;</div><div class="line">Person.prototype.logDes = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.des);</div><div class="line">&#125;</div><div class="line"><span class="comment">//创建子构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">num, name</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.num = num;</div><div class="line">	<span class="comment">//通过借用构造函数调用父构造函数的方法实现继承</span></div><div class="line">	Person.call(<span class="keyword">this</span>, name);</div><div class="line">&#125;</div><div class="line"><span class="comment">//利用原型式继承实现继承父构造函数原型对象</span></div><div class="line">Student.prototype = Person.prototype;</div><div class="line"><span class="comment">//创建不同的实例对象</span></div><div class="line"><span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'2017'</span>, <span class="string">'小明'</span>);</div><div class="line"><span class="keyword">var</span> stu2 = <span class="keyword">new</span> Student(<span class="string">'2018'</span>, <span class="string">'小红'</span>);</div><div class="line"><span class="built_in">console</span>.log(stu1); <span class="comment">// 2017 小明</span></div><div class="line"><span class="built_in">console</span>.log(stu2); <span class="comment">// 2018 小红</span></div><div class="line"><span class="comment">//子构造函数与父构造函数共享同一个原型对象</span></div><div class="line">Student.prototype.des = <span class="string">'desStu'</span>;</div><div class="line"><span class="comment">//子构造函数原型对象设置了属性，父构造函数原型对象也受到影响</span></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Person(<span class="string">'小王'</span>);</div><div class="line">obj.logDes(); <span class="comment">//desStu</span></div></pre></td></tr></table></figure>
+<h1 id="6-深拷贝继承"><a href="#6-深拷贝继承" class="headerlink" title="6. 深拷贝继承"></a>6. 深拷贝继承</h1><h2 id="浅拷贝（地址拷贝）"><a href="#浅拷贝（地址拷贝）" class="headerlink" title="浅拷贝（地址拷贝）"></a>浅拷贝（地址拷贝）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> copy = &#123;&#125;;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> obj) &#123;</div><div class="line">	copy[k] = obj[k];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>浅拷贝是对值类型属性的复制，遇到引用类型数据时，只能复制其地址</p>
+<h2 id="深拷贝（完全拷贝）"><a href="#深拷贝（完全拷贝）" class="headerlink" title="深拷贝（完全拷贝）"></a>深拷贝（完全拷贝）</h2><ol>
+<li>创建一个深拷贝的函数，提供2个参数，一个是目标对象，一个是需要拷贝的对象</li>
+<li><code>for in</code>遍历目标对象获取属性，进行判断属性的类型<ol>
+<li>如果是值类型，直接赋值</li>
+<li>如果是引用类型，再调用这个函数，拷贝引用类型里的数据</li>
+</ol>
+</li>
+</ol>
+<p>函数一般是直接调用，不需要修改数据。所以可以当作值类型直接复制地址<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj, copy</span>) </span>&#123;</div><div class="line">	<span class="comment">//被拷贝的对象必须是一个对象</span></div><div class="line">	copy = copy || &#123;&#125;;</div><div class="line">	<span class="comment">//遍历在目标对象中的所有属性</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> obj) &#123;</div><div class="line">		<span class="comment">//判断是否是自身的属性，防止遍历到原型属性</span></div><div class="line">		<span class="keyword">if</span> (obj.hasOwnProperty(k)) &#123;</div><div class="line">			<span class="comment">//如果是引用类型的属性（function除外）就要进行深拷贝</span></div><div class="line">			<span class="keyword">if</span> (<span class="keyword">typeof</span> obj[k] === <span class="string">'object'</span>) &#123;</div><div class="line">				<span class="comment">//判断属性是数组还是对象</span></div><div class="line">				copy[k] = obj[k].constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</div><div class="line">				<span class="comment">//递归进更深一层</span></div><div class="line">				deepClone(obj[k], copy[k]);</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				<span class="comment">//值类型或者是函数直接复制</span></div><div class="line">				copy[k] = obj[k];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> copy;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在判断对象是否是数组时，我们也可以用到一个方法<code>Array.isArray()</code><br>括号内输入需要判断的对象，返回值是Boolean类型。<br>但是这个方法是ES5才出来，所以具有兼容问题。</p>
+<h2 id="利用深拷贝实现继承"><a href="#利用深拷贝实现继承" class="headerlink" title="利用深拷贝实现继承"></a>利用深拷贝实现继承</h2><ol>
+<li>借用构造函数获取实例属性，<code>call</code>和<code>apply</code></li>
+<li>深拷贝获取原型属性</li>
+</ol>
+<p>完美的拷贝，独立并且互不影响。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/继承，-原型链，-拷贝/" rel="tag"># 继承， 原型链， 拷贝</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/25/原型链图解/" rel="next" title="原型链图解">
+                <i class="fa fa-chevron-left"></i> 原型链图解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Shine Hwong" />
+          <p class="site-author-name" itemprop="name">Shine Hwong</p>
+           
+              <p class="site-description motion-element" itemprop="description">纸上得来终觉浅，绝知此事要躬行</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ShinyHwong" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-属性拷贝（混入式继承）"><span class="nav-number">1.</span> <span class="nav-text">1. 属性拷贝（混入式继承）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-原型式继承"><span class="nav-number">2.</span> <span class="nav-text">2. 原型式继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展内置对象"><span class="nav-number">2.1.</span> <span class="nav-text">扩展内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全的扩展内置对象"><span class="nav-number">2.2.</span> <span class="nav-text">安全的扩展内置对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-原型链继承"><span class="nav-number">3.</span> <span class="nav-text">3. 原型链继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链继承的注意点"><span class="nav-number">3.1.</span> <span class="nav-text">原型链继承的注意点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链继承的问题"><span class="nav-number">3.2.</span> <span class="nav-text">原型链继承的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-creat-方法实现继承"><span class="nav-number">3.3.</span> <span class="nav-text">Object.creat()方法实现继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-借用构造函数（经典继承-伪对象继承）"><span class="nav-number">4.</span> <span class="nav-text">4. 借用构造函数（经典继承 | 伪对象继承）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#call和apply的用法"><span class="nav-number">4.1.</span> <span class="nav-text">call和apply的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#借用构造函数的用法"><span class="nav-number">4.2.</span> <span class="nav-text">借用构造函数的用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-组合继承"><span class="nav-number">5.</span> <span class="nav-text">5. 组合继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-深拷贝继承"><span class="nav-number">6.</span> <span class="nav-text">6. 深拷贝继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝（地址拷贝）"><span class="nav-number">6.1.</span> <span class="nav-text">浅拷贝（地址拷贝）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深拷贝（完全拷贝）"><span class="nav-number">6.2.</span> <span class="nav-text">深拷贝（完全拷贝）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用深拷贝实现继承"><span class="nav-number">6.3.</span> <span class="nav-text">利用深拷贝实现继承</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shine Hwong</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 89491, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "2017/05/01/面向对象继承方法/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/89491/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("7owPa77plE2nxdjNLR7NT0TY-gzGzoHsz", "tcjXJk5vum6BpWEE631Y1zRX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
