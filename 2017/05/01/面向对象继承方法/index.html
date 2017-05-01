@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="继承， 原型链， 拷贝," />
+  <meta name="keywords" content="原型链,继承,拷贝," />
 
 
 
@@ -104,7 +104,7 @@ JavaScript中的继承：Object是所有对象的父类型，所有Javascript中
 
 说明：其他">
 <meta property="og:image" content="http://i.imgur.com/GV32mRI.png">
-<meta property="og:updated_time" content="2017-05-01T07:54:21.990Z">
+<meta property="og:updated_time" content="2017-05-01T09:12:14.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象继承方法">
 <meta name="twitter:description" content="全文字数：5748字，阅读时间：10分钟
@@ -412,7 +412,9 @@ JavaScript中的继承：Object是所有对象的父类型，所有Javascript中
 <p>说明：其他语言中继承通常通过<em>类</em>来实现，JS中没有<em>类</em>的概念（ES6新增了class）。JS中的继承是某个对象继承继承另外一个对象，是基于<em>对象</em>的。</p>
 </blockquote>
 <h1 id="1-属性拷贝（混入式继承）"><a href="#1-属性拷贝（混入式继承）" class="headerlink" title="1. 属性拷贝（混入式继承）"></a>1. 属性拷贝（混入式继承）</h1><p>属性拷贝是浅拷贝，复制引用类型时，只会复制地址，两者会共享同一数据，修改一个会影响另外一个。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = &#123;</div><div class="line">	<span class="attr">name</span> : <span class="string">'小明'</span>,</div><div class="line">	<span class="attr">age</span> : <span class="number">20</span>,</div><div class="line">	<span class="attr">friends</span> : [<span class="string">'小红'</span>,  <span class="string">'小智'</span>]</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = &#123;&#125;;</div><div class="line"><span class="comment">//obj2继承obj1的属性</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> obj1) &#123;</div><div class="line">	obj2[k] = obj1[k]; <span class="comment">//遍历复制属性</span></div><div class="line">&#125;</div><div class="line">obj2.friends.push(<span class="string">'小王'</span>); <span class="comment">//为子对象添加一个属性</span></div><div class="line"><span class="comment">//obj1的friends里也会被增加一个小王</span></div></pre></td></tr></table></figure></p>
-<p>在ES6中添加了一个<code>Object.assign()</code>属性<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> copy = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span> : <span class="string">'小明'</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">age</span> : <span class="number">20</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj3 = &#123;<span class="attr">friends</span> : [<span class="string">'小红'</span>]&#125;;</div><div class="line"><span class="comment">//第一个参数：目标对象，后面的参数：需要拷贝的对象</span></div><div class="line"><span class="built_in">Object</span>.assign(copy, obj1, obj2, obj3);</div><div class="line"><span class="built_in">console</span>.log(copy); <span class="comment">//输出&#123;name : '小明',age : 20,friends : ['小红']&#125;</span></div><div class="line">copy.friends.push(<span class="string">'小王'</span>);</div><div class="line"><span class="built_in">console</span>.log(obj3); <span class="comment">//输出&#123;friends : ['小红', '小王']&#125;</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>在ES6中添加了一个<code>Object.assign()</code>属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> copy = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span> : <span class="string">'小明'</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">age</span> : <span class="number">20</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj3 = &#123;<span class="attr">friends</span> : [<span class="string">'小红'</span>]&#125;;</div><div class="line"><span class="comment">//第一个参数：目标对象，后面的参数：需要拷贝的对象</span></div><div class="line"><span class="built_in">Object</span>.assign(copy, obj1, obj2, obj3);</div><div class="line"><span class="built_in">console</span>.log(copy); <span class="comment">//输出&#123;name : '小明',age : 20,friends : ['小红']&#125;</span></div><div class="line">copy.friends.push(<span class="string">'小王'</span>);</div><div class="line"><span class="built_in">console</span>.log(obj3); <span class="comment">//输出&#123;friends : ['小红', '小王']&#125;</span></div></pre></td></tr></table></figure>
 <p>同样会影响父对象中的引用类型属性。</p>
 <h1 id="2-原型式继承"><a href="#2-原型式继承" class="headerlink" title="2. 原型式继承"></a>2. 原型式继承</h1><p>利用构造函数创建出来的对象可以使用原型对象中的属性和方法</p>
 <p>简单的原型式继承：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Fun.prototype.des = <span class="string">'des'</span>;</div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Fun();</div><div class="line"><span class="built_in">console</span>.log(obj.des); <span class="comment">//des</span></div><div class="line"><span class="comment">//构造函数创建的对象可以使用原型的属性方法</span></div></pre></td></tr></table></figure></p>
@@ -486,7 +488,11 @@ JavaScript中的继承：Object是所有对象的父类型，所有Javascript中
       
         <div class="post-tags">
           
-            <a href="/tags/继承，-原型链，-拷贝/" rel="tag"># 继承， 原型链， 拷贝</a>
+            <a href="/tags/原型链/" rel="tag"># 原型链</a>
+          
+            <a href="/tags/继承/" rel="tag"># 继承</a>
+          
+            <a href="/tags/拷贝/" rel="tag"># 拷贝</a>
           
         </div>
       
@@ -617,7 +623,7 @@ JavaScript中的继承：Object是所有对象的父类型，所有Javascript中
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
