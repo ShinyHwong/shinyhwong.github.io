@@ -293,6 +293,220 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/Node.js 常用接口.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shine Hwong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杂货铺">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/Node.js 常用接口.html" itemprop="url">
+                  Node.js 常用接口
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T09:31:38+08:00">
+                2017-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Node.js 常用接口.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="Node.js 常用接口.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/Node.js 常用接口.html" class="leancloud_visitors" data-flag-title="Node.js 常用接口">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,085
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长" }}">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Node.js 就是运行在服务端的 JavaScript 。<br>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。<br>Node.js 使用了一个<strong>事件驱动</strong>、<strong>异步（非阻塞式）I/O</strong>、<strong>单线程</strong>模型。轻量又高效。</p>
+<h1 id="http"><a href="#http" class="headerlink" title="http"></a>http</h1><h2 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//导入http模块中的功能</span></div><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="comment">//2. 创建http服务</span></div><div class="line"><span class="keyword">const</span> server = http.craeteServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)) </span>&#123;</div><div class="line">  <span class="comment">//request -&gt; 请求，客服端发送给服务器的</span></div><div class="line">  <span class="comment">//response -&gt; 响应，服务器对客户端的响应</span></div><div class="line"></div><div class="line">  <span class="comment">//告诉客户端响应完成</span></div><div class="line">  response.end(); <span class="comment">//必须，有且只有一个</span></div><div class="line">&#125;）；</div><div class="line"></div><div class="line"><span class="comment">//3. 启动服务</span></div><div class="line"><span class="comment">/*</span></div><div class="line">*参数1. 端口</div><div class="line">*参数2. 监听的ip地址</div><div class="line">*参数3. 回调 -&gt;当服务器成功启动执行回调</div><div class="line">*/</div><div class="line">server.listen(<span class="number">80</span>, <span class="string">'127.0.0.1'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'服务器成功创建并启动监听'</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. 导入模块</span></div><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="comment">//2. 创建http服务</span></div><div class="line"><span class="keyword">const</span> server = http.craeteServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)) </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">//给客户端指定编码格式和网页状态码</span></div><div class="line">  <span class="comment">//参数1：网页状态码</span></div><div class="line">  <span class="comment">//参数2：设置网页的编码格式</span></div><div class="line">  response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span> : <span class="string">'text/html;charset=utf-8;'</span>&#125;);</div><div class="line"></div><div class="line">  <span class="comment">//write可以使用多次，向客户端发送数据</span></div><div class="line">  response.write(<span class="string">'发送的数据1'</span>);</div><div class="line">  response.write(<span class="string">'发送的数据1'</span>);</div><div class="line"></div><div class="line">  <span class="comment">//告诉客户端响应完成</span></div><div class="line">  response.end(); <span class="comment">//必须，有且只有一个</span></div><div class="line">&#125;）；</div><div class="line"></div><div class="line"><span class="comment">//3. 启动服务</span></div><div class="line"><span class="comment">// 参数2 默认就是本机地址</span></div><div class="line"><span class="comment">// 参数3 默认也可以不要</span></div><div class="line">server.listen(<span class="number">80</span>)</div></pre></td></tr></table></figure>
+<h2 id="请求url过滤"><a href="#请求url过滤" class="headerlink" title="请求url过滤"></a>请求url过滤</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">let</span> a = <span class="number">0</span>;</div><div class="line"><span class="comment">// 回调方法是每一次请求都会进来</span></div><div class="line"><span class="keyword">const</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="comment">// req.url 能获取到客户端发送的请求地址</span></div><div class="line">  </div><div class="line">  <span class="comment">//过滤请求url</span></div><div class="line">  <span class="keyword">if</span> (req.url == <span class="string">'/favicon.ico'</span>)&#123;</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//请求url默认跳转 </span></div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (req.url == <span class="string">'/'</span>) &#123;</div><div class="line">    req.url = <span class="string">'/index.html'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//404未找到</span></div><div class="line">  <span class="keyword">else</span> &#123;</div><div class="line">    res.writeHead(<span class="number">404</span>, &#123;<span class="string">'Content-type'</span>: <span class="string">'text/html'</span>&#125;);</div><div class="line">    res.end(<span class="string">'404'</span>);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  res.end();</div><div class="line">&#125;);</div><div class="line">server.listen(<span class="number">80</span>);</div></pre></td></tr></table></figure>
+<h1 id="fs（File-System文件系统）"><a href="#fs（File-System文件系统）" class="headerlink" title="fs（File System文件系统）"></a>fs（File System文件系统）</h1><p>const fs = require(‘fs’);</p>
+<h2 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">* 参数1： 要读取文件的路径</div><div class="line">* 参数2： 回调函数</div><div class="line">* 注意：</div><div class="line">* 读文件是耗时操作，所以要用回调</div><div class="line">* err永远是回调函数第一个参数</div><div class="line">* Buffer是二进制数据的暂缓去</div><div class="line">* 可以用toString()将二进制转换成可阅读的字符串</div><div class="line"></div><div class="line">fs.readFile('note.txt', function(err, data) &#123;</div><div class="line">  if (!err)&#123;</div><div class="line">    console.log(data.toString());</div><div class="line">  &#125;    </div><div class="line">&#125;)</div><div class="line">console.log(1);</div><div class="line">//由于异步，先打印1再打印文件内容</div></pre></td></tr></table></figure>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件操作-1"><a href="#文件操作-1" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
+<li><p>覆盖文件内容<br>fs.writeFile(文件的路径， 写入的内容， 回调函数);</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fs.writeFile(<span class="string">'note.txt'</span>, <span class="string">'写入的内容'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (!err)&#123;<span class="built_in">console</span>.log(<span class="string">'写入成功'</span>)&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>往最后追加内容<br>fs.appendFile(文件的路径， 写入的内容， 回调函数)；</p>
+</li>
+<li><p>删除文件<br>fs.unlink(文件的路径， 回调函数)；</p>
+</li>
+</ul>
+<h3 id="文件夹操作"><a href="#文件夹操作" class="headerlink" title="文件夹操作"></a>文件夹操作</h3><ul>
+<li><p>创建文件夹<br>fs.mkdir(文件夹名， 回调函数)；<br>如果已经存在，则为err</p>
+</li>
+<li><p>删除文件夹<br>fs.rmdir(文件夹名，回调函数)；<br>如果不存在，则为err</p>
+</li>
+</ul>
+<h2 id="查询文件状态"><a href="#查询文件状态" class="headerlink" title="查询文件状态"></a>查询文件状态</h2><p>判断为文件或者是文件夹<br>fs.stat(文件/文件夹名路径， 回调函数)；<br>回调的第二个参数为文件的状态。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">fs.stat(<span class="string">'note.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, status</span>)) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!err) &#123;</div><div class="line">    <span class="comment">//判断文件</span></div><div class="line">    <span class="keyword">if</span>(status.isFile())&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'文件'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//判断文件夹</span></div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(status.isDirectory())&#123;</div><div class="line">      consoloe.log(<span class="string">'文件夹'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="读取文件夹里的内容"><a href="#读取文件夹里的内容" class="headerlink" title="读取文件夹里的内容"></a>读取文件夹里的内容</h2><p>读取到所有文件包括文件夹<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fs.readdir(文件的路径， <span class="function"><span class="keyword">function</span>(<span class="params">err, files</span>))</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!err)&#123;</div><div class="line">    <span class="built_in">console</span>.log(files);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//导入模块</span></div><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="comment">//举例</span></div><div class="line"><span class="keyword">const</span> myPath = <span class="string">'C:/abc/123.txt'</span>;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>连接路径<br>  path.join(路径1，路径2…);<br>  路径1/路径2/…</p>
+</li>
+<li><p>获取文件名<br>  path.basename(myPath);<br>  123.txt</p>
+</li>
+<li><p>获取当前文件所在路径(__dirname也可实现)<br>  path.dirname(myPath);<br>  C:/abc</p>
+</li>
+<li><p>获取扩展名<br>  path.extname(myPath);<br>  .txt</p>
+</li>
+</ul>
+<h2 id="path-parse"><a href="#path-parse" class="headerlink" title="path.parse"></a>path.parse</h2><pre><code>path.parse(&apos;C:\\path\\dir\\file.txt&apos;)
+// 返回:
+{
+    root : &quot;C:\\&quot;,
+    dir : &quot;C:\\path\\dir&quot;,
+    base : &quot;file.txt&quot;,
+    ext : &quot;.txt&quot;,
+    name : &quot;file&quot;
+}
+</code></pre><h1 id="url-parse"><a href="#url-parse" class="headerlink" title="url.parse"></a>url.parse</h1><p>url.parse() 方法会解析一个 URL 字符串并返回一个 URL 对象(需要添加参数 true )。<br><img src="http://i.imgur.com/QxiihB0.jpg" alt="node.js url"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</div><div class="line"><span class="keyword">let</span> myurl = <span class="string">'http://127.0.0.1:80/a/b/c?name=shine&amp;age=20'</span>;</div><div class="line"></div><div class="line"><span class="comment">//使用parse对url进行格式化</span></div><div class="line"><span class="comment">//第二个参数为true则将字符串转换成对象，可以用点语法获取对象的值</span></div><div class="line"><span class="keyword">let</span> query = url.parse(myurl, <span class="literal">true</span>).query;</div><div class="line"><span class="built_in">console</span>.log(query.name); <span class="comment">//shine</span></div><div class="line"></div><div class="line"><span class="comment">//格式化字符串</span></div><div class="line"><span class="keyword">const</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</div><div class="line"><span class="keyword">let</span> queryStr = url.parse(myurl).query; <span class="comment">//name=shine&amp;age=20</span></div><div class="line"><span class="keyword">let</span> obj = querystring.parse(queryStr);</div><div class="line"><span class="built_in">console</span>.log(obj); <span class="comment">//&#123;name : 'shine', age : '20'&#125;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//获取访问路径</span></div><div class="line"><span class="keyword">let</span> pathname = url.parse(myurl).pathname;</div><div class="line"><span class="built_in">console</span>.log(pathname); <span class="comment">// /a/b/c</span></div><div class="line"></div><div class="line"><span class="comment">//获取端口</span></div><div class="line"><span class="keyword">let</span> port = url.parse(myurl).port;</div><div class="line"><span class="built_in">console</span>.log(port); <span class="comment">// 80</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/HTTP协议与报文.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2014,200 +2228,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/offset类属性与style类属性的区别.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shine Hwong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杂货铺">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/offset类属性与style类属性的区别.html" itemprop="url">
-                  offset类属性与style类属性的区别
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T23:38:49+08:00">
-                2017-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/offset类属性与style类属性的区别.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="offset类属性与style类属性的区别.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/offset类属性与style类属性的区别.html" class="leancloud_visitors" data-flag-title="offset类属性与style类属性的区别">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  269
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长" }}">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>全文字数：1115字，阅读时长：3分钟</p>
-<h1 id="offset类属性与style类属性的区别"><a href="#offset类属性与style类属性的区别" class="headerlink" title="offset类属性与style类属性的区别"></a>offset类属性与style类属性的区别</h1><p>在JavaScript DOM操作中，有两个属性可以获取元素的width属性，但是两者也有很大的不同</p>
-<ul>
-<li><p>style类属性</p>
-<ol>
-<li>必须要是行内元素才能获取到，当元素的宽高写在CSS中时，无法获取</li>
-<li>获取到的是String，带px</li>
-<li>可读写</li>
-<li>若没有设置left，style.left返回空字符串 “ “</li>
-</ol>
-</li>
-<li><p>offset类属性</p>
-<ol>
-<li>获取元素的实际存在的宽高，不管是在行内还是页内</li>
-<li>获取到的是Number</li>
-<li>只可读</li>
-</ol>
-</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/offset类属性与style类属性的区别.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2257,7 +2277,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2270,7 +2290,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
