@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://www.hwong.cn/HTTP%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87.html</loc>
+    <lastmod>2017-06-08T13:11:22.944Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP 协议与报文</title>
+        <pubTime>2017-05-13T15:29:01.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+        <tag>GET</tag>
+         
+        <tag>POST</tag>
+         
+        <tag>编码</tag>
+         
+        <tag>内容协商</tag>
+         
+        <tag>报文</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hwong.cn/HTTP%E7%8A%B6%E6%80%81%E7%A0%81.html</loc>
     <lastmod>2017-06-06T07:44:37.138Z</lastmod>
     <data>
@@ -33,33 +60,6 @@
         <tag>Node.js</tag>
          
         <tag>接口</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hwong.cn/HTTP%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87.html</loc>
-    <lastmod>2017-05-13T15:37:53.142Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP 协议与报文</title>
-        <pubTime>2017-05-13T15:29:01.000Z</pubTime>
-        
-        <tag>HTTP协议</tag>
-         
-        <tag>HTTP报文</tag>
-         
-        <tag>GET</tag>
-         
-        <tag>POST</tag>
-         
-        <tag>编码</tag>
-         
-        <tag>内容协商</tag>
          
          
            
