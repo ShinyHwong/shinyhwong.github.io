@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="方法总结,DOM元素属性,DOM事件属性,获取位置定位," />
+  <meta name="keywords" content="排序算法," />
 
 
 
@@ -87,30 +87,21 @@
 
 
 
-<meta name="description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element">
+<meta name="description" content="插入算法它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。具有n个元素时它需要经过n-1趟排序。对于p = 1到p = n-1趟，插入排序保证从位置0到位置p上的元素为已排序状态。它就是基于这个事实来排序的。123456789101112131415161718function insertionSort(arr)&amp;#123;  //如果数组的长度小于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="获取DOM元素事件位置信息的常用方法">
-<meta property="og:url" content="http://www.hwong.cn/client、offset、screen、page、scroll的比较.html">
+<meta property="og:title" content="JS实现常用排序算法">
+<meta property="og:url" content="http://www.hwong.cn/JS实现常用排序算法.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/788/=OffsetHeight.png">
-<meta property="og:image" content="http://www.2cto.com/uploadfile/Collfiles/20140914/2014091409260873.png">
-<meta property="og:updated_time" content="2017-04-16T14:47:28.713Z">
+<meta property="og:description" content="插入算法它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。具有n个元素时它需要经过n-1趟排序。对于p = 1到p = n-1趟，插入排序保证从位置0到位置p上的元素为已排序状态。它就是基于这个事实来排序的。123456789101112131415161718function insertionSort(arr)&amp;#123;  //如果数组的长度小于">
+<meta property="og:image" content="http://i.imgur.com/DRmvDGi.gif">
+<meta property="og:image" content="http://i.imgur.com/Pef33Zl.gif">
+<meta property="og:image" content="http://i.imgur.com/GsWqRUS.gif">
+<meta property="og:image" content="http://i.imgur.com/r3jFLpK.gif">
+<meta property="og:updated_time" content="2017-06-09T01:37:11.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="获取DOM元素事件位置信息的常用方法">
-<meta name="twitter:description" content="全文字数：3630字，阅读时长：8分钟
-在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element">
-<meta name="twitter:image" content="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png">
+<meta name="twitter:title" content="JS实现常用排序算法">
+<meta name="twitter:description" content="插入算法它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。具有n个元素时它需要经过n-1趟排序。对于p = 1到p = n-1趟，插入排序保证从位置0到位置p上的元素为已排序状态。它就是基于这个事实来排序的。123456789101112131415161718function insertionSort(arr)&amp;#123;  //如果数组的长度小于">
+<meta name="twitter:image" content="http://i.imgur.com/DRmvDGi.gif">
 
 
 
@@ -138,13 +129,13 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 
 
 
-  <link rel="canonical" href="http://www.hwong.cn/client、offset、screen、page、scroll的比较.html"/>
+  <link rel="canonical" href="http://www.hwong.cn/JS实现常用排序算法.html"/>
 
 
 
 
 
-  <title> 获取DOM元素事件位置信息的常用方法 | 杂货铺 </title>
+  <title> JS实现常用排序算法 | 杂货铺 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -306,7 +297,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/client、offset、screen、page、scroll的比较.html">
+    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/JS实现常用排序算法.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shine Hwong">
@@ -327,7 +318,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
             
             
               
-                获取DOM元素事件位置信息的常用方法
+                JS实现常用排序算法
               
             
           </h1>
@@ -342,8 +333,8 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-02T18:10:15+08:00">
-                2017-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-09T09:34:49+08:00">
+                2017-03-09
               </time>
             
 
@@ -362,8 +353,8 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/client、offset、screen、page、scroll的比较.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="client、offset、screen、page、scroll的比较.html" itemprop="commentsCount"></span>
+                <a href="/JS实现常用排序算法.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="JS实现常用排序算法.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -372,7 +363,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 
           
           
-             <span id="/client、offset、screen、page、scroll的比较.html" class="leancloud_visitors" data-flag-title="获取DOM元素事件位置信息的常用方法">
+             <span id="/JS实现常用排序算法.html" class="leancloud_visitors" data-flag-title="JS实现常用排序算法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -396,7 +387,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,394
+                  1,810
                 </span>
               
 
@@ -412,7 +403,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长" }}">
-                  5
+                  7
                 </span>
               
             </div>
@@ -431,28 +422,29 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
       
 
       
-        <p>全文字数：3630字，阅读时长：8分钟</p>
-<p>在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。</p>
-<h1 id="Part1-client、scroll、offset元素属性的定义"><a href="#Part1-client、scroll、offset元素属性的定义" class="headerlink" title="Part1  client、scroll、offset元素属性的定义"></a>Part1  client、scroll、offset元素属性的定义</h1><p>在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是<strong>只读</strong>属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">element.clientHeight <span class="comment">//在页面上返回内容的可视高度（不包括边框，边距或滚动条）</span></div><div class="line">element.clientLeft <span class="comment">//元素的左边框的宽度,若左边出现了垂直滚动条，也包含滚动条的宽度</span></div><div class="line"></div><div class="line">element.offsetHeight <span class="comment">//返回元素的高度，包括边框和填充，但不是边距</span></div><div class="line">element.offsetLeft <span class="comment">//获取边框相对于具有定位属性的父对象的左边距</span></div><div class="line"></div><div class="line">element.scrollHeight <span class="comment">//返回元素的整体高度（包括带滚动条的隐蔽的地方）</span></div><div class="line">element.scrollLeft <span class="comment">//滚动条卷去隐藏的距离</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="clientHeight、scrollHeight、offsetHeight的比较"><a href="#clientHeight、scrollHeight、offsetHeight的比较" class="headerlink" title="clientHeight、scrollHeight、offsetHeight的比较"></a>clientHeight、scrollHeight、offsetHeight的比较</h2><h3 id="client"><a href="#client" class="headerlink" title="client"></a>client</h3><p><img src="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png" alt="client"><br>clientHeight：可见区域的宽度，不包括<code>boder</code>的宽度，如果区域内带有滚动条，还应该减去横向滚动条不可用的高度，正常的是17px，其实就是滚动条的可滚动的部分了，其实<em>clientHeight</em>与<code>height</code>的高度差不多，如果不带滚动条的话他们的值都是一样的，如果带有滚动条的话就会比<code>height</code>值少17px；火狐与IE下均为一致。<br>注意，对于类型<code>&lt;i&gt;</code>,<code>&lt;code&gt;</code>和<code>&lt;span&gt;</code>这些内联元素,<em>clientWidth</em>和<em>clientHeight</em>总是返回0。</p>
-<h3 id="scroll"><a href="#scroll" class="headerlink" title="scroll"></a>scroll</h3><p><img src="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png" alt="scroll"><br>scrollHeight：同样不包含<code>border</code>,由<code>height</code>与<code>padding</code>相加。若包含滚动条，<code>scrollHeight</code>就是滚动条可滚动的距离。（<code>height</code>与<code>padding</code>相加在减去滚动条的高度，默认为17px）。直观的说法就是元素的内容区域加上它的内边距再加上任何溢出内容的尺寸。当内容正好和内容区域匹配而没有溢出时，这些属性与clientWidth和clientHeight是相等的。但当溢出时，它们就包含溢出的内容，返回值比clientWidth和clientHeight要大。</p>
-<h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><p><img src="https://developer.mozilla.org/@api/deki/files/788/=OffsetHeight.png" alt="offset"><br>offsetHeight：元素的offsetHeightw值包括该元素的边框,元素的垂直内边距,元素的水平滚动条(若出现水平滚动条),以及元素的样式高度。实际值为<code>height</code> + <code>padding</code> + <code>border</code>。</p>
-<h2 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>测试代码<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">        div&#123;</div><div class="line">            overflow: scroll; /*设置滚动条*/</div><div class="line">            position: absolute;</div><div class="line">            left: 1500px;</div><div class="line">            width: 300px;</div><div class="line">            height: 300px;</div><div class="line">            border: 5px solid #000;</div><div class="line">            padding: 10px;</div><div class="line">            margin: 20px;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'clientWidth: '</span>+ div.clientWidth);</div><div class="line">	 <span class="comment">//320 padding+width 有滚动条时 303 padding+width-scroll(默认17px)</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'clientLeft: '</span>+ div.clientLeft); </div><div class="line">	<span class="comment">//5 边框的宽度，有滚动条就加滚动条宽度</span></div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'offsetWidth: '</span>+ div.offsetWidth);</div><div class="line">	<span class="comment">//330 boder + padding + width</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'offsetLeft: '</span>+ div.offsetLeft); </div><div class="line">	<span class="comment">//1520  获取边框相对于具有定位属性的父对象的左边距</span></div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'scrollWidth: '</span> + div.scrollWidth); </div><div class="line">	<span class="comment">//320 padding + width 有滚动条时 303 padding+width-scrollWidth(默认17px)</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'scrollLeft: '</span> + div.scrollLeft); </div><div class="line">	<span class="comment">//0 滚动条卷去的部分</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<hr>
-<h1 id="Part2-offset、client、screen、page在DOM事件中的定义"><a href="#Part2-offset、client、screen、page在DOM事件中的定义" class="headerlink" title="Part2  offset、client、screen、page在DOM事件中的定义"></a>Part2  offset、client、screen、page在DOM事件中的定义</h1><p>在文档中，以上4个属性都归类在DOM Event中，属于事件状态，需要与函数结合起来使用，函数不会在事件发生前执行。常见的事件有鼠标点击、键盘按下等，事件发生后，我们就能检测相应的属性。</p>
-<p><img src="http://www.2cto.com/uploadfile/Collfiles/20140914/2014091409260873.png" alt=""></p>
-<h2 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h2><p>screenX:鼠标位置相对于用户屏幕水平偏移量，此时的参照点也就是原点是<strong>屏幕的左上角</strong>。</p>
-<h2 id="client-1"><a href="#client-1" class="headerlink" title="client"></a>client</h2><p>clientX:跟screenX相比就是将参照点改成了浏览器内容区域的左上角，该参照点会随之滚动条的移动而移动，也就是说，他计算<code>left</code>或<code>top</code>时直接忽略了滚动条的高和宽，它的参考点是<strong>浏览器可见区域的左上角</strong>，而不是页面本身的body左上角原点，计算数值和滚动条是否滚动没有关系，只是绝对的计算鼠标点距离浏览器内容区域的左上角的距离，忽略了滚动条的存在。</p>
-<h2 id="page"><a href="#page" class="headerlink" title="page"></a>page</h2><p>pageX：参照点是<strong>页面本身的body原点</strong>，而不是浏览器内容区域左上角，它计算的值不会随着滚动条而变动，它在计算时其实是以body左上角原点（即页面本身的左上角，而不是浏览器可见区域的左上角）为参考点计算的，这个相当于已经把滚动条滚过的高或宽计算在内了，所以无论滚动条是否滚动，他都是一样的距离值。</p>
-<blockquote>
-<p><code>pageX</code> = <code>clientX</code> + ScrollLeft(滚动条滚过的水平距离)<br><code>pageY</code> = <code>clientY</code> + ScrollTop(滚动条滚过的垂直距离)</p>
-</blockquote>
-<h2 id="offset-1"><a href="#offset-1" class="headerlink" title="offset"></a>offset</h2><p>offsetX：<em>offsetX</em> 表示鼠标指针位置相对于<strong>触发事件的对象</strong>的 <em>x</em>    坐标。不包含边框，所以可以为负值。</p>
-<hr>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在实际开发中，我们经常要使用以上的方法来获得我们需要的值。首先，我们应该注意每一种属性的区别，了解他们是如何计算出来的，不至于在开发中张冠李戴，出现错误。其次，以上各种属性在不同浏览器中也有兼容问题，也是我们必须要要小心的地方，因为你可能写对了名字，但是在这个浏览器中无效，那也是白忙活一场。<br>所以，在开发时，应尽量避免出现这些问题，多进行验证，这样才能保证代码的正确性。 </p>
-
+        <h1 id="插入算法"><a href="#插入算法" class="headerlink" title="插入算法"></a>插入算法</h1><p>它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。具有n个元素时它需要经过n-1趟排序。对于p = 1到p = n-1趟，插入排序保证从位置0到位置p上的元素为已排序状态。它就是基于这个事实来排序的。<br><img src="http://i.imgur.com/DRmvDGi.gif" alt="插入排序"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertionSort</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="comment">//如果数组的长度小于等于1，直接返回数组</span></div><div class="line">  <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> arr;</div><div class="line">  <span class="comment">//遍历数组</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">    <span class="comment">//取到当前数值，往前查找，看时候有比该数值大的数</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = i<span class="number">-1</span>; j &gt;=<span class="number">0</span>; j--)&#123;</div><div class="line">      <span class="comment">//如果存在下标小的数大于下标大的数</span></div><div class="line">      <span class="keyword">if</span> (arr[i] &lt; arr[j])&#123;</div><div class="line">        <span class="comment">//交换两个数字的位置</span></div><div class="line">        <span class="keyword">var</span> temp = arr[j];</div><div class="line">        arr[j] = arr[i];</div><div class="line">        arr[i] = temp;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最好的情况只需要 n-1 次操作完成，最坏则需要 n(n-1)/2 次。插入算法的时间复杂度为 O(n^2) 。因而插入排序不适合对于数据量比较大的排序应用。但是，如果需要排序的数据量很小，插入排序还是一个不错的选择。<br><a id="more"></a></p>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序与插入排序拥有<strong>相等</strong>的运行时间。但是两种算法在需要的交换次数却有很大的不同。在最好的情况，冒泡排序需要 O(n^2) 次，而插入排序只要最多 O(n) 次。冒泡排序如果能在内部循环第一次运行时，使用一个 flag 来表示有无交换的可能，也可以把最好的复杂度降低到 O(n) 。在这个情况下，已经排好的数列就无交换的必要了。<br><img src="http://i.imgur.com/Pef33Zl.gif" alt="冒泡排序"><br>冒泡排序算法的运作如下：</p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubleSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="comment">//如果数组的长度小于等于1，直接返回数组</span></div><div class="line">  <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> arr;</div><div class="line">  <span class="keyword">var</span> flag = <span class="literal">false</span>; <span class="comment">//设置 flag 记录是否已经排序完成，降低复杂度</span></div><div class="line">  <span class="comment">//从第一个数开始遍历数组</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">    <span class="comment">//每完成一次外循环，内循环遍历次数就少一次</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length - i; j++)&#123;</div><div class="line">      <span class="comment">//如果前一个数大于后一个数就进行位置交换</span></div><div class="line">      <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</div><div class="line">        <span class="keyword">var</span> temp = arr[j+<span class="number">1</span>];</div><div class="line">        arr[j+<span class="number">1</span>] = arr[j];</div><div class="line">        arr[j] = temp;</div><div class="line">        flag = <span class="literal">true</span>; <span class="comment">//有交换时 flag 就为true</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="comment">//判断是否进行了位置交换，如果没有则排序完成</span></div><div class="line">  <span class="keyword">if</span> (！flag) <span class="keyword">return</span> arr;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>选择排序是一中简单直观的排序算法。它的工作原理如下：<br>首先在未排序序列中找到最小（大）元素，存放到序列的起始位置，然后，再从剩余未排序的元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直至完成排序。<br>选择排序的主要有点与数据移动有关。如果某个元素位于正确的最终位置上，那么它将不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终的位置上，一次对 n 个元素的表进行排序总共进行至多 n-1 次交换。在所有完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。<br><img src="http://i.imgur.com/GsWqRUS.gif" alt="选择排序"><br>复杂度分析<br>选择排序的交换操作介于 0 和 n-1 次之间。比较操作为 n(n-1)/2 次。赋值操作介于 0 和 3(n-1) 次之间。比较次数时间复杂度为 O(n^2)，标胶次数与关键字的初始状态无关，总次数为 n(n-1)/2 。交换次数 O(n)，最好的情况是已经有序，交换0次，最坏的情况是逆序，交换 n-1 次。<br>交换次数比冒泡排序次数少，由于交换所需 CPU 时间比比较操作所需 CPU 时间多，<strong>n 值较小时，选择排序比冒泡排序快。</strong><br>原地操作几乎是选择排序的唯一有点，当空间复杂度要求较高时，可以考虑选择排序，实际适用的场合非常罕见。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="comment">//如果数组的长度小于等于1，直接返回数组</span></div><div class="line">  <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> arr;</div><div class="line">  <span class="comment">//遍历数组</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">    <span class="keyword">var</span> min = i; <span class="comment">//设置已排列序列末尾的下标</span></div><div class="line">    <span class="comment">//遍历未排列的序列并找出最小值</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</div><div class="line">      <span class="keyword">if</span>(arr[min] &gt; arr[j])&#123;</div><div class="line">        <span class="keyword">var</span> temp = arr[min]</div><div class="line">        arr[min] = arr[j];</div><div class="line">        arr[j] = temp;</div><div class="line">        min = j; <span class="comment">//更新已排列序列末尾值的下标</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。<br><img src="http://i.imgur.com/r3jFLpK.gif" alt="快速排序"></p>
+<p>步骤为：</p>
+<ol>
+<li>从数列中挑出一个元素，称为“基准”(pivot)</li>
+<li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆放在基准值后面（相同的数可以在任意一边）。在这个分区结束后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</li>
+<li>递归（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排列。</li>
+<li>递归的最底部情形，就是这个数列的长度小于等于1，也就是已经被排好了。虽然一直会递归下去，但是这个算法总会结束，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它的最终位置上。</li>
+</ol>
+<p>正如它的名字，快速排序是在时间中最快的已知排序算法，它的时间复杂度为 O(nlogn)。</p>
+<p>由于对枢纽元的处理会导致第三步中的分割不为已，因此，我们希望把等于枢纽元的大约一半的关键字分到左边，另外一半分到右边。我们可以采用 Math.floor(arr.length /2) 来得到数组大约一半的这个数值的索引。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="comment">//如果数组的长度小于等于1，直接返回数组</span></div><div class="line">  <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> arr;</div><div class="line">  <span class="comment">//获取基准的索引</span></div><div class="line">  <span class="keyword">var</span> pivotIndex = <span class="built_in">Math</span>.florr(arr.length/<span class="number">2</span>);</div><div class="line">  <span class="comment">//将基准数从数组中单独提取出来</span></div><div class="line">  <span class="keyword">var</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</div><div class="line">  <span class="comment">//定义左边和右边两个子序列</span></div><div class="line">  <span class="keyword">var</span> left = [];</div><div class="line">  <span class="keyword">var</span> right = [];</div><div class="line">  <span class="comment">//遍历当前序列</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">    <span class="comment">//如果数值比基准小，放在左边的子序列</span></div><div class="line">    <span class="keyword">if</span> (arr[i] &lt;= pivot)&#123;</div><div class="line">      left.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//如果数值比基准大，放在右边的子序列</span></div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">      right.push(arr[i]); </div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//递归排序</span></div><div class="line">  <span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -475,13 +467,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
       
         <div class="post-tags">
           
-            <a href="/tags/方法总结/" rel="tag"># 方法总结</a>
-          
-            <a href="/tags/DOM元素属性/" rel="tag"># DOM元素属性</a>
-          
-            <a href="/tags/DOM事件属性/" rel="tag"># DOM事件属性</a>
-          
-            <a href="/tags/获取位置定位/" rel="tag"># 获取位置定位</a>
+            <a href="/tags/排序算法/" rel="tag"># 排序算法</a>
           
         </div>
       
@@ -494,18 +480,14 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/offset类属性与style类属性的区别.html" rel="next" title="offset类属性与style类属性的区别">
-                <i class="fa fa-chevron-left"></i> offset类属性与style类属性的区别
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/值类型与引用类型.html" rel="prev" title="值类型与引用类型及在内存中的存储">
-                值类型与引用类型及在内存中的存储 <i class="fa fa-chevron-right"></i>
+              <a href="/JavaScript中的数据类型转换.html" rel="prev" title="JavaScript中的数据类型转换">
+                JavaScript中的数据类型转换 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,7 +644,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part1-client、scroll、offset元素属性的定义"><span class="nav-number">1.</span> <span class="nav-text">Part1  client、scroll、offset元素属性的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#clientHeight、scrollHeight、offsetHeight的比较"><span class="nav-number">1.1.</span> <span class="nav-text">clientHeight、scrollHeight、offsetHeight的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#client"><span class="nav-number">1.1.1.</span> <span class="nav-text">client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scroll"><span class="nav-number">1.1.2.</span> <span class="nav-text">scroll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offset"><span class="nav-number">1.1.3.</span> <span class="nav-text">offset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试代码"><span class="nav-number">1.2.</span> <span class="nav-text">测试代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part2-offset、client、screen、page在DOM事件中的定义"><span class="nav-number">2.</span> <span class="nav-text">Part2  offset、client、screen、page在DOM事件中的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#screen"><span class="nav-number">2.1.</span> <span class="nav-text">screen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-1"><span class="nav-number">2.2.</span> <span class="nav-text">client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#page"><span class="nav-number">2.3.</span> <span class="nav-text">page</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#offset-1"><span class="nav-number">2.4.</span> <span class="nav-text">offset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插入算法"><span class="nav-number">1.</span> <span class="nav-text">插入算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-number">2.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择排序"><span class="nav-number">3.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-number">4.</span> <span class="nav-text">快速排序</span></a></li></ol></div>
             
 
           </div>
@@ -814,7 +796,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 		_hcwp.push({widget:"Bloggerstream", widget_id: 89491, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "client、offset、screen、page、scroll的比较.html"});
+		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "JS实现常用排序算法.html"});
 		
 
 		(function() {

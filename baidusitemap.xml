@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://www.hwong.cn/JS%E5%AE%9E%E7%8E%B0%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html</loc>
+    <lastmod>2017-06-09T01:37:11.213Z</lastmod>
+    <data>
+        <display>
+        <title>JS实现常用排序算法</title>
+        <pubTime>2017-03-09T01:34:49.000Z</pubTime>
+        
+        <tag>排序算法</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hwong.cn/HTTP%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87.html</loc>
     <lastmod>2017-06-08T13:11:22.944Z</lastmod>
     <data>
@@ -13,6 +30,8 @@
         
         <tag>HTTP</tag>
          
+        <tag>报文</tag>
+         
         <tag>GET</tag>
          
         <tag>POST</tag>
@@ -20,8 +39,6 @@
         <tag>编码</tag>
          
         <tag>内容协商</tag>
-         
-        <tag>报文</tag>
          
          
            

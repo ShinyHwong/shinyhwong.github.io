@@ -11,3 +11,4 @@ http://www.hwong.cn/值类型与引用类型.html
 http://www.hwong.cn/client、offset、screen、page、scroll的比较.html
 http://www.hwong.cn/offset类属性与style类属性的区别.html
 http://www.hwong.cn/JavaScript中的数据类型转换.html
+http://www.hwong.cn/JS实现常用排序算法.html
