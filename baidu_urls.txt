@@ -1,5 +1,6 @@
 http://www.hwong.cn/HTTP状态码.html
 http://www.hwong.cn/Node.js 常用接口.html
+http://www.hwong.cn/作用域.html
 http://www.hwong.cn/HTTP协议与报文.html
 http://www.hwong.cn/面向对象继承方法.html
 http://www.hwong.cn/原型链图解.html
