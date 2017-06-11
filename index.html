@@ -293,7 +293,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/工厂模式实例详解.html">
+    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/观察者模式实例详解.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shine Hwong">
@@ -315,8 +315,8 @@
             
               
                 
-                <a class="post-title-link" href="/工厂模式实例详解.html" itemprop="url">
-                  工厂模式实例详解
+                <a class="post-title-link" href="/观察者模式实例详解.html" itemprop="url">
+                  观察者模式实例详解
                 </a>
               
             
@@ -332,7 +332,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T00:06:55+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T00:16:22+08:00">
                 2017-06-12
               </time>
             
@@ -352,8 +352,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/工厂模式实例详解.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="工厂模式实例详解.html" itemprop="commentsCount"></span>
+                <a href="/观察者模式实例详解.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="观察者模式实例详解.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -362,7 +362,7 @@
 
           
           
-             <span id="/工厂模式实例详解.html" class="leancloud_visitors" data-flag-title="工厂模式实例详解">
+             <span id="/观察者模式实例详解.html" class="leancloud_visitors" data-flag-title="观察者模式实例详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  561
+                  744
                 </span>
               
 
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长" }}">
-                  2
+                  3
                 </span>
               
             </div>
@@ -422,24 +422,20 @@
 
       
         
-          <p>适用于<strong>大批量</strong>创建<strong>同类型</strong>的对象，通过同一个接口创建对象，根据传入的参数不同从而创建不同内容的对象，让这个接口由子类决定实例化哪一个类。<br>优点：解决了多个类似对象声明的问题，易于维护和扩展，稳定性好。<br>推荐场景：1. 对象的构建十分复杂。 2. 需要依赖具体环境创建不同实例。 3. 处理大量具有相同属性的小对象。</p>
-<p>实施过程：</p>
-<ol>
-<li>提供父构造函数</li>
-<li>设置父构造函数的原型对象</li>
-<li>定制不同对象上的差异化属性(设置子构造函数–&gt;父构造函数的静态方法)</li>
-<li>在父构造函数上添加静态工厂方法<ol>
-<li>判断是否支持生产</li>
-<li>设置子构造函数（父构造函数的静态方法）的原型对象</li>
-<li>修正构造器属性</li>
-<li>返回利用子构造函数创建的实例对象</li>
-</ol>
-</li>
-<li>使用父构造函数的静态工厂方法创建指定的对象</li>
-</ol>
+          <p>观察者模式又名发布-订阅者模式，它定义了对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都将得到通知，自动刷新状态。<br>观察者模式提供给关联对象一种同步通信的手段，使某个对象与依赖它的其他对象之间保持状态同步。</p>
+<h1 id="角色："><a href="#角色：" class="headerlink" title="角色："></a>角色：</h1><ul>
+<li>观察者（订阅者）<br>  接口或抽象类。当被观察者状态发生变化时，会得到通知</li>
+<li>被观察者（发布者 或者 主题）<br>  当需要被观察的状态发生改变时，需要通知队列中的所有观察者对象。<br>  需要维持（添加，删除，通知）一个观察者对象列表</li>
+</ul>
+<h1 id="观察者模式案例"><a href="#观察者模式案例" class="headerlink" title="观察者模式案例"></a>观察者模式案例</h1><p>步骤：</p>
+<pre><code>1. 提供一个发布者（负责信息发布）
+2. 提供观察者（信息发布后需要采取行动的对象）
+3. 注册观察者（将观察者注册到发布者的客户列表）
+4. 发布者发布信息（事件触发）
+</code></pre>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/工厂模式实例详解.html#more" rel="contents">
+            <a class="btn" href="/观察者模式实例详解.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2183,7 +2179,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
