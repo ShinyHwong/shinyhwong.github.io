@@ -1,3 +1,4 @@
+http://www.hwong.cn/工厂模式实例详解.html
 http://www.hwong.cn/HTTP状态码.html
 http://www.hwong.cn/Node.js 常用接口.html
 http://www.hwong.cn/作用域.html
