@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="方法总结,DOM元素属性,DOM事件属性,获取位置定位," />
+  <meta name="keywords" content="设计模式,工厂模式,备忘录模式," />
 
 
 
@@ -87,27 +87,33 @@
 
 
 
-<meta name="description" content="在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element.clientHeight //在页面上">
+<meta name="description" content="工厂模式适用于大批量创建同类型的对象，通过同一个接口创建对象，根据传入的参数不同从而创建不同内容的对象，让这个接口由子类决定实例化哪一个类。优点：解决了多个类似对象声明的问题，易于维护和扩展，稳定性好。推荐场景：1. 对象的构建十分复杂。 2. 需要依赖具体环境创建不同实例。 3. 处理大量具有相同属性的小对象。
+实施过程：
+
+提供父构造函数
+设置父构造函数的原型对象
+定制不同对象上的差异化属性(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="获取DOM元素事件位置信息的常用方法">
-<meta property="og:url" content="http://www.hwong.cn/client、offset、screen、page、scroll的比较.html">
+<meta property="og:title" content="工厂模式与备忘录模式实例详解">
+<meta property="og:url" content="http://www.hwong.cn/工厂模式和备忘录模式实例详解.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element.clientHeight //在页面上">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png">
-<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/788/=OffsetHeight.png">
-<meta property="og:image" content="http://www.2cto.com/uploadfile/Collfiles/20140914/2014091409260873.png">
-<meta property="og:updated_time" content="2017-06-10T00:56:21.634Z">
+<meta property="og:description" content="工厂模式适用于大批量创建同类型的对象，通过同一个接口创建对象，根据传入的参数不同从而创建不同内容的对象，让这个接口由子类决定实例化哪一个类。优点：解决了多个类似对象声明的问题，易于维护和扩展，稳定性好。推荐场景：1. 对象的构建十分复杂。 2. 需要依赖具体环境创建不同实例。 3. 处理大量具有相同属性的小对象。
+实施过程：
+
+提供父构造函数
+设置父构造函数的原型对象
+定制不同对象上的差异化属性(">
+<meta property="og:image" content="http://i.imgur.com/Iq3DZJG.png">
+<meta property="og:updated_time" content="2017-06-11T16:25:52.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="获取DOM元素事件位置信息的常用方法">
-<meta name="twitter:description" content="在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。
-Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是只读属性。
-12345678element.clientHeight //在页面上">
-<meta name="twitter:image" content="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png">
+<meta name="twitter:title" content="工厂模式与备忘录模式实例详解">
+<meta name="twitter:description" content="工厂模式适用于大批量创建同类型的对象，通过同一个接口创建对象，根据传入的参数不同从而创建不同内容的对象，让这个接口由子类决定实例化哪一个类。优点：解决了多个类似对象声明的问题，易于维护和扩展，稳定性好。推荐场景：1. 对象的构建十分复杂。 2. 需要依赖具体环境创建不同实例。 3. 处理大量具有相同属性的小对象。
+实施过程：
+
+提供父构造函数
+设置父构造函数的原型对象
+定制不同对象上的差异化属性(">
+<meta name="twitter:image" content="http://i.imgur.com/Iq3DZJG.png">
 
 
 
@@ -135,13 +141,13 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 
 
 
-  <link rel="canonical" href="http://www.hwong.cn/client、offset、screen、page、scroll的比较.html"/>
+  <link rel="canonical" href="http://www.hwong.cn/工厂模式和备忘录模式实例详解.html"/>
 
 
 
 
 
-  <title> 获取DOM元素事件位置信息的常用方法 | 杂货铺 </title>
+  <title> 工厂模式与备忘录模式实例详解 | 杂货铺 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -303,7 +309,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/client、offset、screen、page、scroll的比较.html">
+    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/工厂模式和备忘录模式实例详解.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shine Hwong">
@@ -324,7 +330,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
             
             
               
-                获取DOM元素事件位置信息的常用方法
+                工厂模式与备忘录模式实例详解
               
             
           </h1>
@@ -339,8 +345,8 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-02T18:10:15+08:00">
-                2017-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-17T18:24:32+08:00">
+                2017-06-17
               </time>
             
 
@@ -359,8 +365,8 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/client、offset、screen、page、scroll的比较.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="client、offset、screen、page、scroll的比较.html" itemprop="commentsCount"></span>
+                <a href="/工厂模式和备忘录模式实例详解.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="工厂模式和备忘录模式实例详解.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -369,7 +375,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 
           
           
-             <span id="/client、offset、screen、page、scroll的比较.html" class="leancloud_visitors" data-flag-title="获取DOM元素事件位置信息的常用方法">
+             <span id="/工厂模式和备忘录模式实例详解.html" class="leancloud_visitors" data-flag-title="工厂模式与备忘录模式实例详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,7 +399,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,381
+                  837
                 </span>
               
 
@@ -409,7 +415,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长" }}">
-                  5
+                  3
                 </span>
               
             </div>
@@ -428,27 +434,35 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
       
 
       
-        <p>在JavaScript的DOM操作中，我们经常需要获取元素或事件的宽高及定位信息。因此我们就需要用到一些属性来得到我们想要的信息。</p>
-<h1 id="Part1-client、scroll、offset元素属性的定义"><a href="#Part1-client、scroll、offset元素属性的定义" class="headerlink" title="Part1  client、scroll、offset元素属性的定义"></a>Part1  client、scroll、offset元素属性的定义</h1><p>在w3c的官方文档里，我们可以看到这几个属性都归类在HTML DOM元素对象的属性方法中，适用于所有HTML元素，都是<strong>只读</strong>属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">element.clientHeight <span class="comment">//在页面上返回内容的可视高度（不包括边框，边距或滚动条）</span></div><div class="line">element.clientLeft <span class="comment">//元素的左边框的宽度,若左边出现了垂直滚动条，也包含滚动条的宽度</span></div><div class="line"></div><div class="line">element.offsetHeight <span class="comment">//返回元素的高度，包括边框和填充，但不是边距</span></div><div class="line">element.offsetLeft <span class="comment">//获取边框相对于具有定位属性的父对象的左边距</span></div><div class="line"></div><div class="line">element.scrollHeight <span class="comment">//返回元素的整体高度（包括带滚动条的隐蔽的地方）</span></div><div class="line">element.scrollLeft <span class="comment">//滚动条卷去隐藏的距离</span></div></pre></td></tr></table></figure>
+        <h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><p>适用于<strong>大批量</strong>创建<strong>同类型</strong>的对象，通过同一个接口创建对象，根据传入的参数不同从而创建不同内容的对象，让这个接口由子类决定实例化哪一个类。<br>优点：解决了多个类似对象声明的问题，易于维护和扩展，稳定性好。<br>推荐场景：1. 对象的构建十分复杂。 2. 需要依赖具体环境创建不同实例。 3. 处理大量具有相同属性的小对象。</p>
+<p>实施过程：</p>
+<ol>
+<li>提供父构造函数</li>
+<li>设置父构造函数的原型对象</li>
+<li>定制不同对象上的差异化属性(设置子构造函数–&gt;父构造函数的静态方法)</li>
+<li>在父构造函数上添加静态工厂方法<ol>
+<li>判断是否支持生产</li>
+<li>设置子构造函数（父构造函数的静态方法）的原型对象</li>
+<li>修正构造器属性</li>
+<li>返回利用子构造函数创建的实例对象</li>
+</ol>
+</li>
+<li>使用父构造函数的静态工厂方法创建指定的对象</li>
+</ol>
 <a id="more"></a>
-<h2 id="clientHeight、scrollHeight、offsetHeight的比较"><a href="#clientHeight、scrollHeight、offsetHeight的比较" class="headerlink" title="clientHeight、scrollHeight、offsetHeight的比较"></a>clientHeight、scrollHeight、offsetHeight的比较</h2><h3 id="client"><a href="#client" class="headerlink" title="client"></a>client</h3><p><img src="https://developer.mozilla.org/@api/deki/files/608/=ClientHeight.png" alt="client"><br>clientHeight：可见区域的宽度，不包括<code>boder</code>的宽度，如果区域内带有滚动条，还应该减去横向滚动条不可用的高度，正常的是17px，其实就是滚动条的可滚动的部分了，其实<em>clientHeight</em>与<code>height</code>的高度差不多，如果不带滚动条的话他们的值都是一样的，如果带有滚动条的话就会比<code>height</code>值少17px；火狐与IE下均为一致。<br>注意，对于类型<code>&lt;i&gt;</code>,<code>&lt;code&gt;</code>和<code>&lt;span&gt;</code>这些内联元素,<em>clientWidth</em>和<em>clientHeight</em>总是返回0。</p>
-<h3 id="scroll"><a href="#scroll" class="headerlink" title="scroll"></a>scroll</h3><p><img src="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png" alt="scroll"><br>scrollHeight：同样不包含<code>border</code>,由<code>height</code>与<code>padding</code>相加。若包含滚动条，<code>scrollHeight</code>就是滚动条可滚动的距离。（<code>height</code>与<code>padding</code>相加在减去滚动条的高度，默认为17px）。直观的说法就是元素的内容区域加上它的内边距再加上任何溢出内容的尺寸。当内容正好和内容区域匹配而没有溢出时，这些属性与clientWidth和clientHeight是相等的。但当溢出时，它们就包含溢出的内容，返回值比clientWidth和clientHeight要大。</p>
-<h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><p><img src="https://developer.mozilla.org/@api/deki/files/788/=OffsetHeight.png" alt="offset"><br>offsetHeight：元素的offsetHeightw值包括该元素的边框,元素的垂直内边距,元素的水平滚动条(若出现水平滚动条),以及元素的样式高度。实际值为<code>height</code> + <code>padding</code> + <code>border</code>。</p>
-<h2 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>测试代码<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">        div&#123;</div><div class="line">            overflow: scroll; /*设置滚动条*/</div><div class="line">            position: absolute;</div><div class="line">            left: 1500px;</div><div class="line">            width: 300px;</div><div class="line">            height: 300px;</div><div class="line">            border: 5px solid #000;</div><div class="line">            padding: 10px;</div><div class="line">            margin: 20px;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'clientWidth: '</span>+ div.clientWidth);</div><div class="line">	 <span class="comment">//320 padding+width 有滚动条时 303 padding+width-scroll(默认17px)</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'clientLeft: '</span>+ div.clientLeft); </div><div class="line">	<span class="comment">//5 边框的宽度，有滚动条就加滚动条宽度</span></div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'offsetWidth: '</span>+ div.offsetWidth);</div><div class="line">	<span class="comment">//330 boder + padding + width</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'offsetLeft: '</span>+ div.offsetLeft); </div><div class="line">	<span class="comment">//1520  获取边框相对于具有定位属性的父对象的左边距</span></div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'scrollWidth: '</span> + div.scrollWidth); </div><div class="line">	<span class="comment">//320 padding + width 有滚动条时 303 padding+width-scrollWidth(默认17px)</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'scrollLeft: '</span> + div.scrollLeft); </div><div class="line">	<span class="comment">//0 滚动条卷去的部分</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<hr>
-<h1 id="Part2-offset、client、screen、page在DOM事件中的定义"><a href="#Part2-offset、client、screen、page在DOM事件中的定义" class="headerlink" title="Part2  offset、client、screen、page在DOM事件中的定义"></a>Part2  offset、client、screen、page在DOM事件中的定义</h1><p>在文档中，以上4个属性都归类在DOM Event中，属于事件状态，需要与函数结合起来使用，函数不会在事件发生前执行。常见的事件有鼠标点击、键盘按下等，事件发生后，我们就能检测相应的属性。</p>
-<p><img src="http://www.2cto.com/uploadfile/Collfiles/20140914/2014091409260873.png" alt=""></p>
-<h2 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h2><p>screenX:鼠标位置相对于用户屏幕水平偏移量，此时的参照点也就是原点是<strong>屏幕的左上角</strong>。</p>
-<h2 id="client-1"><a href="#client-1" class="headerlink" title="client"></a>client</h2><p>clientX:跟screenX相比就是将参照点改成了浏览器内容区域的左上角，该参照点会随之滚动条的移动而移动，也就是说，他计算<code>left</code>或<code>top</code>时直接忽略了滚动条的高和宽，它的参考点是<strong>浏览器可见区域的左上角</strong>，而不是页面本身的body左上角原点，计算数值和滚动条是否滚动没有关系，只是绝对的计算鼠标点距离浏览器内容区域的左上角的距离，忽略了滚动条的存在。</p>
-<h2 id="page"><a href="#page" class="headerlink" title="page"></a>page</h2><p>pageX：参照点是<strong>页面本身的body原点</strong>，而不是浏览器内容区域左上角，它计算的值不会随着滚动条而变动，它在计算时其实是以body左上角原点（即页面本身的左上角，而不是浏览器可见区域的左上角）为参考点计算的，这个相当于已经把滚动条滚过的高或宽计算在内了，所以无论滚动条是否滚动，他都是一样的距离值。</p>
+<p><img src="http://i.imgur.com/Iq3DZJG.png" alt="工厂模式示例图"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. 提供父构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CarFactory</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">//2. 设置父构造函数原型对象（共同属性）</span></div><div class="line">CarFactory.prototype = &#123;</div><div class="line">    <span class="attr">rank</span>: <span class="keyword">this</span>.num,</div><div class="line">    <span class="attr">bandName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.carBand)</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">country</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.country)</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//3. 定制不同对象差异化属性</span></div><div class="line">CarFactory.benz = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.carBand = <span class="string">'benz'</span>;</div><div class="line">    <span class="keyword">this</span>.country = <span class="string">'Germany'</span>;</div><div class="line">    <span class="keyword">this</span>.num = <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">CarFactory.audi = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.carBand = <span class="string">'audi'</span>;</div><div class="line">    <span class="keyword">this</span>.country = <span class="string">'Germany'</span>;</div><div class="line">    <span class="keyword">this</span>.num = <span class="number">2</span>;</div><div class="line">&#125;;</div><div class="line">CarFactory.bmw = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.carBand = <span class="string">'bmw'</span>;</div><div class="line">    <span class="keyword">this</span>.country = <span class="string">'Germany'</span>;</div><div class="line">    <span class="keyword">this</span>.num = <span class="number">3</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//4. 在父构造函数上添加静态工厂方法</span></div><div class="line">CarFactory.product = <span class="function"><span class="keyword">function</span> (<span class="params">band</span>) </span>&#123;</div><div class="line">    <span class="comment">//容错处理，判断能否生产</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> CarFactory[band] !== <span class="string">'function'</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="string">'目前不支持生产'</span>; <span class="comment">//抛出异常</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">//设置子构造函数的原型属性为父构造函数的实例，完成原型链继承</span></div><div class="line">    CarFactory[band].prototype = <span class="keyword">new</span> CarFactory();</div><div class="line">    <span class="comment">//修正构造器属性</span></div><div class="line">    CarFactory[band].prototype.constructor = CarFactory[band];</div><div class="line">    <span class="comment">//让父构造函数的静态工厂方法返回子构造函数的的实例对象</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CarFactory[band]();</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//5. 利用父构造函数的静态方法创建对象</span></div><div class="line"><span class="keyword">var</span> benz = CarFactory.product(<span class="string">'benz'</span>);</div><div class="line"><span class="built_in">console</span>.log(benz); <span class="comment">//&#123;carBand: "benz", country: "Germany", num: 1&#125;</span></div><div class="line"><span class="keyword">var</span> audi = CarFactory.product(<span class="string">'audi'</span>);</div><div class="line"><span class="built_in">console</span>.log(audi); <span class="comment">//&#123;carBand: "audi", country: "Germany", num: 2&#125;</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> volkswagen = CarFactory.product(<span class="string">'volkswagen'</span>);</div><div class="line"><span class="built_in">console</span>.log(volkswagen); <span class="comment">//不支持生产，抛出异常</span></div></pre></td></tr></table></figure></p>
+<h1 id="备忘模式-函数结果缓存"><a href="#备忘模式-函数结果缓存" class="headerlink" title="备忘模式(函数结果缓存)"></a>备忘模式(函数结果缓存)</h1><p>特定场景：当某个函数需要接受参数，可能会反复计算并且在函数内部需要进行耗时并且大量的逻辑处理才能得到结果时。我们可以把计算结果保存包函数对象中。计算时，先去缓存中查找，没有再计算。</p>
 <blockquote>
-<p><code>pageX</code> = <code>clientX</code> + ScrollLeft(滚动条滚过的水平距离)<br><code>pageY</code> = <code>clientY</code> + ScrollTop(滚动条滚过的垂直距离)</p>
+<p>函数是对象，可以在函数上面添加属性和方法</p>
 </blockquote>
-<h2 id="offset-1"><a href="#offset-1" class="headerlink" title="offset"></a>offset</h2><p>offsetX：<em>offsetX</em> 表示鼠标指针位置相对于<strong>触发事件的对象</strong>的 <em>x</em>    坐标。不包含边框，所以可以为负值。</p>
-<hr>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在实际开发中，我们经常要使用以上的方法来获得我们需要的值。首先，我们应该注意每一种属性的区别，了解他们是如何计算出来的，不至于在开发中张冠李戴，出现错误。其次，以上各种属性在不同浏览器中也有兼容问题，也是我们必须要要小心的地方，因为你可能写对了名字，但是在这个浏览器中无效，那也是白忙活一场。<br>所以，在开发时，应尽量避免出现这些问题，多进行验证，这样才能保证代码的正确性。 </p>
-
+<p>函数的参数作为<em>key</em>，结果作为<em>value</em>。</p>
+<p>步骤：</p>
+<pre><code>1. 提供一个缓存对象`cache`（key-value）
+2. 获取传入的参数
+3. 在缓存对象`cache`中查找是否有结果
+4. 有，就返回
+5. 没有，执行函数得到结果保存到`cache`中并返回结果。
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> memento = <span class="function"><span class="keyword">function</span> (<span class="params">param</span>) </span>&#123;</div><div class="line">    <span class="comment">//初次运行建立缓存</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> memento.cache === <span class="string">'undefined'</span>) &#123;</div><div class="line">        memento.cache = &#123;&#125;;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//如果有缓存就返回存储的结果</span></div><div class="line">    <span class="keyword">if</span> (memento.cache[param] !== <span class="literal">undefined</span>) &#123;</div><div class="line">        <span class="keyword">return</span> memento.cache[param];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//没有就进行计算得到结果存储</span></div><div class="line">    <span class="keyword">var</span> result = <span class="string">''</span>; <span class="comment">//初始化计算结果</span></div><div class="line"></div><div class="line">    <span class="comment">//复杂计算，结果保存到result</span></div><div class="line"></div><div class="line">    memento.cache[param] = result; <span class="comment">//存储结果</span></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -471,13 +485,11 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
       
         <div class="post-tags">
           
-            <a href="/tags/方法总结/" rel="tag"># 方法总结</a>
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
-            <a href="/tags/DOM元素属性/" rel="tag"># DOM元素属性</a>
+            <a href="/tags/工厂模式/" rel="tag"># 工厂模式</a>
           
-            <a href="/tags/DOM事件属性/" rel="tag"># DOM事件属性</a>
-          
-            <a href="/tags/获取位置定位/" rel="tag"># 获取位置定位</a>
+            <a href="/tags/备忘录模式/" rel="tag"># 备忘录模式</a>
           
         </div>
       
@@ -490,8 +502,8 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/offset类属性与style类属性的区别.html" rel="next" title="offset类属性与style类属性的区别">
-                <i class="fa fa-chevron-left"></i> offset类属性与style类属性的区别
+              <a href="/单例模式实例详解.html" rel="next" title="单例模式实例详解">
+                <i class="fa fa-chevron-left"></i> 单例模式实例详解
               </a>
             
           </div>
@@ -499,10 +511,6 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/值类型与引用类型.html" rel="prev" title="值类型与引用类型及在内存中的存储">
-                值类型与引用类型及在内存中的存储 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -658,7 +666,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part1-client、scroll、offset元素属性的定义"><span class="nav-number">1.</span> <span class="nav-text">Part1  client、scroll、offset元素属性的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#clientHeight、scrollHeight、offsetHeight的比较"><span class="nav-number">1.1.</span> <span class="nav-text">clientHeight、scrollHeight、offsetHeight的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#client"><span class="nav-number">1.1.1.</span> <span class="nav-text">client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scroll"><span class="nav-number">1.1.2.</span> <span class="nav-text">scroll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offset"><span class="nav-number">1.1.3.</span> <span class="nav-text">offset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试代码"><span class="nav-number">1.2.</span> <span class="nav-text">测试代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part2-offset、client、screen、page在DOM事件中的定义"><span class="nav-number">2.</span> <span class="nav-text">Part2  offset、client、screen、page在DOM事件中的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#screen"><span class="nav-number">2.1.</span> <span class="nav-text">screen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-1"><span class="nav-number">2.2.</span> <span class="nav-text">client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#page"><span class="nav-number">2.3.</span> <span class="nav-text">page</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#offset-1"><span class="nav-number">2.4.</span> <span class="nav-text">offset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工厂模式"><span class="nav-number">1.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#备忘模式-函数结果缓存"><span class="nav-number">2.</span> <span class="nav-text">备忘模式(函数结果缓存)</span></a></li></ol></div>
             
 
           </div>
@@ -810,7 +818,7 @@ Part1  client、scroll、offset元素属性的定义在w3c的官方文档里，�
 		_hcwp.push({widget:"Bloggerstream", widget_id: 89491, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "client、offset、screen、page、scroll的比较.html"});
+		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "工厂模式和备忘录模式实例详解.html"});
 		
 
 		(function() {
