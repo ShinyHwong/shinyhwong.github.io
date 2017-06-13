@@ -1,3 +1,4 @@
+http://www.hwong.cn/单例模式实例详解.html
 http://www.hwong.cn/观察者模式实例详解.html
 http://www.hwong.cn/HTTP状态码.html
 http://www.hwong.cn/Node.js 常用接口.html

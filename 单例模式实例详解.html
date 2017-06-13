@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="静态方法,静态属性," />
+  <meta name="keywords" content="设计模式,单例模式," />
 
 
 
@@ -87,46 +87,39 @@
 
 
 
-<meta name="description" content="静态成员：构造函数对象自己的属性和方法实例成员：直接定义在实例上的属性和方法原型成员：直接定义在原型对象上的属性和方法
+<meta name="description" content="保证一个特定的类只有一个实例（并且永远是同一个）在JavaScript中，只有对象没有类，要实现单例模式也有多种方法。
 
-所有对象都是Object的实例，所以可以访问Object的静态成员
+最简单的方式：通过字面量来创建对象，因为在JS中对象之间永远不可能相等，除非它们是同一个对象使用字面量创建的对象总是唯一的。
 
-Object.toString：返回对象的字符串描述信息
-object类型返回[object Object]
-函数、数组类型返回字符串形式
-Number类型可调用该方法，传递参数，表示转换进制
+实现单例模式的的几种途径
 
-
-Obje">
+在代码中提供一个全局变量来存储创建出来的实例。缺点：该全局变量可能会被轻易的修改和覆盖
+尝试在构造函数的静态成员中缓存实例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object 的静态成员">
-<meta property="og:url" content="http://www.hwong.cn/Object静态成员介绍.html">
+<meta property="og:title" content="单例模式实例详解">
+<meta property="og:url" content="http://www.hwong.cn/单例模式实例详解.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="静态成员：构造函数对象自己的属性和方法实例成员：直接定义在实例上的属性和方法原型成员：直接定义在原型对象上的属性和方法
+<meta property="og:description" content="保证一个特定的类只有一个实例（并且永远是同一个）在JavaScript中，只有对象没有类，要实现单例模式也有多种方法。
 
-所有对象都是Object的实例，所以可以访问Object的静态成员
+最简单的方式：通过字面量来创建对象，因为在JS中对象之间永远不可能相等，除非它们是同一个对象使用字面量创建的对象总是唯一的。
 
-Object.toString：返回对象的字符串描述信息
-object类型返回[object Object]
-函数、数组类型返回字符串形式
-Number类型可调用该方法，传递参数，表示转换进制
+实现单例模式的的几种途径
 
-
-Obje">
-<meta property="og:updated_time" content="2017-06-10T00:57:04.903Z">
+在代码中提供一个全局变量来存储创建出来的实例。缺点：该全局变量可能会被轻易的修改和覆盖
+尝试在构造函数的静态成员中缓存实例">
+<meta property="og:image" content="http://i.imgur.com/YEWZqD4.png">
+<meta property="og:updated_time" content="2017-06-11T16:21:39.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object 的静态成员">
-<meta name="twitter:description" content="静态成员：构造函数对象自己的属性和方法实例成员：直接定义在实例上的属性和方法原型成员：直接定义在原型对象上的属性和方法
+<meta name="twitter:title" content="单例模式实例详解">
+<meta name="twitter:description" content="保证一个特定的类只有一个实例（并且永远是同一个）在JavaScript中，只有对象没有类，要实现单例模式也有多种方法。
 
-所有对象都是Object的实例，所以可以访问Object的静态成员
+最简单的方式：通过字面量来创建对象，因为在JS中对象之间永远不可能相等，除非它们是同一个对象使用字面量创建的对象总是唯一的。
 
-Object.toString：返回对象的字符串描述信息
-object类型返回[object Object]
-函数、数组类型返回字符串形式
-Number类型可调用该方法，传递参数，表示转换进制
+实现单例模式的的几种途径
 
-
-Obje">
+在代码中提供一个全局变量来存储创建出来的实例。缺点：该全局变量可能会被轻易的修改和覆盖
+尝试在构造函数的静态成员中缓存实例">
+<meta name="twitter:image" content="http://i.imgur.com/YEWZqD4.png">
 
 
 
@@ -154,13 +147,13 @@ Obje">
 
 
 
-  <link rel="canonical" href="http://www.hwong.cn/Object静态成员介绍.html"/>
+  <link rel="canonical" href="http://www.hwong.cn/单例模式实例详解.html"/>
 
 
 
 
 
-  <title> Object 的静态成员 | 杂货铺 </title>
+  <title> 单例模式实例详解 | 杂货铺 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -322,7 +315,7 @@ Obje">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/Object静态成员介绍.html">
+    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/单例模式实例详解.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shine Hwong">
@@ -343,7 +336,7 @@ Obje">
             
             
               
-                Object 的静态成员
+                单例模式实例详解
               
             
           </h1>
@@ -358,8 +351,8 @@ Obje">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T22:49:12+08:00">
-                2017-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T00:15:48+08:00">
+                2017-06-15
               </time>
             
 
@@ -378,8 +371,8 @@ Obje">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Object静态成员介绍.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="Object静态成员介绍.html" itemprop="commentsCount"></span>
+                <a href="/单例模式实例详解.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="单例模式实例详解.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -388,7 +381,7 @@ Obje">
 
           
           
-             <span id="/Object静态成员介绍.html" class="leancloud_visitors" data-flag-title="Object 的静态成员">
+             <span id="/单例模式实例详解.html" class="leancloud_visitors" data-flag-title="单例模式实例详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,7 +405,7 @@ Obje">
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  576
+                  1,199
                 </span>
               
 
@@ -428,7 +421,7 @@ Obje">
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长" }}">
-                  2
+                  4
                 </span>
               
             </div>
@@ -447,49 +440,38 @@ Obje">
       
 
       
-        <blockquote>
-<p>静态成员：构造函数对象自己的属性和方法<br>实例成员：直接定义在实例上的属性和方法<br>原型成员：直接定义在原型对象上的属性和方法</p>
-</blockquote>
-<p>所有对象都是<code>Object</code>的实例，所以可以访问<code>Object</code>的静态成员</p>
-<ul>
-<li><code>Object.toString</code>：返回对象的字符串描述信息<ul>
-<li><code>object</code>类型返回<code>[object Object]</code></li>
-<li>函数、数组类型返回字符串形式</li>
-<li><code>Number</code>类型可调用该方法，传递参数，表示转换进制</li>
-</ul>
-</li>
-<li><code>Object.apply/call</code>：调用其他对象的方法</li>
-<li><code>Object.arguments</code>：接收存储函数的实参</li>
-<li><code>Object.assign</code>：属性拷贝</li>
-<li><code>Object.caller</code>：返回一个函数的引用，这个函数调用了当前的函数；另外<code>callee</code>放回正在执行的函数本身的引用，它是arguments的一个属性，常用于递归函数。<a id="more"></a></li>
-<li><code>Object.constructor</code>：构造器属性，指向构造函数</li>
-<li><code>Object.getPropertyOf</code>：获取原型对象，相当于(<code>.__proto__</code>)</li>
-<li><code>Object.create</code>：创建对象并设置原型对象</li>
-<li><code>Object.getOwnPropertyDescriptor</code>：获取实例属性的描述信息<ul>
-<li><code>configurable</code>：是否可配置（是否可删除，是否可修改该属性）</li>
-<li><code>enumerable</code>：是否可枚举（可用<code>for..in</code>遍历）</li>
-<li><code>value</code>：值</li>
-<li><code>writable</code>：是否可重写（修改）</li>
-</ul>
-</li>
-<li><code>Object.defineProperty</code>：设置属性的描述信息<ul>
-<li>修改已经存在的属性，默认为<code>true</code></li>
-<li>添加新的属性，默认是<code>false</code></li>
-<li>参数：第一个参数为需要配置的对象，第二个参数为该对象需要配置的属性，第三个对象为该属性的描述对象</li>
-</ul>
-</li>
-<li><code>Object.getOwnPropertyName</code>：获取对象所有实例属性的名字，不包括原型属性。返回一个数组</li>
-<li><p><code>Object.keys</code>：获取所有对象属性名，不包括原型属性和不可枚举属性</p>
+        <p>保证一个特定的类只有一个实例（并且永远是同一个）<br>在JavaScript中，只有对象没有类，要实现单例模式也有多种方法。</p>
 <blockquote>
-<p>关于<code>Object.getOwnPropertyName</code>与<code>Object.keys</code>的差别</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> obj = &#123;<span class="attr">name</span> : <span class="string">'名字'</span>, <span class="attr">age</span> : <span class="number">20</span>&#125;;</div><div class="line">&gt; <span class="built_in">Object</span>.prototype.des = <span class="string">'des'</span>;</div><div class="line">&gt; <span class="comment">//设置name属性不可枚举</span></div><div class="line">&gt; <span class="built_in">Object</span>.defineProperty(obj, <span class="string">'name'</span>, &#123;<span class="attr">enumerable</span> : <span class="literal">false</span>&#125;);</div><div class="line">&gt; <span class="comment">//结果都不包含原型属性</span></div><div class="line">&gt; <span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyName(obj)); <span class="comment">//[name, age]</span></div><div class="line">&gt; <span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj)); <span class="comment">//[age]</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p>最简单的方式：通过字面量来创建对象，因为在JS中对象之间永远不可能相等，除非它们是同一个对象<br>使用字面量创建的对象总是唯一的。</p>
 </blockquote>
+<p>实现单例模式的的几种途径</p>
+<ol>
+<li>在代码中提供一个全局变量来存储创建出来的实例。缺点：该全局变量可能会被轻易的修改和覆盖</li>
+<li>尝试在构造函数的静态成员中缓存实例属性。缺点：函数的静态属性在外部可以直接修改，容易导致实例对象的丢失。</li>
+<li>将实例对象包装在闭包中，安全性好，无法轻易修改。缺点：有额外的闭包开销。<a id="more"></a>
+<h1 id="全局变量方法"><a href="#全局变量方法" class="headerlink" title="全局变量方法"></a>全局变量方法</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//提供全局变量，使用全局变量来接收内部创建出来的实例对象（this）</span></div><div class="line"><span class="keyword">var</span> instance; </div><div class="line"><span class="comment">//提供构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Singleton</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//判断是否已经创建存在过</span></div><div class="line">    <span class="keyword">if</span> (instance) &#123;</div><div class="line">        <span class="comment">//如果创建过直接返回</span></div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//默认把实例对象赋值给this再传给全局变量instance</span></div><div class="line">    instance = <span class="keyword">this</span>; </div><div class="line">    <span class="comment">//设置实例属性方法</span></div><div class="line">    <span class="keyword">this</span>.property = <span class="string">'设置属性'</span>;</div><div class="line">    <span class="keyword">this</span>.fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="string">'设置方法'</span>&#125;; </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> Singleton();</div><div class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> Singleton();</div><div class="line"><span class="comment">//两个对象存储数据的地址一样，实际就是一个对象</span></div><div class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">//true</span></div></pre></td></tr></table></figure>
 </li>
-<li><p><code>Object.prevenExtensions</code>：禁止扩展属性（不可以添加属性，可删可改）。可通过<code>Object.isExtensible</code>查询。</p>
-</li>
-<li><code>Object.seal</code>：密封属性（禁止扩展和删除，禁止修改<code>configurable</code>和<code>enumerable</code>。可以修改属性的值）。可通过<code>Object.isSealed</code>查询。</li>
-<li><code>Object.freeze</code>：冻结属性（不可增删改）。可通过<code>Object.isFrozen</code>查询。</li>
-</ul>
+</ol>
+<p>但是上述方法有一个明显的问题，全局变量<code>instance</code>容易被修改，造成之后创建的实例指向错误的数据。</p>
+<p>改进：通过即使调用函数，把<code>instance</code>封闭在里面。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明构造函数</span></div><div class="line"><span class="keyword">var</span> Singleton;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//内部声明instance</span></div><div class="line">    <span class="keyword">var</span> instance;</div><div class="line">    Singleton = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (instance) &#123;</div><div class="line">            <span class="comment">//如果创建过直接返回</span></div><div class="line">            <span class="keyword">return</span> instance;</div><div class="line">        &#125;</div><div class="line">        instance = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">this</span>.property = <span class="string">'设置属性'</span>;</div><div class="line">        <span class="keyword">this</span>.fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="string">'设置方法'</span>&#125;;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<p>这样只能修改构造函数名称，但是修改了的话浏览器会报错提示我们<code>Singleton is not a constructor</code>，可以很快排错。</p>
+<h1 id="构造函数静态属性方法"><a href="#构造函数静态属性方法" class="headerlink" title="构造函数静态属性方法"></a>构造函数静态属性方法</h1><p>通过把<code>instance</code>设置为构造函数<code>Singleton</code>的静态属性，在一定程度上可以防止被修改。但是通过<code>Singleton.instance</code>还是可以修改到。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Singleton</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (Singleton.instance) &#123;</div><div class="line">        <span class="keyword">return</span> Singleton.instance;</div><div class="line">    &#125;</div><div class="line">    Singleton.instance = <span class="keyword">this</span>; </div><div class="line">    <span class="keyword">this</span>.property = <span class="string">'设置属性'</span>;</div><div class="line">    <span class="keyword">this</span>.fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="string">'设置方法'</span>&#125;; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="惰性函数方法"><a href="#惰性函数方法" class="headerlink" title="惰性函数方法"></a>惰性函数方法</h1><p>实现思路：在构造函数内部声明一个私有变量<code>instance</code>，利用惰性函数执行过一次后自我更新的特性可以直接返回<code>instance</code>。</p>
+<p>问题：由于惰性函数的自我更新，导致构造函数指向新的对象</p>
+<blockquote>
+<p>在构造函数更新过一次后，新的构造函数创建出来的实例的<code>constructor</code>属性还是跟第一次创建出来的实例一样，指向更新前的构造函数。并且创建对象以后设置的原型对象和单例对象不是同一个（由于更新之后，新构造函数的原型对象与旧构造函数的原型对象不是同一个），导致创建对象后设置到原型对象的属性和方法无法访问。</p>
+</blockquote>
+<p>改进方法：利用原型链继承，将新构造函数原型对象设置为旧构造函数的实例。同时用新构造函数创建实例赋值给<code>instance</code>，并修正<code>instance</code>构造器属性指向。</p>
+<p>步骤：</p>
+<pre><code>1. 提供一个构造函数
+2. 在构造函数内部提供一个私有变量
+3. 利用惰性函数实现构造函数的自我更新(直接返回instance)
+4. 设置新构造函数的原型对象是旧构造函数的一个实例
+5. 使用新构造函数创建对象并赋值给instance
+6. 修正构造器属性指向更新后的构造函数
+7. 使用instance设置属性和方法
+8. 返回instance
+</code></pre><p><img src="http://i.imgur.com/YEWZqD4.png" alt="惰性函数单例模式"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//提供单例构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Singleton</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">/*系统在新建Singleton的实例对象时，会有如下默认操作</span></div><div class="line">    var 实例对象 </div><div class="line">    this = 实力对象</div><div class="line">    所以在第一次执行时，this就代表最开始这个构造函数的实例对象*/</div><div class="line">    </div><div class="line">    <span class="comment">//提供私有变量</span></div><div class="line">    <span class="keyword">var</span> instance;</div><div class="line">    <span class="comment">//惰性函数执行一次后自我更新</span></div><div class="line">    Singleton = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//自我更新后，Singleton代表新构造函数，this指向旧构造函数的实例</span></div><div class="line">    <span class="comment">//原型链继承，实现原型属性访问修改</span></div><div class="line">    Singleton.prototype = <span class="keyword">this</span>;</div><div class="line">    <span class="comment">//设置私有变量为新构造函数的实例对象</span></div><div class="line">    instance = <span class="keyword">new</span> Singleton();</div><div class="line">    <span class="comment">//修正构造器属性指向更新后的构造函数</span></div><div class="line">    instance.constructor = Singleton;</div><div class="line">    <span class="comment">//设置属性方法</span></div><div class="line">    instance.property = <span class="string">'设置属性'</span>;</div><div class="line">    instance.fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="string">'设置方法'</span>&#125;;</div><div class="line">    <span class="comment">//返回这个instance，覆盖this</span></div><div class="line">    <span class="keyword">return</span> instance;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -513,9 +495,9 @@ Obje">
       
         <div class="post-tags">
           
-            <a href="/tags/静态方法/" rel="tag"># 静态方法</a>
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
-            <a href="/tags/静态属性/" rel="tag"># 静态属性</a>
+            <a href="/tags/单例模式/" rel="tag"># 单例模式</a>
           
         </div>
       
@@ -528,8 +510,8 @@ Obje">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Web与网络基础.html" rel="next" title="Web与网络基础">
-                <i class="fa fa-chevron-left"></i> Web与网络基础
+              <a href="/观察者模式实例详解.html" rel="next" title="观察者模式实例详解">
+                <i class="fa fa-chevron-left"></i> 观察者模式实例详解
               </a>
             
           </div>
@@ -537,10 +519,6 @@ Obje">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/原型链图解.html" rel="prev" title="原型链图解">
-                原型链图解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,8 +590,17 @@ Obje">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -677,6 +664,22 @@ Obje">
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#全局变量方法"><span class="nav-number">1.</span> <span class="nav-text">全局变量方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数静态属性方法"><span class="nav-number">2.</span> <span class="nav-text">构造函数静态属性方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#惰性函数方法"><span class="nav-number">3.</span> <span class="nav-text">惰性函数方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -823,7 +826,7 @@ Obje">
 		_hcwp.push({widget:"Bloggerstream", widget_id: 89491, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "Object静态成员介绍.html"});
+		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "单例模式实例详解.html"});
 		
 
 		(function() {
