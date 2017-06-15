@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://www.hwong.cn/%E6%A8%A1%E7%89%88%E5%BC%95%E6%93%8E%20nunjucks.html</loc>
+    <lastmod>2017-06-15T10:33:55.991Z</lastmod>
+    <data>
+        <display>
+        <title>模版引擎 nunjucks</title>
+        <pubTime>2017-06-19T06:32:28.000Z</pubTime>
+        
+        <tag>nunjucks</tag>
+         
+        <tag>模板引擎</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hwong.cn/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F%E5%AE%9E%E4%BE%8B%E8%AF%A6%E8%A7%A3.html</loc>
     <lastmod>2017-06-11T16:25:52.252Z</lastmod>
     <data>
@@ -259,9 +278,9 @@
         <title>JavaScript中的数据类型转换</title>
         <pubTime>2017-03-14T15:26:42.000Z</pubTime>
         
-        <tag>数据类型转换</tag>
-         
         <tag>方法总结</tag>
+         
+        <tag>数据类型转换</tag>
          
          
            
@@ -278,13 +297,13 @@
         <title>获取DOM元素事件位置信息的常用方法</title>
         <pubTime>2017-04-02T10:10:15.000Z</pubTime>
         
-        <tag>方法总结</tag>
-         
         <tag>DOM元素属性</tag>
          
         <tag>DOM事件属性</tag>
          
         <tag>获取位置定位</tag>
+         
+        <tag>方法总结</tag>
          
          
            
