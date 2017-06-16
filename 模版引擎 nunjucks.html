@@ -89,32 +89,41 @@
 
 <meta name="description" content="在 js 中，通过 nunjucks.render(模板名 name , 数据 context) 来得到页面数据，可通过 res.end(数据) 将页面传递出去。
 
-注释
-注释 #&amp;#125;```123- 变量  ```&amp;#123;&amp;#123; name &amp;#125;&amp;#125;
+注释  ``
+
+变量  `
+  
+  `
 
 if 判断
-1234567&amp;#123;% if 条件1 %&amp;#125;  执行内容1;&amp;#123;% elif 条">
+1234567&amp;#123;% if 条件1 %&amp;#125;  执行内容1;&amp;#123;% elif 条件2 %&amp;#125;  执行内容2;&amp;#123;% else %&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模版引擎 nunjucks">
 <meta property="og:url" content="http://www.hwong.cn/模版引擎 nunjucks.html">
 <meta property="og:site_name" content="杂货铺">
 <meta property="og:description" content="在 js 中，通过 nunjucks.render(模板名 name , 数据 context) 来得到页面数据，可通过 res.end(数据) 将页面传递出去。
 
-注释
-注释 #&amp;#125;```123- 变量  ```&amp;#123;&amp;#123; name &amp;#125;&amp;#125;
+注释  ``
+
+变量  `
+  
+  `
 
 if 判断
-1234567&amp;#123;% if 条件1 %&amp;#125;  执行内容1;&amp;#123;% elif 条">
-<meta property="og:updated_time" content="2017-06-15T10:48:39.706Z">
+1234567&amp;#123;% if 条件1 %&amp;#125;  执行内容1;&amp;#123;% elif 条件2 %&amp;#125;  执行内容2;&amp;#123;% else %&amp;#125;">
+<meta property="og:updated_time" content="2017-06-15T10:52:34.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模版引擎 nunjucks">
 <meta name="twitter:description" content="在 js 中，通过 nunjucks.render(模板名 name , 数据 context) 来得到页面数据，可通过 res.end(数据) 将页面传递出去。
 
-注释
-注释 #&amp;#125;```123- 变量  ```&amp;#123;&amp;#123; name &amp;#125;&amp;#125;
+注释  ``
+
+变量  `
+  
+  `
 
 if 判断
-1234567&amp;#123;% if 条件1 %&amp;#125;  执行内容1;&amp;#123;% elif 条">
+1234567&amp;#123;% if 条件1 %&amp;#125;  执行内容1;&amp;#123;% elif 条件2 %&amp;#125;  执行内容2;&amp;#123;% else %&amp;#125;">
 
 
 
@@ -400,7 +409,7 @@ if 判断
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  425
+                  421
                 </span>
               
 
@@ -437,8 +446,11 @@ if 判断
       
         <p>在 js 中，通过 <code>nunjucks.render(模板名 name , 数据 context)</code> 来得到页面数据，可通过 <code>res.end(数据)</code> 将页面传递出去。</p>
 <ul>
-<li><p>注释</p>
-<figure class="highlight plain"><figcaption><span>注释 #&#125;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 变量</div><div class="line">  ```&#123;&#123; name &#125;&#125;</div></pre></td></tr></table></figure>
+<li><p>注释<br>  ``</p>
+</li>
+<li><p>变量<br>  `</p>
+  
+<p>  `</p>
 </li>
 <li><p>if 判断</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if 条件1 %&#125;</div><div class="line">  执行内容1;</div><div class="line">&#123;% elif 条件2 %&#125;</div><div class="line">  执行内容2;</div><div class="line">&#123;% else %&#125;</div><div class="line">  执行内容3;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
@@ -446,12 +458,12 @@ if 判断
 <li><p>for 循环<br>for 可以遍历数组和对象</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  &#123;% for item in items %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  &#123;% endfor %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p>macro  宏命令</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;#定义了一个名为user的方法， 传入参数name#&#125;</div><div class="line">  &#123;% macro user(name) %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span> &#123;&#123; name &#125;&#125; <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  &#123;% endmacro %&#125;</div><div class="line"></div><div class="line">&#123;#调用函数#&#125;</div><div class="line">  &#123;&#123;user('小明')&#125;&#125;</div><div class="line">  &#123;&#123;user('小红')&#125;&#125;</div></pre></td></tr></table></figure>
-</li>
 </ul>
 <a id="more"></a>
 <ul>
+<li><p>macro  宏命令</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;#定义了一个名为user的方法， 传入参数name#&#125;</div><div class="line">  &#123;% macro user(name) %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span> &#123;&#123; name &#125;&#125; <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  &#123;% endmacro %&#125;</div><div class="line"></div><div class="line">&#123;#调用函数#&#125;</div><div class="line">  &#123;&#123;user('小明')&#125;&#125;</div><div class="line">  &#123;&#123;user('小红')&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
 <li><p>模版继承<br>观察各种网站可以发现，网站的结构实际上是类似的，头部、尾部都是固定格式，只有中间页面部分内容不同。如果每个模板都重复头尾，一旦要修改头部或尾部，那就需要改动所有模板。<br>更好的方式是使用继承。先定义一个基本的网页框架 base.html</p>
   <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;% block header %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Unnamed<span class="tag">&lt;/<span class="name">h3</span>&gt;</span> </div><div class="line">&#123;% endblock %&#125;</div><div class="line"></div><div class="line">&#123;% block body %&#125;</div><div class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span>No body<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line">&#123;% endblock %&#125;</div><div class="line"></div><div class="line">&#123;% block footer %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>copyright<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
 <p>base.html 定义了三个可编辑的块，分别是 <code>header</code>、<code>body</code>、<code>footer</code>。子模版也可以有选择地对块重新定义。</p>

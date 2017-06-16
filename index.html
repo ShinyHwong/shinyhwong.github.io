@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  425
+                  421
                 </span>
               
 
@@ -424,17 +424,17 @@
         
           <p>在 js 中，通过 <code>nunjucks.render(模板名 name , 数据 context)</code> 来得到页面数据，可通过 <code>res.end(数据)</code> 将页面传递出去。</p>
 <ul>
-<li><p>注释</p>
-<figure class="highlight plain"><figcaption><span>注释 #&#125;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 变量</div><div class="line">  ```&#123;&#123; name &#125;&#125;</div></pre></td></tr></table></figure>
+<li><p>注释<br>  ``</p>
+</li>
+<li><p>变量<br>  `</p>
+  
+<p>  `</p>
 </li>
 <li><p>if 判断</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if 条件1 %&#125;</div><div class="line">  执行内容1;</div><div class="line">&#123;% elif 条件2 %&#125;</div><div class="line">  执行内容2;</div><div class="line">&#123;% else %&#125;</div><div class="line">  执行内容3;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>for 循环<br>for 可以遍历数组和对象</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  &#123;% for item in items %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  &#123;% endfor %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>macro  宏命令</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;#定义了一个名为user的方法， 传入参数name#&#125;</div><div class="line">  &#123;% macro user(name) %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span> &#123;&#123; name &#125;&#125; <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  &#123;% endmacro %&#125;</div><div class="line"></div><div class="line">&#123;#调用函数#&#125;</div><div class="line">  &#123;&#123;user('小明')&#125;&#125;</div><div class="line">  &#123;&#123;user('小红')&#125;&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
           <!--noindex-->
