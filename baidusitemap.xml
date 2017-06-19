@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://www.hwong.cn/express%E5%9F%BA%E7%A1%80.html</loc>
+    <lastmod>2017-06-19T16:25:21.058Z</lastmod>
+    <data>
+        <display>
+        <title>express 基础</title>
+        <pubTime>2017-06-24T16:21:27.000Z</pubTime>
+        
+        <tag>Node.js</tag>
+         
+        <tag>express</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hwong.cn/%E6%A8%A1%E7%89%88%E5%BC%95%E6%93%8E%20nunjucks.html</loc>
     <lastmod>2017-06-18T03:32:29.274Z</lastmod>
     <data>
@@ -278,9 +297,9 @@
         <title>JavaScript中的数据类型转换</title>
         <pubTime>2017-03-14T15:26:42.000Z</pubTime>
         
-        <tag>方法总结</tag>
-         
         <tag>数据类型转换</tag>
+         
+        <tag>方法总结</tag>
          
          
            
@@ -297,13 +316,13 @@
         <title>获取DOM元素事件位置信息的常用方法</title>
         <pubTime>2017-04-02T10:10:15.000Z</pubTime>
         
+        <tag>方法总结</tag>
+         
         <tag>DOM元素属性</tag>
          
         <tag>DOM事件属性</tag>
          
         <tag>获取位置定位</tag>
-         
-        <tag>方法总结</tag>
          
          
            
