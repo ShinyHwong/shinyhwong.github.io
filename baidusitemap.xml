@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://www.hwong.cn/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1.html</loc>
+    <lastmod>2017-07-02T02:53:38.123Z</lastmod>
+    <data>
+        <display>
+        <title>构造函数与原型对象</title>
+        <pubTime>2017-03-01T08:03:33.000Z</pubTime>
+        
+        <tag>构造函数</tag>
+         
+        <tag>原型对象</tag>
+         
+        <tag>this</tag>
+         
+        <tag>私有属性</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hwong.cn/JS%E5%AE%9E%E7%8E%B0%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html</loc>
     <lastmod>2017-07-02T02:40:42.241Z</lastmod>
     <data>
@@ -258,29 +281,6 @@
         <tag>TCP/IP 分层管理</tag>
          
         <tag>URI格式</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hwong.cn/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1.html</loc>
-    <lastmod>2017-07-02T02:34:36.012Z</lastmod>
-    <data>
-        <display>
-        <title>构造函数与原型对象</title>
-        <pubTime>2017-03-01T08:03:33.000Z</pubTime>
-        
-        <tag>构造函数</tag>
-         
-        <tag>原型对象</tag>
-         
-        <tag>this</tag>
-         
-        <tag>私有属性</tag>
          
          
            
