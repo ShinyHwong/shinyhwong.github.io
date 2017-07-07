@@ -99,7 +99,7 @@
 然后添加模块1npm install mongodb
 示例导入 MongoDB1var mongoClient = require(&apos;mongodb&apos;).MongoClient;
 连接数据库12345mongoClient.connect(&apos;mongodb://localhost:27017/myDa">
-<meta property="og:updated_time" content="2017-07-02T02:28:44.180Z">
+<meta property="og:updated_time" content="2017-07-07T02:43:00.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js 中的 MongoDB 基本操作">
 <meta name="twitter:description" content="Node.js 中 MongoDB 数据库操作起步首先安装 Node.js 和 MongoDB。
@@ -430,8 +430,8 @@
 <p>然后添加模块<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install mongodb</div></pre></td></tr></table></figure></p>
 <h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>导入 MongoDB<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoClient = <span class="built_in">require</span>(<span class="string">'mongodb'</span>).MongoClient;</div></pre></td></tr></table></figure></p>
 <p>连接数据库<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mongoClient.connect(<span class="string">'mongodb://localhost:27017/myDatabase'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, db</span>) </span>&#123;</div><div class="line">  </div><div class="line">  ...<span class="comment">//在此进行增删查改</span></div><div class="line">  </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>在进行增删查改操作前先要获取到<code>collection</code>：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在连接数据库的回调函数中输入</span></div><div class="line"><span class="keyword">var</span> collection = db.collection(<span class="string">'myCollection'</span>);</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
+<p>在进行增删查改操作前先要获取到<code>collection</code>：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在连接数据库的回调函数中输入</span></div><div class="line"><span class="keyword">var</span> collection = db.collection(<span class="string">'myCollection'</span>);</div></pre></td></tr></table></figure></p>
 <h2 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h2><ul>
 <li><p>插入单条数据</p>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">collection.inserOne(&#123;<span class="string">'name'</span>:<span class="string">'shine'</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (!err)&#123;</div><div class="line">    <span class="built_in">console</span>.log(result);</div><div class="line">  &#125;</div><div class="line">  db.close(); <span class="comment">//操作完成，关闭数据库</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
