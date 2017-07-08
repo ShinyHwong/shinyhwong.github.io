@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTTP,状态码," />
+  <meta name="keywords" content="重绘,回流,性能优化," />
 
 
 
@@ -87,24 +87,28 @@
 
 
 
-<meta name="description" content="HTTP 状态码负责表示客户端 HTTP 请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。
+<meta name="description" content="在面试的时候被问到重绘（Repaint）与回流（Reflow），虽然自己之前有了解过，但是也是有印象，所以这次去网上查了资料，好好总结下。
+虽然在 PC 端，重绘与回流对性能的影响微乎其微，但是在移动端，这两者简直是性能杀手。
+浏览器解析过程首先我们要明白的是浏览器的解析过程，才能更好地理解重绘与回流。解析过程大致分为以下四步：
 
-状态码如 200 OK，以3位数字和原因短语组成。数字中的第一位指定了响应类别，后两位无分类。">
+解析 HTML 以构建 DOM 树 渲染引擎开始解析 HTML 文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP状态码">
-<meta property="og:url" content="http://www.hwong.cn/HTTP状态码.html">
+<meta property="og:title" content="重绘与回流">
+<meta property="og:url" content="http://www.hwong.cn/重绘与回流.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="HTTP 状态码负责表示客户端 HTTP 请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。
+<meta property="og:description" content="在面试的时候被问到重绘（Repaint）与回流（Reflow），虽然自己之前有了解过，但是也是有印象，所以这次去网上查了资料，好好总结下。
+虽然在 PC 端，重绘与回流对性能的影响微乎其微，但是在移动端，这两者简直是性能杀手。
+浏览器解析过程首先我们要明白的是浏览器的解析过程，才能更好地理解重绘与回流。解析过程大致分为以下四步：
 
-状态码如 200 OK，以3位数字和原因短语组成。数字中的第一位指定了响应类别，后两位无分类。">
-<meta property="og:image" content="http://i.imgur.com/6CblFjR.jpg">
-<meta property="og:updated_time" content="2017-07-02T02:38:36.844Z">
+解析 HTML 以构建 DOM 树 渲染引擎开始解析 HTML 文">
+<meta property="og:updated_time" content="2017-07-08T11:36:40.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTTP状态码">
-<meta name="twitter:description" content="HTTP 状态码负责表示客户端 HTTP 请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。
+<meta name="twitter:title" content="重绘与回流">
+<meta name="twitter:description" content="在面试的时候被问到重绘（Repaint）与回流（Reflow），虽然自己之前有了解过，但是也是有印象，所以这次去网上查了资料，好好总结下。
+虽然在 PC 端，重绘与回流对性能的影响微乎其微，但是在移动端，这两者简直是性能杀手。
+浏览器解析过程首先我们要明白的是浏览器的解析过程，才能更好地理解重绘与回流。解析过程大致分为以下四步：
 
-状态码如 200 OK，以3位数字和原因短语组成。数字中的第一位指定了响应类别，后两位无分类。">
-<meta name="twitter:image" content="http://i.imgur.com/6CblFjR.jpg">
+解析 HTML 以构建 DOM 树 渲染引擎开始解析 HTML 文">
 
 
 
@@ -132,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://www.hwong.cn/HTTP状态码.html"/>
+  <link rel="canonical" href="http://www.hwong.cn/重绘与回流.html"/>
 
 
 
 
 
-  <title> HTTP状态码 | 杂货铺 </title>
+  <title> 重绘与回流 | 杂货铺 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +304,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/HTTP状态码.html">
+    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/重绘与回流.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shine Hwong">
@@ -321,7 +325,7 @@
             
             
               
-                HTTP状态码
+                重绘与回流
               
             
           </h1>
@@ -336,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T15:27:57+08:00">
-                2017-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T19:32:09+08:00">
+                2017-07-08
               </time>
             
 
@@ -356,8 +360,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/HTTP状态码.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="HTTP状态码.html" itemprop="commentsCount"></span>
+                <a href="/重绘与回流.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="重绘与回流.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -366,7 +370,7 @@
 
           
           
-             <span id="/HTTP状态码.html" class="leancloud_visitors" data-flag-title="HTTP状态码">
+             <span id="/重绘与回流.html" class="leancloud_visitors" data-flag-title="重绘与回流">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,200
+                  1,186
                 </span>
               
 
@@ -425,36 +429,59 @@
       
 
       
-        <blockquote>
-<p>HTTP 状态码负责表示客户端 HTTP 请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。</p>
-</blockquote>
-<p>状态码如 200 OK，以3位数字和原因短语组成。<br>数字中的第一位指定了响应类别，后两位无分类。<br><img src="http://i.imgur.com/6CblFjR.jpg" alt="状态码的类别"><br><a id="more"></a></p>
-<h1 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h1><p>2XX 的响应结果表明请求被正常处理了。</p>
-<h2 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h2><p>表示从客户端发来的请求在服务器端被正常处理了。</p>
-<h2 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h2><p>表示服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。<br>比如，当从浏览器发出请求处理后，返回 204 响应，那么浏览器显示的页面不发生更新。<br>一般在只需要从客户端往服务器发送消息，而对客户端不需要发送新消息内容的情况下使用。</p>
-<h2 id="206-Partial-Content"><a href="#206-Partial-Content" class="headerlink" title="206 Partial Content"></a>206 Partial Content</h2><p>表示客户端进行了范围请求，而服务器成功执行了这部分的 GET 请求。响应报文中包含由 Content-Range 指定范围的实体内容。</p>
-<h1 id="3XX-重定向"><a href="#3XX-重定向" class="headerlink" title="3XX 重定向"></a>3XX 重定向</h1><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。</p>
-<h2 id="301-Moved-Permanently"><a href="#301-Moved-Permanently" class="headerlink" title="301 Moved Permanently"></a>301 Moved Permanently</h2><p>永久性重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。</p>
-<h2 id="302-Found"><a href="#302-Found" class="headerlink" title="302 Found"></a>302 Found</h2><p>临时性重定向。该状态码表示请求的资源已被分配了新的 URI，希望用户（本次）能使用新的 URI 访问。</p>
-<h2 id="303-See-Other"><a href="#303-See-Other" class="headerlink" title="303 See Other"></a>303 See Other</h2><p>该状态码表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。<br>303 与 302 状态码有着相同的功能，但 303 状态码明确表示客户端应当采用  GET 方法获取资源。</p>
+        <p>在面试的时候被问到重绘（Repaint）与回流（Reflow），虽然自己之前有了解过，但是也是有印象，所以这次去网上查了资料，好好总结下。</p>
+<p>虽然在 PC 端，重绘与回流对性能的影响微乎其微，但是在移动端，这两者简直是性能杀手。</p>
+<h1 id="浏览器解析过程"><a href="#浏览器解析过程" class="headerlink" title="浏览器解析过程"></a>浏览器解析过程</h1><p>首先我们要明白的是浏览器的解析过程，才能更好地理解重绘与回流。解析过程大致分为以下四步：</p>
+<ol>
+<li>解析 HTML 以构建 DOM 树<br> 渲染引擎开始解析 HTML 文档，转换树中的 HTML 标签到 DOM 节点。生成内容树。</li>
+<li>构建渲染树<br> 解析 CSS 成样式结构体，根据 CSS 选择器计算出节点的样式，创建另一个树：渲染树</li>
+<li>布局渲染树<br> 从根节点递归调用，计算每一个元素的大小、位置等，给每个节点所应该出现在屏幕上的精确坐标。</li>
+<li>绘制渲染树<br> 遍历渲染树，每个节点将使用 UI 后端层来绘制。<a id="more"></a>
 <blockquote>
-<p>当 301、302、303 响应状态码返回时，几乎所有的浏览器都会把 POST 改成 GET，并删除请求报文内的主体，之后请求会自动再次发送。</p>
+<p><strong>渲染树（render tree）的特性</strong></p>
+<p>渲染树能识别样式，每个节点都有自己的样式，而且渲染树不包含隐藏的节点（比如 <code>display: none</code> 的节点以及 <code>&lt;head&gt;&lt;/head&gt;</code> 节点）,因为这些节点不会用于呈现，而且不会影响呈现，所以就不包含在渲染树中。</p>
+<p>注意： <code>visility: hidden</code> 会影响布局（layout），会占据空间。</p>
 </blockquote>
-<h2 id="304-Not-Modified"><a href="#304-Not-Modified" class="headerlink" title="304 Not Modified"></a>304 Not Modified</h2><p>该状态码表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但为满足条件的情况。304 状态码返回时，不包含任何响应的主体部分。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。</p>
-<blockquote>
-<p>附带条件的请求是指采用 GET 方法的请求报文中包含 If-Match, If-Modified-Since, If-None-Macth, If-Range, If-Unmodified-Since 中任一首部。</p>
-</blockquote>
-<h2 id="307-Temporary-Redirect"><a href="#307-Temporary-Redirect" class="headerlink" title="307 Temporary Redirect"></a>307 Temporary Redirect</h2><p>临时重定向。该状态码与 302 Found 有着相同的含义。尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。<br>307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
-<h1 id="4XX-客户端错误"><a href="#4XX-客户端错误" class="headerlink" title="4XX 客户端错误"></a>4XX 客户端错误</h1><p>4XX 的响应结果表明客户端是发生错误的原因所在。</p>
-<h2 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h2><p>该状态码表示请求报文中存在语法错误。当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。</p>
-<h2 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h2><p>该状态码表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过 1 次请求，则表示用户认证失败。</p>
-<h2 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h2><p>该状态码表明对请求资源的访问被服务器拒绝了。<br>未获得文件系统的访问授权，访问权限出现某些问题等情况都可能是发生 403 的原因。</p>
-<h2 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h2><p>该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。</p>
-<h1 id="5XX-服务器错误"><a href="#5XX-服务器错误" class="headerlink" title="5XX 服务器错误"></a>5XX 服务器错误</h1><p>5XX 的响应结果表明服务器本身发生错误。</p>
-<h2 id="500-Internet-Server-Error"><a href="#500-Internet-Server-Error" class="headerlink" title="500 Internet Server Error"></a>500 Internet Server Error</h2><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。</p>
-<h2 id="503-Service-Unavailable"><a href="#503-Service-Unavailable" class="headerlink" title="503 Service Unavailable"></a>503 Service Unavailable</h2><p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。如果事先得知解除以上状况需要的时间，最好写入 Retry-After 首部字段再返回给客户端。</p>
-<hr>
-<p>状态码与状况的不一致<br>不少返回的状态码响应都是错误的，但是用户可能察觉不到这点。比如 Web 应用程序内部发生错误，状态码依然返回 200 OK，这种情况也经常遇到。</p>
+</li>
+</ol>
+<h1 id="重绘与回流的定义"><a href="#重绘与回流的定义" class="headerlink" title="重绘与回流的定义"></a>重绘与回流的定义</h1><p>我们可以看到重绘与回流分别出现在了第三和第四步。</p>
+<p>对于 DOM 结构中的各个元素都有自己的盒子（模型），这些都需要浏览器根据各种样式（浏览器的、开发人员定义的等等）来计算并根据计算结果将元素放到它该出现的位置，这个过程称之为<strong>回流（reflow）</strong>。</p>
+<p>当各种盒子的位置、大小以及其他属性，例如颜色、字体大小等都确定下来之后，浏览器便把这些元素都按照格子的特性绘制了一遍，于是页面的内容出现了。这个过程就是<strong>重绘（repaint）</strong>。</p>
+<p>我们可以通过一个例子来更好地理解。</p>
+<p>一棵树，四季变化就会引起树叶颜色的变化，这个就是重绘。若是将树枝砍断后，这棵树等到重新长出新树枝恢复到以前的样子，这个过程就类似回流。</p>
+<ol>
+<li>当渲染树中的一部分（或者全部）因为元素的规模尺寸、布局、隐藏等改变而需要重新构建。就是回流（reflow）。每个页面在第一次加载的时候就会产生一次回流。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并且重新构造这部分渲染树，完成回流后，浏览器会重新绘制受到影响的部分，产生重绘。</li>
+<li>当渲染树中的一些元素需要更新属性，而这些属性只是影响元素的外观、风格，例如 <code>background-color</code>，而不会影响布局。则只会产生重绘。</li>
+</ol>
+<p>回流必将引起重绘，重绘不一定会产生回流。</p>
+<h1 id="产生重绘及回流的一些操作"><a href="#产生重绘及回流的一些操作" class="headerlink" title="产生重绘及回流的一些操作"></a>产生重绘及回流的一些操作</h1><p>回流的成本比重绘高得多。DOM 树里每个节点都有 reflow 方法，一个节点的 reflow 很有可能导致子节点，甚至父节点以及同级的节点产生 reflow。</p>
+<h2 id="引起repaint的操作"><a href="#引起repaint的操作" class="headerlink" title="引起repaint的操作"></a>引起repaint的操作</h2><p>一个元素的外观改变，但是没有改变布局的情况</p>
+<ol>
+<li>visibility</li>
+<li>outline</li>
+<li>background color</li>
+</ol>
+<h2 id="引起reflow的操作"><a href="#引起reflow的操作" class="headerlink" title="引起reflow的操作"></a>引起reflow的操作</h2><ol>
+<li>改变窗口大小（resize）</li>
+<li>改变字体</li>
+<li>增加和删除样式表</li>
+<li>用户的交互（比如内容的改变，用户在输入框输入文字，激活伪类，类似 :hover 这种） </li>
+<li>操作 class 属性</li>
+<li>脚本操作 DOM</li>
+<li>读取元素的某些属性（offsetLeft、offsetTop、offsetHeight、offsetWidth、 scrollTop/Left/Width/Height、clientTop/Left/Width/Height、 getComputedStyle()、currentStyle(in IE)) </li>
+<li>设置 style 属性</li>
+<li>CSS3 动画（animation）和过渡（transition）: 动画的每一 frame 都会触发 Reflow。</li>
+</ol>
+<h1 id="优化建议"><a href="#优化建议" class="headerlink" title="优化建议"></a>优化建议</h1><ol>
+<li>尽可能少的修改元素 style 上的属性</li>
+<li>尽量通过 className 来修改样式</li>
+<li>集中修改 CSS 样式，多项改变只在最后才更新到界面，例如将元素先设置为 <code>display: none</code>，修改完成后再改回原来的值</li>
+<li>缓存 layout 属性值（var offsetL = elem.offsetLeft）</li>
+<li>设置元素的 <code>position</code> 属性为 <code>absolute</code> 或 <code>fixed</code></li>
+<li>避免使用 table 布局或 内联样式（inline style）</li>
+<li>避免使用 CSS 里的 JS 表达式（expression）</li>
+<li>减少 DOM 的层级</li>
+</ol>
 
       
     </div>
@@ -478,9 +505,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/重绘/" rel="tag"># 重绘</a>
           
-            <a href="/tags/状态码/" rel="tag"># 状态码</a>
+            <a href="/tags/回流/" rel="tag"># 回流</a>
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
           
         </div>
       
@@ -493,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Node.js 常用接口.html" rel="next" title="Node.js 常用接口">
-                <i class="fa fa-chevron-left"></i> Node.js 常用接口
+              <a href="/MongoDB 基本操作.html" rel="next" title="Node.js 中的 MongoDB 基本操作">
+                <i class="fa fa-chevron-left"></i> Node.js 中的 MongoDB 基本操作
               </a>
             
           </div>
@@ -502,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/观察者模式实例详解.html" rel="prev" title="观察者模式实例详解">
-                观察者模式实例详解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -661,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2XX-成功"><span class="nav-number">1.</span> <span class="nav-text">2XX 成功</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#200-OK"><span class="nav-number">1.1.</span> <span class="nav-text">200 OK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#204-No-Content"><span class="nav-number">1.2.</span> <span class="nav-text">204 No Content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#206-Partial-Content"><span class="nav-number">1.3.</span> <span class="nav-text">206 Partial Content</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3XX-重定向"><span class="nav-number">2.</span> <span class="nav-text">3XX 重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#301-Moved-Permanently"><span class="nav-number">2.1.</span> <span class="nav-text">301 Moved Permanently</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#302-Found"><span class="nav-number">2.2.</span> <span class="nav-text">302 Found</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#303-See-Other"><span class="nav-number">2.3.</span> <span class="nav-text">303 See Other</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#304-Not-Modified"><span class="nav-number">2.4.</span> <span class="nav-text">304 Not Modified</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#307-Temporary-Redirect"><span class="nav-number">2.5.</span> <span class="nav-text">307 Temporary Redirect</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4XX-客户端错误"><span class="nav-number">3.</span> <span class="nav-text">4XX 客户端错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#400-Bad-Request"><span class="nav-number">3.1.</span> <span class="nav-text">400 Bad Request</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#401-Unauthorized"><span class="nav-number">3.2.</span> <span class="nav-text">401 Unauthorized</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#403-Forbidden"><span class="nav-number">3.3.</span> <span class="nav-text">403 Forbidden</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#404-Not-Found"><span class="nav-number">3.4.</span> <span class="nav-text">404 Not Found</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5XX-服务器错误"><span class="nav-number">4.</span> <span class="nav-text">5XX 服务器错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#500-Internet-Server-Error"><span class="nav-number">4.1.</span> <span class="nav-text">500 Internet Server Error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#503-Service-Unavailable"><span class="nav-number">4.2.</span> <span class="nav-text">503 Service Unavailable</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器解析过程"><span class="nav-number">1.</span> <span class="nav-text">浏览器解析过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重绘与回流的定义"><span class="nav-number">2.</span> <span class="nav-text">重绘与回流的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产生重绘及回流的一些操作"><span class="nav-number">3.</span> <span class="nav-text">产生重绘及回流的一些操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引起repaint的操作"><span class="nav-number">3.1.</span> <span class="nav-text">引起repaint的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引起reflow的操作"><span class="nav-number">3.2.</span> <span class="nav-text">引起reflow的操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化建议"><span class="nav-number">4.</span> <span class="nav-text">优化建议</span></a></li></ol></div>
             
 
           </div>
@@ -813,7 +838,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 89491, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "HTTP状态码.html"});
+		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "重绘与回流.html"});
 		
 
 		(function() {
