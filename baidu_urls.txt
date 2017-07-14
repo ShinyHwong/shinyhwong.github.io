@@ -16,8 +16,8 @@ http://www.hwong.cn/Object静态成员介绍.html
 http://www.hwong.cn/Web与网络基础.html
 http://www.hwong.cn/构造函数与原型对象.html
 http://www.hwong.cn/面向对象介绍与创建对象.html
+http://www.hwong.cn/数组常用方法.html
 http://www.hwong.cn/值类型与引用类型.html
 http://www.hwong.cn/client、offset、screen、page、scroll的比较.html
-http://www.hwong.cn/数组常用方法.html
 http://www.hwong.cn/offset类属性与style类属性的区别.html
 http://www.hwong.cn/JavaScript中的数据类型转换.html
