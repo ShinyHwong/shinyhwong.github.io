@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="纸上得来终觉浅，绝知此事要躬行">
+<meta name="description" content="array.concat(item…)concat 方法产生了一个新数组，它包含一份 array 的浅复制，并把一个或多个参数 item 附加在其后。如果参数 item 是一个数组，那么它的每个元素会被分别添加。1234var a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];var b = [1, 2, 3];var c = a.concat(b, &apos;another&apos;）;console.log(c); /">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组常用方法">
 <meta property="og:url" content="http://www.hwong.cn/数组常用方法.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="纸上得来终觉浅，绝知此事要躬行">
-<meta property="og:updated_time" content="2017-07-16T12:54:35.694Z">
+<meta property="og:description" content="array.concat(item…)concat 方法产生了一个新数组，它包含一份 array 的浅复制，并把一个或多个参数 item 附加在其后。如果参数 item 是一个数组，那么它的每个元素会被分别添加。1234var a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];var b = [1, 2, 3];var c = a.concat(b, &apos;another&apos;）;console.log(c); /">
+<meta property="og:updated_time" content="2017-07-22T15:54:36.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组常用方法">
-<meta name="twitter:description" content="纸上得来终觉浅，绝知此事要躬行">
+<meta name="twitter:description" content="array.concat(item…)concat 方法产生了一个新数组，它包含一份 array 的浅复制，并把一个或多个参数 item 附加在其后。如果参数 item 是一个数组，那么它的每个元素会被分别添加。1234var a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];var b = [1, 2, 3];var c = a.concat(b, &apos;another&apos;）;console.log(c); /">
 
 
 
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-13T22:38:05+08:00">
-                2017-01-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-13T22:38:05+08:00">
+                2017-07-13
               </time>
             
 
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  0
+                  1,041
                 </span>
               
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长" }}">
-                  1
+                  4
                 </span>
               
             </div>
@@ -417,7 +417,18 @@
       
 
       
-        
+        <h1 id="array-concat-item…"><a href="#array-concat-item…" class="headerlink" title="array.concat(item…)"></a>array.concat(item…)</h1><p><code>concat</code> 方法产生了一个<em>新数组</em>，它包含一份 array 的<strong>浅复制</strong>，并把一个或多个参数 item 附加在其后。如果参数 item 是一个数组，那么它的每个元素会被分别添加。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> c = a.concat(b, <span class="string">'another'</span>）;</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// ['a', 'b', 'c', 1, 2, 3, 'another']</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-join-separator"><a href="#array-join-separator" class="headerlink" title="array.join(separator)"></a>array.join(separator)</h1><p><code>join</code> 方法把一个 array 构造成一个<em>字符串</em>。它先把 array 中的每个元素构造成一个字符串，接着用一个 <code>separator</code> 分隔符把它们<strong>连接</strong>在一起。默认的 <code>separator</code> 是逗号’,’。要想做到无缝连接可以用空字符串’’作为 <code>separator</code> 。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.join(<span class="string">''</span>）;</div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 'abcd'</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-push-item…"><a href="#array-push-item…" class="headerlink" title="array.push(item…)"></a>array.push(item…)</h1><p><code>push</code> 方法把一个或多个参数 item 附加到一个数组的尾部。和 <code>cacat</code> 方法不同的是，它会<strong>修改</strong> array ，如果参数 item 是一个数组，它会把参数数组作为单个元素整个添加到数组中，并<strong>返回</strong>这个 array 的<strong>新长度值</strong>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> c = a.push(b, <span class="string">'another'</span>）;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ['a', 'b', 'c', [1, 2, 3], 'another']</span></div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 5</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-pop"><a href="#array-pop" class="headerlink" title="array.pop()"></a>array.pop()</h1><p><code>pop</code> 和 <code>push</code> 方法使得数组 array 可以像堆栈（stack）一样工作。 <code>pop</code> 方法移除 array 中的最后一个元素并<strong>返回该元素</strong>。如果 array 是空数组，会返回 <code>undefined</code> 。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.pop(）;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ['a', 'b']</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 'c'</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-unshift-item…"><a href="#array-unshift-item…" class="headerlink" title="array.unshift(item…)"></a>array.unshift(item…)</h1><p><code>unshift</code> 方法像 <code>push</code> 方法一样，用于把元素添加到数组中，不同的是 <code>unshift</code> 是把 item 插入到 array 的开始部分。返回 array 的新长度值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> c = a.unshift(b, <span class="string">'another'</span>）;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// [[1, 2, 3], 'another', 'a', 'b', 'c']</span></div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 5</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-shift"><a href="#array-shift" class="headerlink" title="array.shift()"></a>array.shift()</h1><p><code>shift</code> 方法删除数组 array 的第 1 个元素并返回该元素。如果这个数组是空的，返回 <code>undefined</code> 。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.shift(）;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ['b', 'c']</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 'a'</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-reverse"><a href="#array-reverse" class="headerlink" title="array.reverse()"></a>array.reverse()</h1><p><code>reverse</code> 方法反转 array 里的元素的顺序，并返回 array 本身。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.reverse(）;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ['c', 'b', 'a']</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// ['c', 'b', 'a']</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-slice-start-end"><a href="#array-slice-start-end" class="headerlink" title="array.slice(start, end)"></a>array.slice(start, end)</h1><p><code>slice</code> 方法对 array 中的一段做<strong>浅复制</strong>。首先复制 <code>array[start]</code> ，一直复制到 <code>array[end]</code> 为止（不包含<code>array[end]</code>，可以理解为返回 [array[start], array[end]) ）。end 参数是可选的，默认值是该数组的长度 <code>array.length</code>。如果两个参数的任何一个为负数， <code>array.length</code> 会和它们相加，试图让它们变成非负数。如果<strong>start 大于等于 <code>array.length</code></strong> ，得到的结果将是一个<strong>新的空数组</strong>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.slice(<span class="number">0</span>, <span class="number">1</span>); <span class="comment">// ['a']</span></div><div class="line"><span class="keyword">var</span> c = a.slice(<span class="number">1</span>);    <span class="comment">// ['b', 'c']</span></div><div class="line"><span class="keyword">var</span> d = a.slice(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// ['b']</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-splice-start-deleteCount-item…"><a href="#array-splice-start-deleteCount-item…" class="headerlink" title="array.splice(start, deleteCount, item…)"></a>array.splice(start, deleteCount, item…)</h1><p><code>splice</code> 方法从 array 中移除一个或多个元素，并用新的 item 替换它们。参数 start 是从数组 array 中移除元素的开始位置。参数 deleteCount 是要移除元素的个数。如果有额外的参数， 那些 item 会插入到被移除元素的位置上。它会<strong>返回一个包含被移除元素的数组</strong>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.splice(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'x'</span>, <span class="string">'y'</span>);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ['a', 'x', 'y', 'c']</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// ['b']</span></div></pre></td></tr></table></figure></p>
+<h1 id="array-sort-compareFn"><a href="#array-sort-compareFn" class="headerlink" title="array.sort(compareFn)"></a>array.sort(compareFn)</h1><p><code>sort</code> 方法是对 array 中的内容进行排序，它不能正确地给一组数字排序：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = [<span class="number">4</span>, <span class="number">54</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">21</span>];</div><div class="line">n.sort();</div><div class="line"><span class="built_in">console</span>.log(n); <span class="comment">// [12, 15, 21, 4, 54]</span></div></pre></td></tr></table></figure></p>
+<p>JavaScript 的<strong>默认</strong>比较函数把要被排序的<strong>元素</strong>都<strong>视为字符串</strong>。它尚未足够只能到在比较这些元素之前先检测它们的类型，所以当它比较这些数字的时候，会把它们转化为字符串，于是得到一个错的离谱的结果。<br>我们可以使用自己的比较函数来替换默认的比较函数。我们的比较函数应该接收两个从那沪深，并且如果这两个参数相等则返回 0 ，如果第 1 个参数应该排列在前面，则返回一个负数，如果第二个参数应该排列在前面，则返回一个正数。</p>
+
       
     </div>
 
@@ -457,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/offset类属性与style类属性的区别.html" rel="next" title="offset类属性与style类属性的区别">
-                <i class="fa fa-chevron-left"></i> offset类属性与style类属性的区别
+              <a href="/重绘与回流.html" rel="next" title="重绘与回流">
+                <i class="fa fa-chevron-left"></i> 重绘与回流
               </a>
             
           </div>
@@ -466,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/client、offset、screen、page、scroll的比较.html" rel="prev" title="获取DOM元素事件位置信息的常用方法">
-                获取DOM元素事件位置信息的常用方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -541,8 +548,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -606,6 +622,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#array-concat-item…"><span class="nav-number">1.</span> <span class="nav-text">array.concat(item…)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-join-separator"><span class="nav-number">2.</span> <span class="nav-text">array.join(separator)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-push-item…"><span class="nav-number">3.</span> <span class="nav-text">array.push(item…)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-pop"><span class="nav-number">4.</span> <span class="nav-text">array.pop()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-unshift-item…"><span class="nav-number">5.</span> <span class="nav-text">array.unshift(item…)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-shift"><span class="nav-number">6.</span> <span class="nav-text">array.shift()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-reverse"><span class="nav-number">7.</span> <span class="nav-text">array.reverse()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-slice-start-end"><span class="nav-number">8.</span> <span class="nav-text">array.slice(start, end)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-splice-start-deleteCount-item…"><span class="nav-number">9.</span> <span class="nav-text">array.splice(start, deleteCount, item…)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#array-sort-compareFn"><span class="nav-number">10.</span> <span class="nav-text">array.sort(compareFn)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
