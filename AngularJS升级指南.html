@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据类型转换,方法总结," />
+  <meta name="keywords" content="AngularJS,升级,Angular," />
 
 
 
@@ -87,55 +87,19 @@
 
 
 
-<meta name="description" content="Part1 数字转换成字符串1.1 使用JS内部方法进行转换
-parseInt  可以将一个字符串型整数进行转换.
-
-
-parseInt提取数字注意点.
-
-第一个字母必须是数字,如果不是数字则显示NaN
-
-parseFloat 可以将一个字符串型的浮点数进行转换
-
-
-因为JS是弱类型语言, 不管是int还是float都是Number.
-
-1.2 直接使用Number对象进行包裹12var a =">
+<meta name="description" content="分离 controller 的 function123app.controller(&apos;myController&apos;, [&apos;$scoppe&apos;, function($scope)&amp;#123;  // AngularJS 中定义controller&amp;#125;])
+写成两个文件：负责注册所有controller的文件1234// app-controller.jsapp.controller(&apos;first">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript中的数据类型转换">
-<meta property="og:url" content="http://www.hwong.cn/JavaScript中的数据类型转换.html">
+<meta property="og:title" content="AngularJS 平滑升级指南">
+<meta property="og:url" content="http://www.hwong.cn/AngularJS升级指南.html">
 <meta property="og:site_name" content="杂货铺">
-<meta property="og:description" content="Part1 数字转换成字符串1.1 使用JS内部方法进行转换
-parseInt  可以将一个字符串型整数进行转换.
-
-
-parseInt提取数字注意点.
-
-第一个字母必须是数字,如果不是数字则显示NaN
-
-parseFloat 可以将一个字符串型的浮点数进行转换
-
-
-因为JS是弱类型语言, 不管是int还是float都是Number.
-
-1.2 直接使用Number对象进行包裹12var a =">
-<meta property="og:updated_time" content="2017-07-02T02:31:08.567Z">
+<meta property="og:description" content="分离 controller 的 function123app.controller(&apos;myController&apos;, [&apos;$scoppe&apos;, function($scope)&amp;#123;  // AngularJS 中定义controller&amp;#125;])
+写成两个文件：负责注册所有controller的文件1234// app-controller.jsapp.controller(&apos;first">
+<meta property="og:updated_time" content="2017-08-04T14:53:50.091Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript中的数据类型转换">
-<meta name="twitter:description" content="Part1 数字转换成字符串1.1 使用JS内部方法进行转换
-parseInt  可以将一个字符串型整数进行转换.
-
-
-parseInt提取数字注意点.
-
-第一个字母必须是数字,如果不是数字则显示NaN
-
-parseFloat 可以将一个字符串型的浮点数进行转换
-
-
-因为JS是弱类型语言, 不管是int还是float都是Number.
-
-1.2 直接使用Number对象进行包裹12var a =">
+<meta name="twitter:title" content="AngularJS 平滑升级指南">
+<meta name="twitter:description" content="分离 controller 的 function123app.controller(&apos;myController&apos;, [&apos;$scoppe&apos;, function($scope)&amp;#123;  // AngularJS 中定义controller&amp;#125;])
+写成两个文件：负责注册所有controller的文件1234// app-controller.jsapp.controller(&apos;first">
 
 
 
@@ -163,13 +127,13 @@ parseFloat 可以将一个字符串型的浮点数进行转换
 
 
 
-  <link rel="canonical" href="http://www.hwong.cn/JavaScript中的数据类型转换.html"/>
+  <link rel="canonical" href="http://www.hwong.cn/AngularJS升级指南.html"/>
 
 
 
 
 
-  <title> JavaScript中的数据类型转换 | 杂货铺 </title>
+  <title> AngularJS 平滑升级指南 | 杂货铺 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -331,7 +295,7 @@ parseFloat 可以将一个字符串型的浮点数进行转换
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/JavaScript中的数据类型转换.html">
+    <link itemprop="mainEntityOfPage" href="http://www.hwong.cn/AngularJS升级指南.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shine Hwong">
@@ -352,7 +316,7 @@ parseFloat 可以将一个字符串型的浮点数进行转换
             
             
               
-                JavaScript中的数据类型转换
+                AngularJS 平滑升级指南
               
             
           </h1>
@@ -367,8 +331,8 @@ parseFloat 可以将一个字符串型的浮点数进行转换
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T23:26:42+08:00">
-                2016-12-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T22:51:07+08:00">
+                2017-08-04
               </time>
             
 
@@ -387,8 +351,8 @@ parseFloat 可以将一个字符串型的浮点数进行转换
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/JavaScript中的数据类型转换.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="JavaScript中的数据类型转换.html" itemprop="commentsCount"></span>
+                <a href="/AngularJS升级指南.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="AngularJS升级指南.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -397,7 +361,7 @@ parseFloat 可以将一个字符串型的浮点数进行转换
 
           
           
-             <span id="/JavaScript中的数据类型转换.html" class="leancloud_visitors" data-flag-title="JavaScript中的数据类型转换">
+             <span id="/AngularJS升级指南.html" class="leancloud_visitors" data-flag-title="AngularJS 平滑升级指南">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,7 +385,7 @@ parseFloat 可以将一个字符串型的浮点数进行转换
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  588
+                  1,082
                 </span>
               
 
@@ -437,7 +401,7 @@ parseFloat 可以将一个字符串型的浮点数进行转换
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长" }}">
-                  3
+                  4
                 </span>
               
             </div>
@@ -456,66 +420,32 @@ parseFloat 可以将一个字符串型的浮点数进行转换
       
 
       
-        <h1 id="Part1-数字转换成字符串"><a href="#Part1-数字转换成字符串" class="headerlink" title="Part1 数字转换成字符串"></a>Part1 数字转换成字符串</h1><h2 id="1-1-使用JS内部方法进行转换"><a href="#1-1-使用JS内部方法进行转换" class="headerlink" title="1.1 使用JS内部方法进行转换"></a>1.1 使用JS内部方法进行转换</h2><ol>
-<li>parseInt  可以将一个字符串型整数进行转换.</li>
-</ol>
+        <h1 id="分离-controller-的-function"><a href="#分离-controller-的-function" class="headerlink" title="分离 controller 的 function"></a>分离 controller 的 function</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'myController'</span>, [<span class="string">'$scoppe'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">  <span class="comment">// AngularJS 中定义controller</span></div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<p>写成两个文件：<br>负责注册所有controller的文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app-controller.js</span></div><div class="line">app.controller(<span class="string">'firstController'</span>, [<span class="string">'$scope'</span>, firstCtrl])</div><div class="line">   .controller(<span class="string">'secondController'</span>, [<span class="string">'$scope'</span>, secondCtrl])</div><div class="line">   .controller(...)</div></pre></td></tr></table></figure></p>
+<p>与其余单个controller文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// first.controller.js</span></div><div class="line"><span class="keyword">var</span> firstCtrl = <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</div><div class="line">  $scope.info = <span class="string">'hello world'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>这样代码就会变得清晰，一个注册 conrtroller 的文件与其他负责完成业务逻辑与交互逻辑的单个 controller 文件。</p>
+<p>这里需要注意的一点是，<code>app-controller.js</code> 用到了 <code>first.controller.js</code> 中的 <code>firstCtrl</code> 方法，所以需要在调用注册函数之前定义这些方法。<br><a id="more"></a></p>
+<h1 id="通过-as-语法不再使用-scope"><a href="#通过-as-语法不再使用-scope" class="headerlink" title="通过 as 语法不再使用 $scope"></a>通过 as 语法不再使用 $scope</h1><p>在 Angular 中是没有 <code>$scope</code> 概念的。AngularJS 中提供了一种避免使用 <code>$scope</code> 的方法，就是 <code>as</code> 语法。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"app"</span> <span class="attr">ng-controller</span>=<span class="string">"firstCtrl as $ctrl"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind</span>=<span class="string">"$ctrl.info"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// first.controller.js 现在看起来只是一个普通的方法了</span></div><div class="line"><span class="keyword">var</span> firstCtrl = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.info = <span class="string">'hello world'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// app-controller.js</span></div><div class="line">app.controller(<span class="string">'firstController'</span>, [firstCtrl])</div><div class="line">   .controller(<span class="string">'secondController'</span>, [secondCtrl])</div><div class="line">   .controller(...)</div></pre></td></tr></table></figure>
+<p>使用 <code>as</code> 语法，相当于在 <code>$scope</code> 中定义了一个属性 <code>$ctrl</code> ，并将这个属性指向 <code>firstCtrl</code> 方法作用域的 <code>this</code> 上。<br>因此，使用 <code>as</code> 语法后， controller 方法就可以使用 <code>this</code> 来操作变量。这样几乎与 Angular 中 Component 类的操作方法一致，在注册 controller 时也不再用注入 <code>$scope</code> 依赖了。</p>
 <blockquote>
-<p>parseInt提取数字注意点.</p>
-<blockquote>
-<p>第一个字母必须是数字,如果不是数字则显示NaN</p>
-<ol>
-<li>parseFloat 可以将一个字符串型的浮点数进行转换</li>
-</ol>
+<p>这里使用 <code>$ctrl</code> 属性可以根据需要调整名称，但统一使用 <code>$ctrl</code> 是最佳实践。一方面可以在所有的 controller 中统一使用相同的属性名调用 controller 中的变量，另一方面使用 $ 前缀可以作为 AngularJS 的标记，避免变量名冲突。</p>
 </blockquote>
-<p>因为JS是弱类型语言, 不管是int还是float都是Number.</p>
+<p>在使用 <code>$watch</code>、<code>$on</code> 等方法时还是需要注入 <code>$scope</code> 。</p>
+<h1 id="使用-TypeScript"><a href="#使用-TypeScript" class="headerlink" title="使用 TypeScript"></a>使用 TypeScript</h1><blockquote>
+<p>TypeScript 是 JavaScript 的超集</p>
 </blockquote>
-<h2 id="1-2-直接使用Number对象进行包裹"><a href="#1-2-直接使用Number对象进行包裹" class="headerlink" title="1.2 直接使用Number对象进行包裹"></a>1.2 直接使用Number对象进行包裹</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">"10"</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(a));</div></pre></td></tr></table></figure>
-<h2 id="1-3-参与数学计算-加法除外"><a href="#1-3-参与数学计算-加法除外" class="headerlink" title="1.3 参与数学计算(加法除外)"></a>1.3 参与数学计算(加法除外)</h2><blockquote>
-<p>加法会将字符串进行拼接</p>
-</blockquote>
-<p>乘法、除法、模运算(取余)都可以将字符串类型变成Number类型.</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h1 id="Part2-数字转换成字符串"><a href="#Part2-数字转换成字符串" class="headerlink" title="Part2 数字转换成字符串"></a>Part2 数字转换成字符串</h1><h2 id="2-1-方法一-直接使用字符串方法"><a href="#2-1-方法一-直接使用字符串方法" class="headerlink" title="2.1 方法一:直接使用字符串方法"></a>2.1 方法一:直接使用字符串方法</h2><ol>
-<li><p>使用数学运算(仅限于加法)</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log(a + <span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (a+ <span class="string">""</span>));</div><div class="line"><span class="comment">//结果转换成String</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>使用字符串方法</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log(a.toString());</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (a.toString()));</div><div class="line"><span class="comment">//结果转换成String</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>直接使用String进行包裹</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(a));</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="built_in">String</span>(a)));</div><div class="line"><span class="comment">//结果转换成String</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="2-2-方法二-使用小数化方法进行转换"><a href="#2-2-方法二-使用小数化方法进行转换" class="headerlink" title="2.2 方法二:使用小数化方法进行转换"></a>2.2 方法二:使用小数化方法进行转换</h2><ol>
-<li>保留三位小数,四舍五入 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123.123</span>;</div><div class="line"><span class="built_in">console</span>.log(a.toFixed(<span class="number">3</span>));</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (a.toFixed(<span class="number">3</span>)));</div><div class="line"><span class="comment">//结果转换成String</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>toFixed: 把数字转换为字符串，结果的小数点后有指定位数的数字。</p>
-</blockquote>
-<ol>
-<li>以指数形式保存 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123.123</span>;</div><div class="line"><span class="built_in">console</span>.log(a.toExponential(<span class="number">3</span>));</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (a.toExponential(<span class="number">3</span>)));</div><div class="line"><span class="comment">//结果转换成String</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>toExponential: 把对象的值转换为指数计数法。</p>
-</blockquote>
-<ol>
-<li>保留三位有效数字,四舍五入 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">123.123</span>;</div><div class="line"><span class="built_in">console</span>.log(a.toPrecision(<span class="number">3</span>));</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (a.toPrecision(<span class="number">3</span>)));</div><div class="line"><span class="comment">//结果转换成String</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>toPrecision: 把数字格式化为指定的长度。</p>
-</blockquote>
-<hr>
-<h1 id="Part3-Boolean类型转换"><a href="#Part3-Boolean类型转换" class="headerlink" title="Part3 Boolean类型转换"></a>Part3 Boolean类型转换</h1><blockquote>
-<p>非零即为True 即使是负数</p>
-</blockquote>
-<h2 id="3-1-布尔类型转数字"><a href="#3-1-布尔类型转数字" class="headerlink" title="3.1 布尔类型转数字"></a>3.1 布尔类型转数字</h2><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isTrue = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(isTrue)); <span class="comment">//1</span></div></pre></td></tr></table></figure>
-</code></pre><h2 id="3-2-布尔类型转字符串"><a href="#3-2-布尔类型转字符串" class="headerlink" title="3.2 布尔类型转字符串"></a>3.2 布尔类型转字符串</h2><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isTrue = <span class="literal">true</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(isTrue)); <span class="comment">//1</span></div></pre></td></tr></table></figure>
-</code></pre><h2 id="3-3-数字转布尔"><a href="#3-3-数字转布尔" class="headerlink" title="3.3 数字转布尔"></a>3.3 数字转布尔</h2><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">13</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(age));</div></pre></td></tr></table></figure>
-</code></pre><h2 id="3-4-字符串转布尔"><a href="#3-4-字符串转布尔" class="headerlink" title="3.4 字符串转布尔"></a>3.4 字符串转布尔</h2><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"张三"</span>; <span class="comment">//true</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">" "</span>; <span class="comment">//false</span></div><div class="line"><span class="keyword">var</span> name = <span class="literal">null</span>; <span class="comment">//false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(age));</div><div class="line"><span class="comment">//字符串转布尔需保证有值才为true.</span></div></pre></td></tr></table></figure>
-</code></pre><h2 id="3-5-其他类型转布尔"><a href="#3-5-其他类型转布尔" class="headerlink" title="3.5 其他类型转布尔"></a>3.5 其他类型转布尔</h2><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">NaN</span>; <span class="comment">//false</span></div><div class="line"><span class="keyword">var</span> b = <span class="literal">Infinity</span>; <span class="comment">//true,无穷大,非零即为真</span></div><div class="line"><span class="keyword">var</span> c = <span class="literal">undefined</span>; <span class="comment">//false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(a));</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(b));</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(c));</div></pre></td></tr></table></figure>
-</code></pre>
+<p>使用 <code>class</code> 来定义 firstCtrl：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// firstCtrl.controller.ts</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> FirstCtrl &#123;</div><div class="line">  info : <span class="built_in">string</span> = <span class="string">'hello world'</span>;</div><div class="line">  <span class="keyword">constructor</span> (<span class="params"></span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.info);</div><div class="line">  &#125;</div><div class="line">  hasInfo () : <span class="built_in">boolean</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.info.length &gt; <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在其他文件中也全部可以做优化：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app.ts</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> angular.module(<span class="string">'app'</span>, []);</div></pre></td></tr></table></figure></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app-controller.ts</span></div><div class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">'./app'</span>;</div><div class="line"><span class="keyword">import</span> FirstCtrl <span class="keyword">from</span> <span class="string">'./firstCtrl'</span>;</div><div class="line"><span class="keyword">import</span> SecondCtrl <span class="keyword">from</span> <span class="string">'./secondCtrl'</span>;</div><div class="line"></div><div class="line">app.controller(<span class="string">'FirstCtrl'</span>, [firstCtrl])</div><div class="line">   .controller(<span class="string">'SecondCtrl'</span>, [secondCtrl])</div><div class="line">   .controller(...)</div></pre></td></tr></table></figure>
+<p>代码在 TypeScript 下编译完成后，仍可以生成兼容 AngularJS 的 ES3 版本 JS 代码。</p>
+<h1 id="根据最佳实践进一步优化"><a href="#根据最佳实践进一步优化" class="headerlink" title="根据最佳实践进一步优化"></a>根据最佳实践进一步优化</h1><p>我们建议在 <code>constructor</code> 中，只对一些变量的值进行初始化，不执行具体的业务逻辑，而将涉及到业务逻辑的初始化，则放到单独的初始化方法中完成。<br>这也符合 Angular 的理念，在 Angular 中，每个 component 都有一系列生命周期方法，并通过 Angular 框架自动调用运行，我们涉及到业务逻辑的初始化工作在这里拆分到单独的初始化方法中，将更方便我们的代码升级到 Angular 。</p>
+<p>最佳实践：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// firstCtrl.controller.ts</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> FirstCtrl &#123;</div><div class="line">  info : <span class="built_in">string</span> = <span class="string">'hello world'</span>;</div><div class="line">  </div><div class="line">  <span class="keyword">constructor</span> (<span class="params"></span>) &#123;</div><div class="line">    <span class="keyword">this</span>._onInit();</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="comment">// TS 中，类的方法默认为 public 类型，因此不需要显示声明</span></div><div class="line">  hasInfo (): <span class="built_in">boolean</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.info.length &gt; <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="comment">// 这里用 TS 中的 private 关键字将方法声明为私有方法</span></div><div class="line">  <span class="keyword">private</span> _onInit () : <span class="built_in">void</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.info);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>初始化方法并不需要在网页中或其他模块中调用，因此我们将其设定为私有方法（以 <code>_</code> 开头），并写在所有公有方法后面。</p>
+<h1 id="升级到-Angular"><a href="#升级到-Angular" class="headerlink" title="升级到 Angular"></a>升级到 Angular</h1><p>到此为止，我们对项目的修改已经十分巨大，但它依然可以兼容 AngularJS （在 TypeScript Compiler 帮忙编译的情况下），而代码已经变得整洁而先进，并且对现有的项目运行完全没有任何影响。</p>
+<p>Angular 中没有 controller 概念，我们将 controller 改造为 component<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// first.component.ts</span></div><div class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"></div><div class="line"><span class="meta">@Component</span> (&#123;</div><div class="line">  selector: <span class="string">'first-ctrl'</span>,</div><div class="line">  template: <span class="string">'&lt;span *ngIf="hasInfo()"&gt;&#123;&#123; info &#125;&#125;&lt;/span&gt;'</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> FirstComponent <span class="keyword">implements</span> OnInit &#123;</div><div class="line">  info : <span class="built_in">string</span> = <span class="string">'hello world'</span>;</div><div class="line">  </div><div class="line">  <span class="keyword">constructor</span> (<span class="params"></span>) &#123;</div><div class="line">    <span class="comment">// 初始化方法为生命周期方法，由 Angular 框架自动调用，这里不需要手动调用</span></div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="comment">// TS 中，类的方法默认为 public 类型，因此不需要显示声明</span></div><div class="line">  hasInfo (): <span class="built_in">boolean</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.info.length &gt; <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="comment">// 这里用 Angular 中的生命周期方法</span></div><div class="line">  ngOnInit () : <span class="built_in">void</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.info);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>改到这里， <code>first.component.ts</code> 的 Angular 升级已经完成，我们可以看到，除了添加一些 annotation（装饰器） 以外， component 的核心代码机会没有变动。<br>这说明经过优化的、完全兼容 AngularJS 的 TypeScript 版本核心代码，可以直接升级到 Angular ，只要添加一些必要的 annotation 就可以了。</p>
+
       
     </div>
 
@@ -538,9 +468,11 @@ parseFloat 可以将一个字符串型的浮点数进行转换
       
         <div class="post-tags">
           
-            <a href="/tags/数据类型转换/" rel="tag"># 数据类型转换</a>
+            <a href="/tags/AngularJS/" rel="tag"># AngularJS</a>
           
-            <a href="/tags/方法总结/" rel="tag"># 方法总结</a>
+            <a href="/tags/升级/" rel="tag"># 升级</a>
+          
+            <a href="/tags/Angular/" rel="tag"># Angular</a>
           
         </div>
       
@@ -553,15 +485,15 @@ parseFloat 可以将一个字符串型的浮点数进行转换
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/数组常用方法.html" rel="next" title="数组常用方法">
+                <i class="fa fa-chevron-left"></i> 数组常用方法
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/offset类属性与style类属性的区别.html" rel="prev" title="offset类属性与style类属性的区别">
-                offset类属性与style类属性的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -717,7 +649,7 @@ parseFloat 可以将一个字符串型的浮点数进行转换
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part1-数字转换成字符串"><span class="nav-number">1.</span> <span class="nav-text">Part1 数字转换成字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-使用JS内部方法进行转换"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 使用JS内部方法进行转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-直接使用Number对象进行包裹"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 直接使用Number对象进行包裹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-参与数学计算-加法除外"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 参与数学计算(加法除外)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.4.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part2-数字转换成字符串"><span class="nav-number">2.</span> <span class="nav-text">Part2 数字转换成字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-方法一-直接使用字符串方法"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 方法一:直接使用字符串方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-方法二-使用小数化方法进行转换"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 方法二:使用小数化方法进行转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part3-Boolean类型转换"><span class="nav-number">3.</span> <span class="nav-text">Part3 Boolean类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-布尔类型转数字"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 布尔类型转数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-布尔类型转字符串"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 布尔类型转字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-数字转布尔"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 数字转布尔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-字符串转布尔"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 字符串转布尔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-其他类型转布尔"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 其他类型转布尔</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分离-controller-的-function"><span class="nav-number">1.</span> <span class="nav-text">分离 controller 的 function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过-as-语法不再使用-scope"><span class="nav-number">2.</span> <span class="nav-text">通过 as 语法不再使用 $scope</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-TypeScript"><span class="nav-number">3.</span> <span class="nav-text">使用 TypeScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#根据最佳实践进一步优化"><span class="nav-number">4.</span> <span class="nav-text">根据最佳实践进一步优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#升级到-Angular"><span class="nav-number">5.</span> <span class="nav-text">升级到 Angular</span></a></li></ol></div>
             
 
           </div>
@@ -869,7 +801,7 @@ parseFloat 可以将一个字符串型的浮点数进行转换
 		_hcwp.push({widget:"Bloggerstream", widget_id: 89491, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "JavaScript中的数据类型转换.html"});
+		_hcwp.push({widget:"Stream", widget_id: 89491, xid: "AngularJS升级指南.html"});
 		
 
 		(function() {
